@@ -4,6 +4,7 @@ class CreateFootprints < ActiveRecord::Migration[6.0]
       t.float :food
       t.float :mobility
       t.float :household
+      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end
