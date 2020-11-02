@@ -1,0 +1,52 @@
+.challenge-box {
+  background: #FFFFFF;
+  box-shadow: 0px 0px 22px rgba(0, 0, 0, 0.05);
+  border-radius: 15px;
+  height: 130px;
+  width: 140px;
+  border-radius: 15px;
+  color: #575757;
+  margin: 0 auto;
+  padding: 0;
+  display: inline-block;
+  line-height: 50px;
+  font-family: Poppins;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 27px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+
+.recommendation-card {
+  overflow: hidden;
+  height: 107px;
+  background: white;
+  box-shadow: 0px 0px 22px rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+}
+.recommendation-card img {
+  height: 100%;
+  width: 98px;
+  object-fit: cover;
+}
+.recommendation-card h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+.recommendation-card p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+.recommendation-card .recommendation-card-infos {
+  padding: 16px;
+  justify-content: space-between;
+  width: 100%;
+}

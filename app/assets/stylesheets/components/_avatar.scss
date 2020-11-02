@@ -1,20 +1,33 @@
-.avatar {
-  width: 40px;
-  border-radius: 50%;
+.small-avatar {
+  position: absolute;
+  width: 53px;
+  height: 53px;
+  left: 37px;
+  top: 26px;
+  background: url(image.png);
+  border: 4px solid #7DC7BE;
+  box-sizing: border-box;
+  border-radius: 32.8571px;
 }
-.avatar-large {
-  width: 56px;
-  border-radius: 50%;
+.big-avatar {
+  position: absolute;
+  width: 99px;
+  height: 99px;
+  left: 138px;
+  top: 24px;
+  background: url(image.png);
+  border: 2.82857px solid #7DC7BE;
+  box-sizing: border-box;
+  border-radius: 70.7143px;
 }
-.avatar-bordered {
-  width: 40px;
-  border-radius: 50%;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-  border: white 1px solid;
+
+.point-avatar {
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  left: 45px;
+  top: 338px;
+  background: url(image.png);
+  border-radius: 50px;
 }
-.avatar-square {
-  width: 40px;
-  border-radius: 0px;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-  border: white 1px solid;
-}
+
