@@ -1,17 +1,12 @@
 header {
-// position: absolute;
-// left: 0%;
-// right: 0%;
-// top: 0%;
-// bottom: -0.9%;
-font-family: Poppins;
-font-style: normal;
-font-weight: bold;
-font-size: 31.7143px;
-line-height: 48px;
-text-align: center;
-letter-spacing: 0.12em;
-color: #87CCC3;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 31.7143px;
+  line-height: 48px;
+  text-align: center;
+  letter-spacing: 0.12em;
+  color: #87CCC3;
 }
 
 #log-in {
@@ -46,9 +41,10 @@ color: #87CCC3;
 }
 
 .container-sign-in {
-  align-items: center;
-  justify-content: center;
   text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
 }
 
 .rander-sign-in {
