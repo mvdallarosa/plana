@@ -12,7 +12,14 @@ line-height: 48px;
 text-align: center;
 letter-spacing: 0.12em;
 color: #87CCC3;
-margin: 80px 0px;
+}
+
+#log-in {
+  margin: 80px 0px;
+}
+
+#sign-up {
+  margin: 20px 0px;
 }
 
 .no-border {
@@ -20,15 +27,16 @@ margin: 80px 0px;
   border-width: 0 0 2px;
   border-color: #7DC7BE;
   width: 270px;
+  background-color: #F5F5F5;
 }
 
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active  {
+      -webkit-box-shadow: 0 0 0 30px #F5F5F5
+   inset !important;
 
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active  {
-    -webkit-box-shadow: 0 0 0 30px #F5F5F5
- inset !important;
 }
 
 .form-inputs {
