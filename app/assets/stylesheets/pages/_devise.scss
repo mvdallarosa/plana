@@ -1,0 +1,48 @@
+header {
+// position: absolute;
+// left: 0%;
+// right: 0%;
+// top: 0%;
+// bottom: -0.9%;
+font-family: Poppins;
+font-style: normal;
+font-weight: bold;
+font-size: 31.7143px;
+line-height: 48px;
+text-align: center;
+letter-spacing: 0.12em;
+color: #87CCC3;
+margin: 80px 0px;
+}
+
+.no-border {
+  outline: 0;
+  border-width: 0 0 2px;
+  border-color: #7DC7BE;
+  width: 270px;
+}
+
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 30px #F5F5F5
+ inset !important;
+}
+
+.form-inputs {
+  text-align:left;
+  margin-bottom: 40px;
+  margin-left: 50px;
+}
+
+.container-sign-in {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.rander-sign-in {
+  margin-top: 40px;
+}
