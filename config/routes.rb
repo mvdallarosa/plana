@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get "/welcome", to: 'pages#welcome'
   get "/intro", to: 'pages#intro'
   get "/discover", to: 'pages#discover'
+  get "/questionnaire", to: 'questionnaire#edit'
+  patch  "/questionnaire", to: 'questionnaire#update'
   get "/profile", to: 'pages#profile'
   resources :favorites, only: [ :show ]
   get '/ranking', to: 'pages#ranking'

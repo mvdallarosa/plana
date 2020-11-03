@@ -1,0 +1,14 @@
+<div >
+  <%= simple_form_for(@user, url: questionnaire_path) do |f| %>
+    <%= f.simple_fields_for :form do |form_f| %>
+        <%= form_f.input :mobility1 %>
+        <%= form_f.input :mobility2 %>
+        <%= form_f.input :food1 %>
+        <%= form_f.input :food2 %>
+        <%= form_f.input :household1 %>
+        <%= form_f.input :household2 %>
+        <%= form_f.input :household3 %>
+    <% end %>
+    <%= f.button :submit %>
+  <% end %>
+</div>

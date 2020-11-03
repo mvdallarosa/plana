@@ -1,41 +1,52 @@
-<h2>Sign up</h2>
+<div class="container-sign-in">
+<header id="sign-up">plana</header>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
     <%= f.input :first_name,
+                label: false,
                 required: true,
                 autofocus: true,
-                input_html: { autocomplete: "first-name" }%>
+                input_html: { placeholder:"first name", autocomplete: "first-name", class:"no-border"}%>
     <%= f.input :last_name,
+                label: false,
                 required: true,
                 autofocus: true,
-                input_html: { autocomplete: "last-name" }%>
+                input_html: { placeholder:"last name", autocomplete: "last-name", class:"no-border" }%>
     <%= f.input :city,
+                label: false,
                 required: true,
                 autofocus: true,
-                input_html: { autocomplete: "city" }%>
+                input_html: { placeholder:"City", autocomplete: "city", class:"no-border" }%>
     <%= f.input :username,
+                label: false,
                 required: true,
                 autofocus: true,
-                input_html: { autocomplete: "username" }%>
+                input_html: { placeholder:"username", autocomplete: "username", class:"no-border" }%>
     <%= f.input :email,
+                label: false,
                 required: true,
                 autofocus: true,
-                input_html: { autocomplete: "email" }%>
+                input_html: { placeholder:"email", autocomplete: "email", class:"no-border" }%>
     <%= f.input :password,
+                label: false,
                 required: true,
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
+                input_html: { placeholder:"password", autocomplete: "new-password", class:"no-border" } %>
     <%= f.input :password_confirmation,
+                label: false,
                 required: true,
-                input_html: { autocomplete: "new-password" } %>
+                input_html: { placeholder:"repeat password", autocomplete: "new-password", class:"no-border" } %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+    <button class="plana-btn-green"><%= f.button :submit, "Sign up" %></button>
   </div>
 <% end %>
 
+<div class="rander-sign-in">
 <%= render "devise/shared/links" %>
+</div>
+</div>
