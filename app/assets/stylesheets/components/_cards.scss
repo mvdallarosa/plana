@@ -27,6 +27,7 @@
   border-radius: 15px;
   display: flex;
   align-items: center;
+  margin: 20px;
 }
 .item-card img {
   height: 100%;
@@ -55,7 +56,8 @@
 .dashboard-header {
   display: flex;
   align-items: center;
-  background: white;
+  background: #F5F5F5;
+  box-shadow: 0px 0px 22px rgba(0, 0, 0, 0.05);
   padding: 20px;
 }
 
@@ -85,6 +87,7 @@
 
 .tip-box {
   margin-bottom: 20px;
+  text-align: center;
 }
 .tip-box-card p {
   color: #8A8A8A;
@@ -95,4 +98,22 @@
   height: 150px;
   border-radius: 15px;
   background-color: white;
+}
+
+.answer {
+  background: #FFFFFF;
+  border-radius: 50px;
+  font-size: 18px;
+  margin: 20px;
+  color: #2E2E2E;
+  padding: 10px 0px;
+}
+
+.answer-choice {
+  background: #7DC7BE;
+  border-radius: 50px;
+  font-size: 18px;
+  margin: 20px;
+  color: #2E2E2E;
+  padding: 10px 0px;
 }

@@ -1,0 +1,20 @@
+.category-container{
+  overflow: scroll;
+}
+.tip-container {
+  margin: 10px;
+  color: #575757;
+
+  .log-box {
+  margin: 0 auto;
+  display: flex;
+  }
+}
+
+.container-answer {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 100px 20px;
+}
+
