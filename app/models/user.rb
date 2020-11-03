@@ -17,8 +17,9 @@ class User < ApplicationRecord
 
 
   def current_challenge
-    date = Date.today
-    current_commitment = current_user.commitments.where(['start_date < ? AND end_date > ?', date, date])
-    return current_commitment.challenge
+    # date = Date.today
+    # current_commitment = current_user.commitments.where(['start_date < ? AND end_date > ?', date, date])
+    # return current_commitment.challenge
+    current_user.commitments.last
   end
 end
