@@ -19,7 +19,7 @@
   text-align: center;
 }
 
-.recommendation-card {
+.item-card {
   overflow: hidden;
   height: 107px;
   background: white;
@@ -28,25 +28,71 @@
   display: flex;
   align-items: center;
 }
-.recommendation-card img {
+.item-card img {
   height: 100%;
   width: 98px;
   object-fit: cover;
 }
-.recommendation-card h2 {
+.item-card h2 {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
 }
-.recommendation-card p {
+.item-card p {
   font-size: 12px;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
   margin-top: 8px;
 }
-.recommendation-card .recommendation-card-infos {
+.item-card .item-card-infos {
   padding: 16px;
   justify-content: space-between;
   width: 100%;
+}
+
+
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 20px;
+}
+
+.dashboard-header p {
+  margin-bottom: 0;
+  font-size: 12px;
+  color: #8A8A8A;
+}
+.dashboard-header .dashboard-header-infos {
+  padding: 16px;
+  width: 100%;
+}
+
+.header-icon-box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-icon-box h2 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 36px;
+}
+.tip-box-card {
+  margin: auto 10px;
+}
+
+.tip-box {
+  margin-bottom: 20px;
+}
+.tip-box-card p {
+  color: #8A8A8A;
+  font-weight: bold;
+}
+.tip-box {
+  width: 98%;
+  height: 150px;
+  border-radius: 15px;
+  background-color: white;
 }

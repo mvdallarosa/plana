@@ -1,2 +1,66 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
+
+<!-- tracking of current challenge + daily recommendations & tips  -->
+<!-- this is the dashboard that displays the current challenge with its info  -->
+
+<div class="container">
+    <div class="item-card">
+      <img src="https://res.cloudinary.com/dolfny7hf/image/upload/v1604324794/Screenshot_2020-11-02_at_14.41.55_ebniqf.png">
+      <div class="item-card-infos">
+        <h2>Recommendation</h2>
+        <p><i class="far fa-clock"></i> 45 minutes</p>
+        <span class='heart-icon'><i class="far fa-heart"></i></span>
+      </div>
+    </div>
+    <p>   </p>
+    <div class="item-card">
+      <img src="https://res.cloudinary.com/dolfny7hf/image/upload/v1604145319/loj8ksjz8ddp8ydae1w8pflpiwhh.png">
+      <div class="item-card-infos">
+        <h2>Recommendation</h2>
+        <p><i class="far fa-clock"></i> 45 minutes</p>
+        <span class='heart-icon'><i class="fas fa-heart"></i></span>
+      </div>
+    </div>
+  </div>
+
+<div class ="container2">
+  <!-- DASHBOARD  -->
+  <div class="dashboard-header">
+    <div class="dashboard-header-infos">
+      <div class="header-icon-box">
+        <h2>PLANTBASED</h2>
+        <%= image_tag "sprout1.svg", class: "sprout-icon" %>
+        <% image_tag "sprout2.svg", class: "sprout-icon" %>
+        <% image_tag "sprout3.svg", class: "sprout-icon" %>
+        <% image_tag "tree.svg", class: "sprout-icon" %>
+        <% image_tag "planet-earth.svg", class: "sprout-icon" %>
+      </div>
+      <p><%= Date.today %></p>
+    </div>
+  </div>
+
+  <div class='log-box'>
+    <p class='plana-btn-grey'>LOGGED</p>
+  </div>
+
+  <div class="tip-box-card">
+    <p>Daily Tip</p>
+    <div class="tip-box">
+    </div>
+  </div>
+
+  <div class="tip-box-card">
+    <p>Daily Tip</p>
+    <div class="tip-box">
+    </div>
+  </div>
+
+  <div class="navbar">
+   <!-- nav bar -->
+    <%= image_tag "squares.png", alt: "3 square icon", class: 'squares-icon' %>
+    <%= image_tag "leaf.png", alt: "3 square icon", class: 'vagina-icon' %>
+    <%= image_tag "dropdown.png", alt: "3 square icon", class: 'squares-icon' %>
+  </div>
+</div>
+
