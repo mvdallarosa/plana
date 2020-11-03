@@ -1,2 +1,41 @@
 <!-- tracking of current challenge + daily recommendations & tips  -->
 <!-- this is the dashboard that displays the current challenge with its info  -->
+  <%= render 'shared/navbar' %>
+  <!-- DASHBOARD  -->
+  <div class="dashboard-header">
+    <div class="dashboard-header-infos">
+      <div class="header-icon-box">
+        <h2>PLANTBASED</h2>
+        <%= image_tag "sprout1.svg", class: "sprout-icon" %>
+        <% image_tag "sprout2.svg", class: "sprout-icon" %>
+        <% image_tag "sprout3.svg", class: "sprout-icon" %>
+        <% image_tag "tree.svg", class: "sprout-icon" %>
+        <% image_tag "planet-earth.svg", class: "sprout-icon" %>
+      </div>
+      <p><%= Date.today %></p>
+    </div>
+  </div>
+
+<div class ="tip-container">
+  <div class='log-box'>
+    <p class='plana-btn-grey'>LOGGED</p>
+  </div>
+
+  <div class="tip-box-card">
+    <p>Daily Tip</p>
+    <div class="tip-box">
+      ENTER TIP HERE
+    </div>
+  </div>
+
+  <div class="tip-box-card">
+    <p>Daily Tip</p>
+    <div class="tip-box">
+      ENTER TIP HERE
+    </div>
+  </div>
+
+    <div class='log-box'>
+    <p class='plana-btn-green'>NEW CHALLENGE</p>
+  </div>
+</div>
