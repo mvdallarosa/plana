@@ -10,3 +10,30 @@
   display: flex;
   }
 }
+
+.discover-container {
+   // background-size: cover;
+    color: white;
+    padding: 350px 0;
+    background-position: center;
+    text-align: center;
+    .set {
+      text-align: center;
+      font-size: 24px;
+    }
+}
+
+.home-container {
+  color: white;
+  padding: 120px 0;
+  background-position: center;
+  text-align: center;
+  .set {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 300px;
+  }
+  #home {
+    font-size: 55px;
+  }
+}
