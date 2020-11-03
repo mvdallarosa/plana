@@ -7,6 +7,11 @@ class User < ApplicationRecord
   has_many :favorites
   has_one :footprint
   has_one_attached :photo
+  validates_format_of :first_name, with: /[a-z\s.-]/i, presence: true
+  validates :last_name, with: /[a-z\s.-]/i, presence: true
+  validates :username,  uniqueness: true, with: /\A[a-zA-Z0-9]+\z/, presence: true
+  validates :city, presence: true
+
 
   def current_challenge
     date = Date.today
