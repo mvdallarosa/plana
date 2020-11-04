@@ -152,9 +152,11 @@
   background: #FFFFFF;
   border-radius: 50px;
   font-size: 18px;
-  margin: 20px;
+  margin: 30px;
   color: #2E2E2E;
-  padding: 10px 0px;
+  padding: 20px 20px;
+  max-height: 100px;
+  max-width: 500px;
 }
 
 .answer-choice {
@@ -163,7 +165,7 @@
   font-size: 18px;
   margin: 20px;
   color: #2E2E2E;
-  padding: 10px 0px;
+  padding: 20px 0px;
 }
 
 .grid-cards {
