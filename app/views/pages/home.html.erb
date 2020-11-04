@@ -9,8 +9,12 @@
   </div>
 
   <div class="login-buttons">
-    <p class="plana-btn-green">SIGN UP</p>
-    <p class="plana-btn-grey">LOGIN</p>
+    <p><%= link_to "SIGN UP", welcome_path, class: "plana-btn-green" %></p>
+    <% if user_signed_in? %>
+      <%= link_to "LOGIN", dashboard_path, class: "plana-btn-grey" %>
+    <% else %>
+      <%= link_to "LOGIN", new_user_session_path, class: "plana-btn-grey" %>
+    <% end %>
   </div>
 </div>
 

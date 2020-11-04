@@ -1,2 +1,79 @@
 <!-- account page with summary of our score & challenges completed + out favorites -->
 <%= render 'shared/navbar' %>
+<div class="profile-header">
+  <p><%= image_tag 'default_headshot.png', class: 'profile-avatar' %></p>
+  <h2><%= current_user.first_name %> <%= current_user.last_name %></h2>
+  <i class="far fa-edit"></i> | <%= link_to "logout", destroy_user_session_path, method: :delete, class: 'logout' %>
+</div>
+
+<div class="profile-container">
+  <div class="profile-cards">
+    <%= image_tag 'drop-rectangle.png', alt: 'points', class: 'profile-icon' %>
+    <p class='number'>58</p>
+    <p class='descriptions'>Points</p>
+  </div>
+  <div class="profile-cards">
+    <%= image_tag 'schedule-rectangle.png', alt: 'schedule', class: 'profile-icon' %>
+    <p class='number'>2</p>
+    <p class='descriptions'>Challenges</p>
+  </div>
+  <div class="profile-cards">
+    <%= image_tag 'calculator-rectangle.png', alt: 'co2 saved', class: 'profile-icon' %>
+    <p class='number'>50</p>
+    <p class='descriptions'>CO2 saved</p>
+  </div>
+</div>
+
+<div class='saved-container'>
+  <h3>Saved</h3>
+  <div class="saved-list-items">
+    <div class="saved-rows">
+
+      <div class="saved-column">
+        <%= image_tag 'carrot.png', alt: 'carrot', class: 'saved-icon' %>
+      </div>
+      <div class="saved-column2">
+        Recipes
+      </div>
+      <div class="saved-column3">
+        14
+      </div>
+    </div>
+
+    <div class="saved-rows">
+      <div class="saved-column">
+        <%= image_tag 'seed.png', alt: 'seed', class: 'saved-icon' %>
+      </div>
+      <div class="saved-column2">
+        Restaurants
+      </div>
+      <div class="saved-column3">
+        10
+      </div>
+    </div>
+
+    <div class="saved-rows">
+      <div class="saved-column">
+        <%= image_tag 'label.png', alt: 'shops', class: 'saved-icon' %>
+      </div>
+      <div class="saved-column2">
+        Shops
+      </div>
+      <div class="saved-column3">
+        3
+      </div>
+    </div>
+
+    <div class="last-saved-rows">
+      <div class="saved-column">
+        <%= image_tag 'tree.png', alt: 'farmers market', class: 'saved-icon' %>
+      </div>
+      <div class="saved-column2">
+        Farmers Markets
+      </div>
+      <div class="saved-column3">
+        5
+      </div>
+    </div>
+  </div>
+</div>

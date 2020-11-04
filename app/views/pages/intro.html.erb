@@ -1,0 +1,12 @@
+
+<div class="container-intro">
+
+  <h1>Hi, <%= current_user.first_name %> </h1>
+
+
+  <p id="text-intro">Answer a few questions to create an initial estimate of your carbon foorprint.</p>
+
+    <%= link_to questionnaire_path do %>
+    <p class= "plana-btn-green">CONTINUE</p>
+    <% end %>
+</div>
