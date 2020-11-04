@@ -17,9 +17,10 @@ class QuestionnaireController < ApplicationController
     })
     @footprint.user = @user
     @footprint.save
-    if @footprint >= 0 && <= 3.5
+    total = @footprint.mobility + @footprint.food + @footprint.household
+    if total >= 0 && total <= 3.5
       @user.score = 100
-    elsif @footprint > 3.5 && <= 7.5
+    elsif total > 3.5 && total <= 7.5
       @user.score = 50
     else
       @user.score = 0
