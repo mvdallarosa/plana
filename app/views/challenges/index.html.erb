@@ -3,29 +3,31 @@
 
 <!-- here we will list all the challenges & the user can pick the one he wants to commit to -->
 <%= render 'shared/navbar' %>
-<div class="challenge-index-container">
-  <div class="index-text">
-    Choose your
-    4 week
-    challenge
-  </div>
-  <div class="index-cards">
-    <%= link_to discover_path do %>
-      <div class="challenge-card">
-        <span class='challenge-icon-grey'><i class="fas fa-carrot fa-3x"></i></span>
-        <div class='text'>
-          <p>PLANT-BASED</p>
+<div class="main-container">
+  <div class="challenge-index-container">
+    <div class="index-text">
+      Choose your
+      4 week
+      challenge
+    </div>
+    <div class="index-cards">
+      <%= link_to discover_path do %>
+        <div class="challenge-card">
+          <span class='challenge-icon-grey'><i class="fas fa-carrot fa-3x"></i></span>
+          <div class='text'>
+            <p>PLANT-BASED</p>
+          </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
 
-    <%= link_to discover_path do %>
-      <div class="challenge-card-green">
-        <span class='challenge-icon-white'><i class="fas fa-seedling fa-flip-horizontal fa-3x"></i></span>
-        <div class='text'>
-          <p>PLASTIC-FREE</p>
+      <%= link_to discover_path do %>
+        <div class="challenge-card-green">
+          <span class='challenge-icon-white'><i class="fas fa-seedling fa-flip-horizontal fa-3x"></i></span>
+          <div class='text'>
+            <p>PLASTIC-FREE</p>
+          </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
