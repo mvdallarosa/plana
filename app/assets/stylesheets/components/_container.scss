@@ -54,6 +54,36 @@
   margin: 100px 20px;
 }
 
+.container-welcome {
+  position: absolute;
+  width: 233px;
+  height: 180px;
+  left: 71px;
+  top: 316px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 36px;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.container-intro {
+  position: absolute;
+  width: 233px;
+  height: 10px;
+  top: 100px;
+  left: 71px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 36px;
+  text-align: center;
+}
+
+
 .category-index-container {
   .index-header{
     color: #575757;
@@ -64,7 +94,6 @@
     margin-top: 10px;
   }
 }
-
 // Profile Container //
 
 .profile-header {
