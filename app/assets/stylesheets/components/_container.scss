@@ -11,6 +11,33 @@
   }
 }
 
+.discover-container {
+   // background-size: cover;
+    color: white;
+    padding: 350px 0;
+    background-position: center;
+    text-align: center;
+    .set {
+      text-align: center;
+      font-size: 24px;
+    }
+}
+
+.home-container {
+  color: white;
+  padding: 150px 0;
+  background-position: center;
+  text-align: center;
+  .set {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 300px;
+  }
+  #home {
+    font-size: 55px;
+  }
+}
+
 .container-answer {
   align-items: center;
   justify-content: center;
@@ -18,3 +45,13 @@
   margin: 100px 20px;
 }
 
+.category-index-container {
+  .index-header{
+    color: #575757;
+    font-size: 36px;
+    font-weight: 700;
+    padding-left: 30px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+}
