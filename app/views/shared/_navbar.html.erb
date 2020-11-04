@@ -1,6 +1,12 @@
  <div class="navbar">
    <!-- nav bar -->
-    <%= image_tag "squares.png", alt: "3 square icon", class: 'squares-icon' %>
-    <%= image_tag "drop-nav.png", alt: "3 square icon", class: 'teardrop-icon' %>
-    <%= image_tag "dropdown.png", alt: "3 square icon", class: 'squares-icon' %>
+    <%= link_to categories_path, alt: "3 square icon" do %>
+      <%= image_tag 'squares.png', class: 'squares-icon' %>
+      <% end %>
+    <%= link_to dashboard_path, alt: "3 square icon" do %>
+      <%= image_tag 'drop-nav.png', class: 'teardrop-icon' %>
+      <% end %>
+    <%= link_to ranking_path, alt: "3 square icon" do %>
+      <%= image_tag 'dropdown.png', class: 'squares-icon' %>
+      <% end %>
 </div>
