@@ -7,9 +7,11 @@
   text-align: center;
   letter-spacing: 0.12em;
   color: #FFFFFF;
-  line-height: 50px;
+  line-height: 60px;
   border: 0px;
+  padding: 0;
   margin: 20px auto;
+  display: inline-block;
 }
 
 .plana-btn-grey {
@@ -20,8 +22,7 @@
   color: white;
   text-align: center;
   font-size: 18px;
-  line-height: 50px;
-  letter-spacing: 0.12em;
+  line-height: 60px;
   margin: 20px auto;
   padding: 0;
   display: inline-block;
@@ -36,4 +37,10 @@
   border-radius: 50px;
   margin: 10px;
   color: #D8D8D8 !important;
+}
+
+.btn-intro {
+  height: 56px;
+  width: 270px;
+  border-radius: 50px;
 }
