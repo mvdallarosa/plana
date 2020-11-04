@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get "/questionnaire", to: 'questionnaire#edit'
   patch  "/questionnaire", to: 'questionnaire#update'
   get "/profile", to: 'pages#profile'
+  get '/footprint', to: 'footprints#show'
   resources :favorites, only: [ :show ]
   get '/ranking', to: 'pages#ranking'
   resources :categories, only: [ :index, :show ]
