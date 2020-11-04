@@ -5,14 +5,14 @@
   <div class="dashboard-header">
     <div class="dashboard-header-infos">
       <div class="header-icon-box">
-        <h2>PLANTBASED</h2>
+        <h2> <%= @challenge.category.upcase %></h2>
         <%= image_tag "sprout1.svg", class: "sprout-icon" %>
         <% image_tag "sprout2.svg", class: "sprout-icon" %>
         <% image_tag "sprout3.svg", class: "sprout-icon" %>
         <% image_tag "tree.svg", class: "sprout-icon" %>
         <% image_tag "planet-earth.svg", class: "sprout-icon" %>
       </div>
-      <p><%= Date.today %></p>
+      <p><%= Date.today.strftime("%A, %d %B")%></p>
     </div>
   </div>
 
@@ -22,18 +22,30 @@
   </div>
 
   <div class="tip-box-card">
-    <p>Daily Tip</p>
+    <p>Information</p>
     <div class="tip-box">
-      ENTER TIP HERE
+      <%=  @challenge.information  %>
     </div>
   </div>
 
   <div class="tip-box-card">
-    <p>Daily Tip</p>
+      <p>Daily Recommendation</p>
+    <div class="item-card m-0">
+      <img src="https://res.cloudinary.com/dolfny7hf/image/upload/v1604324794/Screenshot_2020-11-02_at_14.41.55_ebniqf.png">
+      <div class="item-card-infos">
+        <h2>Recommendation</h2>
+        <p><i class="far fa-clock"></i> 45 minutes</p>
+        <span class='heart-icon'><i class="far fa-heart"></i></span>
+      </div>
+    </div>
+  </div>
+
+<!--   <div class="tip-box-card">
+    <p>Daily Recommendation</p>
     <div class="tip-box">
       ENTER TIP HERE
     </div>
-  </div>
+  </div> -->
 
   <div class='log-box'>
     <%= link_to 'NEW CHALLENGE', challenges_path, class: 'plana-btn-green' %>
