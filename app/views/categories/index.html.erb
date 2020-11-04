@@ -1,20 +1,21 @@
 <!-- list of all categories ( Category.all ) + 2 card for tools that redirect to their route -->
 <%= render 'shared/navbar' %>
+
 <div class='category-index-container'>
   <div class='index-header pt-4'>
     Tools
   </div>
 
-    <div class="grid-cards">
-      <div class="grid-card">
-        <p>Measure my travel</p>
-        <p><%= image_tag "icon-btn.png", alt: "magnify", width: 50, id:'image-icon' %></p>
-      </div>
+      <div class="grid-cards">
+        <div class="grid-card">
+          <p>Measure my travel</p>
+          <p><%= image_tag "icon-btn.png", alt: "magnify", width: 50, id:'image-icon' %></p>
+        </div>
 
-      <div class="grid-card">
-        <p>Measure my meal</p>
-        <p><%= image_tag "leaf-grey.png", alt: "leaf", width: 50, id:'image-icon' %></p>
-      </div>
+        <div class="grid-card">
+          <p>Measure my meal</p>
+          <p><%= image_tag "leaf-grey.png", alt: "leaf", width: 50, id:'image-icon' %></p>
+        </div>
 
       <div class="grid-card">
         <p> <%= @categories[0].name.capitalize %> </p>
@@ -45,6 +46,6 @@
         <p><%= @categories[5].name.capitalize %></p>
         <p><%= image_tag "tree.png", alt: "tree", width: 50, id:'image-icon' %></p>
       </div>
-    </div>
 
+  </div>
 </div>

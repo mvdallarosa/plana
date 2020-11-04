@@ -1,8 +1,12 @@
 <!-- tracking of current challenge + daily recommendations & tips  -->
 <!-- this is the dashboard that displays the current challenge with its info  -->
-  <%= render 'shared/navbar' %>
+<%= render 'shared/navbar' %>
   <!-- DASHBOARD  -->
+<div class="main-container">
   <div class="dashboard-header">
+    <%= link_to profile_path do %>
+      <%= image_tag 'default_headshot.png', class: 'small-profile-avatar' %>
+    <% end %>
     <div class="dashboard-header-infos">
       <div class="header-icon-box">
         <h2> <%= @challenge.category.upcase %></h2>
@@ -50,4 +54,5 @@
   <div class='log-box'>
     <%= link_to 'NEW CHALLENGE', challenges_path, class: 'plana-btn-green' %>
   </div>
+</div>
 </div>
