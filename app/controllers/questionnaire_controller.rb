@@ -5,7 +5,6 @@ class QuestionnaireController < ApplicationController
     @user.form = Hash.new
   end
 
-
   def update
     @user = current_user
     @user.form = params[:user][:form]
@@ -78,28 +77,5 @@ class QuestionnaireController < ApplicationController
     household = values[:household1]["#{form["household1"]}".to_sym] + values[:household2]["#{form["household2"]}".to_sym] + values[:household3]["#{form["household3"]}".to_sym]
     return [mobility, food, household]
   end
-
 end
-
-
-  def show
-    results = calculate(current_user.form)
-    @footprint = Footprint.new({
-      mobility: results[0],
-      food: results[1],
-      household: results[2]
-    })
-    @footprint.user = current_user
-    @footprint.save
-    if @footprint >= 0 && <= 3.5
-      current_user.score = 100
-      current_user.save
-    elsif @footprint > 3.5 && <= 7.5
-      current_user.score = 50
-      current_user.save
-    else
-      current_user.score = 0
-      current_user.save
-    end
-  end
 
