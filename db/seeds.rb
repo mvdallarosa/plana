@@ -308,13 +308,13 @@ puts "Creating 2 challenges..."
 challenge_attributes = [
   { category: "plastic-free",
     description: "avoid all forms of packaging that involve plastic",
-    information: "Plastic never bio-degrades and disrupts our endocrine system, and is suspected to cause cancer, infertility, and many other diseases. The Plastic Free Challenge is designed to raise awareness and promote solutions.",
+    information: "Plastic never bio-degrades and disrupts our endocrine system, and is suspected to cause cancer, infertility, and many other diseases. Managing your waste has a direct positive impact on the healthcare of our ecosystems, especially the ocean. The Plastic Free Challenge is designed to raise awareness and promote solutions."
     duration: 28,
     impact: 0.50.to_f },
 
   { category: "plant-based",
     description: "no meat / fish / dairy / eggs -- fully plant-based",
-    information: "At Plana, we believe that eating mostly plant-based whole foods for three weeks (or longer) is the perfect way to become your healthiest self and make a positive impact on our environment by saving CO2.",
+    information: "At Plana, we believe that eating mostly plant-based whole foods for three weeks (or longer) is the perfect way to make a positive impact on our environment by saving CO2. On average diet accounts for 40% of our carbon footprint."
     duration: 28,
     impact: 1.01.to_f}
 ]
