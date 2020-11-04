@@ -1,10 +1,10 @@
 <!-- list of all categories ( Category.all ) + 2 card for tools that redirect to their route -->
 <%= render 'shared/navbar' %>
-<div class="container">
-  <div class='category-index-container'>
-    <div class='index-header'>
-      Tools
-    </div>
+
+<div class='category-index-container'>
+  <div class='index-header pt-4'>
+    Tools
+  </div>
 
       <div class="grid-cards">
         <div class="grid-card">
@@ -17,35 +17,34 @@
           <p><%= image_tag "leaf-grey.png", alt: "leaf", width: 50, id:'image-icon' %></p>
         </div>
 
-        <div class="grid-card">
-          <p>Shop responsibily</p>
-          <p><%= image_tag "label.png", alt: "label", width: 50, id:'image-icon' %></p>
-        </div>
+      <div class="grid-card">
+        <p> <%= @categories[0].name.capitalize %> </p>
+        <p><%= image_tag "label.png", alt: "label", width: 50, id:'image-icon' %></p>
+      </div>
 
-        <div class="grid-card">
-          Plant-based recipes
-          <p><%= image_tag "carrot.png", alt: "carrot", width: 50, id:'image-icon' %></p>
-        </div>
+      <div class="grid-card">
+        <p><%= @categories[1].name.capitalize %></p>
+        <p><%= image_tag "carrot.png", alt: "carrot", width: 50, id:'image-icon' %></p>
+      </div>
 
-        <div class="grid-card">
-          <p>Package free shops</p>
-          <p><%= image_tag "grocery.png", alt: "grocery", width: 50, id:'image-icon' %></p>
-        </div>
+      <div class="grid-card">
+        <p><%= @categories[2].name.capitalize %></p>
+        <p><%= image_tag "grocery.png", alt: "grocery", width: 50, id:'image-icon' %></p>
+      </div>
 
-        <div class="grid-card">
-          <p>Organic restaurants</p>
-          <p><%= image_tag "seed.png", alt: "seed", width: 50, id:'image-icon' %></p>
-        </div>
+      <div class="grid-card">
+        <p><%= @categories[3].name.capitalize %></p>
+        <p><%= image_tag "seed.png", alt: "seed", width: 50, id:'image-icon' %></p>
+      </div>
 
-        <div class="grid-card">
-          <p>Seasonal foods</p>
-          <p><%= image_tag "apple.png", alt: "apple", width: 50, id:'image-icon' %></p>
-        </div>
+      <div class="grid-card">
+        <p><%= @categories[4].name.capitalize %></p>
+        <p><%= image_tag "apple.png", alt: "apple", width: 50, id:'image-icon' %></p>
+      </div>
 
-        <div class="grid-card">
-          <p>Farmers market</p>
-          <p><%= image_tag "tree.png", alt: "tree", width: 50, id:'image-icon' %></p>
-        </div>
+      <div class="grid-card">
+        <p><%= @categories[5].name.capitalize %></p>
+        <p><%= image_tag "tree.png", alt: "tree", width: 50, id:'image-icon' %></p>
       </div>
 
   </div>
