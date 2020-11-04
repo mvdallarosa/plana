@@ -5,8 +5,13 @@
 </head>
 <body style="background-color: #7DC7BE">
   <div class="container-welcome">
-  <p>Welcome to <strong>plana</strong>, your guide to a <strong>healthier</strong> lifestyle, for you and for the <strong>planet</strong>.</p>
-</div>
+    <p>Welcome to <strong>plana</strong>, your guide to a <strong>healthier</strong> lifestyle, for you and for the <strong>planet</strong>.</p>
+  </div>
+  <div class="welcome-button-div">
+  <%= link_to new_user_registration_path do %>
+    <p class="plana-btn-white m-0">CONTINUE</p>
+  <% end %>
+  </div>
 
 </body>
 </html>
