@@ -18,20 +18,44 @@
       <i class="fas fa-home fa-2x"></i>
     </div>
   </div>
-
   <div class="footprint-row">
     <div class="footprint-column">
-      <p>2 T</p>
-      <p>CO2 / year</p>
+      <p class='tonnes'><%=current_user.footprint.mobility %> T</p>
+      <p class="number">CO2 / year</p>
     </div>
     <div class="footprint-column">
-      <p>2 T</p>
-      <p>CO2 / year</p>
+      <p class='tonnes'><%=current_user.footprint.food %> T</p>
+      <p class="number">CO2 / year</p>
     </div>
     <div class="footprint-column">
-      <p>2 T</p>
-      <p>CO2 / year</p>
+      <p class='tonnes'><%=current_user.footprint.household %> T</p>
+      <p class="number">CO2 / year</p>
     </div>
   </div>
 
+  <div class="footprint-row2">
+    <div class="footprint-column">
+      <%= image_tag 'calculator-rectangle.png', class: 'profile-icon' %>
+    </div>
+    <div class="footprint-column">
+      <%= image_tag 'drop-rectangle.png', class: 'profile-icon' %>
+    </div>
+  </div>
+  <div class="footprint-row">
+    <div class="footprint-column">
+      <p class='tonnes'><%= current_user.footprint.mobility + current_user.footprint.food + current_user.footprint.household %> T</p>
+      <p class="number">CO2 / year</p>
+    </div>
+    <div class="footprint-column">
+      <p class='tonnes'>2 T</p>
+      <p class="number">CO2 / year</p>
+    </div>
+  </div>
+
+  <div class="footprint-text">
+    <p>Reduce your impact by switching your habits, begin with a 4-week challenge.<p>
+    <%= link_to challenges_path do %>
+      <p class='plana-btn-green pick'> PICK A CHALLENGE </p>
+    <% end %>
+  </div>
 </div>
