@@ -1,7 +1,9 @@
 
 require 'json'
+require 'open3'
 require 'open-uri'
 require 'pry'
+
 
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
@@ -350,6 +352,67 @@ end
 puts "Finished!"
 
 
+category = Category.where(name: "shop responsibly").first
+
+if Item.where(category: category).empty?
+
+puts "Adding brands to category..."
+
+category = Category.where(name: "shop responsibly").first
+
+  a = "curl 'https://api.goycloud.com/functions/browseCategories-V2' \
+  -H 'authority: api.goycloud.com' \
+  -H 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.106 Safari/537.36 Edg/83.0.478.54' \
+  -H 'content-type: text/plain' \
+  -H 'accept: */*' \
+  -H 'origin: https://directory.goodonyou.eco' \
+  -H 'sec-fetch-site: cross-site' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'referer: https://directory.goodonyou.eco/categories/tops' \
+  -H 'accept-language: it-IT,it;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6' \
+  --data-binary '{\"category\":\"tops\",\"offset\":10000,\"filters\":{\"gender\":[2],\"sort\":0},\"_ApplicationId\":\"gcrp2V42PHW7S8ElL639\",\"_JavaScriptKey\":\"gVoyh28ouDRUazw9IMrF6nIkxHVtvvALHHJL5BOg\",\"_ClientVersion\":\"js2.1.0\",\"_InstallationId\":\"9bd19dd1-56a5-a314-f28a-ec137c3e5559\"}' \
+  --compressed".to_s
+# b = Kernel.system(a)
+result = nil
+Open3.popen3(a) do |stdin, stdout, stderr|
+  result = stdout.read
+end
+brands = JSON.parse(result)
+# name
+# description
+# url
+# image url
+# "https://directory.goodonyou.eco/brand/#{yummy-maternity}"
+# Pry::ColorPrinter.pp(brands)
+best = brands["result"]["brands"].select do |brand|
+  brand["ethical_rating"] >= 3
+end
+count = 0
+best.first(300).each do |brand|
+  item = Item.new(
+    name: brand["name"],
+    description: brand["price"],
+    url: "https://directory.goodonyou.eco/brand/#{brand["id"]}"
+    )
+  item.category = category
+  if brand["image"].present?
+    file = URI.open(brand["image"])
+    item.photo.attach(io: file, filename: "brand#{count}.png", content_type: 'image/png')
+  end
+  count += 1
+  item.save
+#   p brand["name"]
+#   p brand["ethical_rating"]
+#   p brand["price"]
+#   p brand["image"]
+#   p "https://directory.goodonyou.eco/brand/#{brand["id"]}"
+end
+else
+  puts "The brands have already been stored in the database..."
+end
+
+
 # RECIPE SEEDS
 # plant_category = Category.where(name: 'plant-based recipes').first
 # if Item.where(category: plant_category).empty?
@@ -516,5 +579,3 @@ puts "Finished!"
 #   p "Recipe Seeds are included"
 # end
 
-
-puts "Adding brands to category..."
