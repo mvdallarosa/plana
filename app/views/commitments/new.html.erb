@@ -7,14 +7,14 @@
       challenge
     </div>
     <div class="index-cards">
-      <div class="challenge-card" data-option='plastic-free'>
+      <div class="challenge-card" data-option=<%= @challenges[0].id %>>
         <span class='challenge-icon-grey'><i class="fas fa-carrot fa-3x"></i></span>
         <div class='text'>
           <p><%= @challenges[0].category.upcase %></p>
         </div>
       </div>
 
-      <div class="challenge-card" data-option='plant-based'>
+      <div class="challenge-card" data-option=<%= @challenges[1].id%>>
       <!-- <div class="challenge-card-green"> -->
       <!-- <span class='challenge-icon-white'> -->
         <span class='challenge-icon-grey'><i class="fas fa-seedling fa-flip-horizontal fa-3x"></i></span>

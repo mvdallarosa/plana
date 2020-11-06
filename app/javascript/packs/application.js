@@ -28,31 +28,13 @@ import "bootstrap";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 import { multiForm } from '../components/multi_step_form';
+import { pickChallenge } from '../components/pick_challenge_form';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   multiForm();
-  const selectChallenge = () => {
-  let count = 0
-  const challenges =  document.querySelectorAll('.challenge-card');
-  const input =  document.querySelector('.comm-input-attribute');
-  const form = document.querySelector('.commitment-attributes');
-  if (challenges) {
-    challenges.forEach((challenge) => {
-      challenge.addEventListener('click', (event) => {
-        // setTimeout(() => {
-        //   event.currentTarget.classList.remove("challenge-card")
-        //   event.currentTarget.classList.add("challenge-card-green")
-        // }, 200)
-        const option = event.currentTarget.dataset.option
-        input = option
-        form.submit()
-      })
-    });
-  }
-  }
-
+  pickChallenge();
 });
 
 
