@@ -515,3 +515,6 @@ puts "Finished!"
 # else
 #   p "Recipe Seeds are included"
 # end
+
+
+puts "Adding brands to category..."
