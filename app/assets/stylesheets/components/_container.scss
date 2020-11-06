@@ -186,7 +186,7 @@
 }
 
 .container-ranking {
-  display: flex;
+  display: block;
 }
 
 .icons {
@@ -256,7 +256,8 @@
     font-size: 20px;
     .pick {
       margin-top: 60px;
-      color: white;
+      color: white !important;
+      text-decoration: none;
     }
   }
 }

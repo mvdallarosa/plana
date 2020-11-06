@@ -16,7 +16,9 @@ class User < ApplicationRecord
   # validates :username,  uniqueness: true, with: /\A[a-zA-Z0-9]+\z/, presence: true
   validates :city, presence: true
 
-
+  def total_footprint
+    self.footprint.mobility + self.footprint.food + self.footprint.household
+  end
   # def current_challenge
   #   # date = Date.today
   #   # current_commitment = current_user.commitments.where(['start_date < ? AND end_date > ?', date, date])
