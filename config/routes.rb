@@ -10,11 +10,14 @@ Rails.application.routes.draw do
   get "/discover", to: 'pages#discover'
   get "/questionnaire", to: 'questionnaire#edit'
   patch  "/questionnaire", to: 'questionnaire#update'
+  get "/challenges", to: "commitments#new"
+  post "/challenges", to: "commitments#create"
   get "/profile", to: 'pages#profile'
   get '/footprint', to: 'footprints#show'
   resources :favorites, only: [ :show ]
   get '/ranking', to: 'pages#ranking'
   resources :categories, only: [ :index, :show ]
-  resources :challenges, only: [ :index ]
+  # resources :challenges, only: [ :index ]
+  resources :commitments, only: [ :new ]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

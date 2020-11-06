@@ -11,6 +11,10 @@ class ApplicationController < ActionController::Base
     dashboard_path
   end
 
+  def after_sign_up_path_for(resource)
+    questionnaire_path
+  end
+
   # def authenticate_user!
   #   if user_signed_in?
   #     redirect_to dashboard_path

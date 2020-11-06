@@ -33,6 +33,26 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   multiForm();
+  const selectChallenge = () => {
+  let count = 0
+  const challenges =  document.querySelectorAll('.challenge-card');
+  const input =  document.querySelector('.comm-input-attribute');
+  const form = document.querySelector('.commitment-attributes');
+  if (challenges) {
+    challenges.forEach((challenge) => {
+      challenge.addEventListener('click', (event) => {
+        // setTimeout(() => {
+        //   event.currentTarget.classList.remove("challenge-card")
+        //   event.currentTarget.classList.add("challenge-card-green")
+        // }, 200)
+        const option = event.currentTarget.dataset.option
+        input = option
+        form.submit()
+      })
+    });
+  }
+  }
+
 });
 
 
