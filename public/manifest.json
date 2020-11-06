@@ -16,7 +16,7 @@
   ],
   "start_url": "www.chooseplana.com",
   "background_color": "#E5E5E5",
-  "display": "standalone",
+  "display": "fullscreen",
   "scope": "/",
   "theme_color": "#E5E5E5"
 }
