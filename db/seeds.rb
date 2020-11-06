@@ -2,7 +2,7 @@
 require 'json'
 require 'open3'
 require 'open-uri'
-require 'pry'
+# require 'pry'
 
 
 # This file should contain all the record creation needed to seed the database with its default values.
