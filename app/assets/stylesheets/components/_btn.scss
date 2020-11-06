@@ -12,6 +12,7 @@
   padding: 0;
   margin: 20px auto;
   display: inline-block;
+  text-decoration: none;
 }
 
 .plana-btn-grey {
@@ -26,8 +27,23 @@
   margin: 20px auto;
   padding: 0;
   display: inline-block;
-
+  text-decoration: none;
 }
+
+.plana-btn-white {
+  height: 56px;
+  width: 270px;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #7DC7BE;
+  text-align: center;
+  font-size: 18px;
+  line-height: 60px;
+  padding: 0;
+  display: inline-block;
+  text-decoration: none;
+}
+
 
 .search-btn {
   width: 95%;
@@ -43,4 +59,5 @@
   height: 56px;
   width: 270px;
   border-radius: 50px;
+  text-decoration: none;
 }

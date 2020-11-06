@@ -1,17 +1,61 @@
-<h1>Footprints#show</h1>
-<p>Find me in app/views/footprints/show.html.erb</p>
-
 <!-- show current user carbon footprint results divided by mobility-food-household-->
 <!-- + button to lower your impact through a challenge -->
 
-<h4>YOUR CARBON FOOTPRINT</h4>
-<ul>
-  <li>mobility: <%=current_user.footprint.mobility %> t</li>
-  <li>consumption: <%=current_user.footprint.food %> t</li>
-  <li>household: <%=current_user.footprint.household %> t</li>
-</ul>
-<h5>=> <%= current_user.footprint.mobility + current_user.footprint.food + current_user.footprint.household %> tonnes CO2 per year</h5>
+<div class="footprint-container">
+    <i class="fas fa-globe-europe fa-3x"></i>
+    <h2>Your Carbon Footprint</h2>
+</div>
 
+<div class="footprint-grid">
+  <div class="footprint-row">
+    <div class="footprint-column">
+      <i class="fas fa-car fa-2x"></i>
+    </div>
+    <div class="footprint-column">
+      <i class="fas fa-shopping-cart fa-2x"></i>
+    </div>
+    <div class="footprint-column">
+      <i class="fas fa-home fa-2x"></i>
+    </div>
+  </div>
+  <div class="footprint-row">
+    <div class="footprint-column">
+      <p class='tonnes'><%=current_user.footprint.mobility %> T</p>
+      <p class="number">CO2 / year</p>
+    </div>
+    <div class="footprint-column">
+      <p class='tonnes'><%=current_user.footprint.food %> T</p>
+      <p class="number">CO2 / year</p>
+    </div>
+    <div class="footprint-column">
+      <p class='tonnes'><%=current_user.footprint.household %> T</p>
+      <p class="number">CO2 / year</p>
+    </div>
+  </div>
 
+  <div class="footprint-row2">
+    <div class="footprint-column">
+      <%= image_tag 'calculator-rectangle.png', class: 'profile-icon' %>
+    </div>
+    <div class="footprint-column">
+      <%= image_tag 'drop-rectangle.png', class: 'profile-icon' %>
+    </div>
+  </div>
+  <div class="footprint-row">
+    <div class="footprint-column">
+      <p class='tonnes'><%= current_user.footprint.mobility + current_user.footprint.food + current_user.footprint.household %> T</p>
+      <p class="number">CO2 / year</p>
+    </div>
+    <div class="footprint-column">
+      <p class='tonnes'>2 T</p>
+      <p class="number">CO2 / year</p>
+    </div>
+  </div>
 
-
+  <div class="footprint-text">
+    <p>Reduce your impact by switching your habits, begin with a 4-week challenge.<p>
+    <%= link_to challenges_path do %>
+      <p class='plana-btn-green pick'> PICK A CHALLENGE </p>
+    <% end %>
+  </div>
+</div>
