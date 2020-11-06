@@ -350,9 +350,6 @@ if Category.all.empty?
 end
 
 puts "Finished!"
-<<<<<<< HEAD
-=======
-
 
 category = Category.where(name: "shop responsibly").first
 
