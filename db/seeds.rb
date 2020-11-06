@@ -370,6 +370,6 @@ puts "Finished!"
 
 
 
+puts "Adding brands to category..."
 
-
-
+category = Category.where(name: "shop responsibly")
