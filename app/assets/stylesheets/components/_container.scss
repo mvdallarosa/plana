@@ -3,6 +3,7 @@
   padding-bottom: 50px;
 }
 
+
 .category-container{
   overflow: scroll;
 }
@@ -60,7 +61,7 @@
 }
 
 .container-welcome {
-  width: 233px;
+  width: 80%;
   height: 180px;
   font-family: Poppins;
   font-style: normal;
@@ -69,11 +70,10 @@
   line-height: 36px;
   text-align: center;
   color: #FFFFFF;
-  margin: 200px auto;
-}
-
-.welcome-button-div {
-  margin: auto 50px;
+  margin: 250px auto;
+  .welcome-button-div {
+    margin-top: 150px;
+  }
 }
 
 .container-intro {
