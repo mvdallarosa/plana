@@ -20,15 +20,15 @@
   </div>
   <div class="footprint-row">
     <div class="footprint-column">
-      <p class='tonnes'><%=current_user.footprint.mobility %> T</p>
+      <p class='tonnes'><%=current_user.footprint.mobility.round(2) %> T</p>
       <p class="number">CO2 / year</p>
     </div>
     <div class="footprint-column">
-      <p class='tonnes'><%=current_user.footprint.food %> T</p>
+      <p class='tonnes'><%=current_user.footprint.food.round(2) %> T</p>
       <p class="number">CO2 / year</p>
     </div>
     <div class="footprint-column">
-      <p class='tonnes'><%=current_user.footprint.household %> T</p>
+      <p class='tonnes'><%=current_user.footprint.household.round(2) %> T</p>
       <p class="number">CO2 / year</p>
     </div>
   </div>
@@ -43,7 +43,7 @@
   </div>
   <div class="footprint-row">
     <div class="footprint-column">
-      <p class='tonnes'><%= current_user.footprint.mobility + current_user.footprint.food + current_user.footprint.household %> T</p>
+      <p class='tonnes'><%= (current_user.footprint.mobility.round(2) + current_user.footprint.food.round(2) + current_user.footprint.household.round(2)).round(2) %> T</p>
       <p class="number">CO2 / year</p>
     </div>
     <div class="footprint-column">

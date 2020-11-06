@@ -9,7 +9,7 @@ class PagesController < ApplicationController
   end
 
   def ranking
-    @users = User.all
+    @users = User.order(score: :desc)
   end
 
   def dashboard
