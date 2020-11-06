@@ -86,3 +86,24 @@
   }
 }
 
+.container-ranking {
+  display: flex;
+}
+
+.icons {
+  display: flex;
+  flex-direction: row;
+  margin-top:5px;
+  font-size: 12px;
+}
+
+.icons p {
+  margin-right: 20px;
+  font-weight: normal;
+}
+
+.top-ranking {
+  display: flex;
+  justify-content: space-between;
+}
+
