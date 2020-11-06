@@ -16,36 +16,47 @@
           <p>Measure my meal</p>
           <p><%= image_tag "leaf-grey.png", alt: "leaf", width: 50, id:'image-icon' %></p>
         </div>
+        <%= link_to category_path(@categories[0]) do %>
+          <div class="grid-card">
+            <p> <%= @categories[0].name.capitalize %> </p>
+            <p><%= image_tag "label.png", alt: "label", width: 50, id:'image-icon' %></p>
+          </div>
+        <% end %>
 
-      <div class="grid-card">
-        <p> <%= @categories[0].name.capitalize %> </p>
-        <p><%= image_tag "label.png", alt: "label", width: 50, id:'image-icon' %></p>
-      </div>
+        <%= link_to category_path(@categories[1]) do %>
+          <div class="grid-card">
+            <p><%= @categories[1].name.capitalize %></p>
+            <p><%= image_tag "carrot.png", alt: "carrot", width: 50, id:'image-icon' %></p>
+          </div>
+        <% end %>
 
-      <div class="grid-card">
-        <p><%= @categories[1].name.capitalize %></p>
-        <p><%= image_tag "carrot.png", alt: "carrot", width: 50, id:'image-icon' %></p>
-      </div>
+        <%= link_to category_path(@categories[2]) do %>
+          <div class="grid-card">
+            <p><%= @categories[2].name.capitalize %></p>
+            <p><%= image_tag "grocery.png", alt: "grocery", width: 50, id:'image-icon' %></p>
+          </div>
+        <% end %>
 
-      <div class="grid-card">
-        <p><%= @categories[2].name.capitalize %></p>
-        <p><%= image_tag "grocery.png", alt: "grocery", width: 50, id:'image-icon' %></p>
-      </div>
+        <%= link_to category_path(@categories[3]) do %>
+          <div class="grid-card">
+            <p><%= @categories[3].name.capitalize %></p>
+            <p><%= image_tag "seed.png", alt: "seed", width: 50, id:'image-icon' %></p>
+          </div>
+        <% end %>
 
-      <div class="grid-card">
-        <p><%= @categories[3].name.capitalize %></p>
-        <p><%= image_tag "seed.png", alt: "seed", width: 50, id:'image-icon' %></p>
-      </div>
+        <%= link_to category_path(@categories[4]) do %>
+          <div class="grid-card">
+            <p><%= @categories[4].name.capitalize %></p>
+            <p><%= image_tag "apple.png", alt: "apple", width: 50, id:'image-icon' %></p>
+          </div>
+        <% end %>
 
-      <div class="grid-card">
-        <p><%= @categories[4].name.capitalize %></p>
-        <p><%= image_tag "apple.png", alt: "apple", width: 50, id:'image-icon' %></p>
-      </div>
-
-      <div class="grid-card">
-        <p><%= @categories[5].name.capitalize %></p>
-        <p><%= image_tag "tree.png", alt: "tree", width: 50, id:'image-icon' %></p>
-      </div>
+        <%= link_to category_path(@categories[5]) do %>
+          <div class="grid-card">
+            <p><%= @categories[5].name.capitalize %></p>
+            <p><%= image_tag "tree.png", alt: "tree", width: 50, id:'image-icon' %></p>
+          </div>
+        <% end %>
 
   </div>
 </div>
