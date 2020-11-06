@@ -14,9 +14,9 @@
       "sizes": "512x512"
 }
   ],
-  "start_url": "www.chooseplana.com",
+  "start_url": "https://www.chooseplana.com",
   "background_color": "#E5E5E5",
-  "display": "fullscreen",
+  "display": "standalone",
   "scope": "/",
   "theme_color": "#E5E5E5"
 }
