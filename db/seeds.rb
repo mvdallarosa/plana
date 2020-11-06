@@ -371,4 +371,9 @@ puts "Finished!"
 
 
 
+puts "Adding brands to category..."
 
+<<<<<<< HEAD
+category = Category.where(name: "shop responsibly")
+=======
+>>>>>>> ddeff643665404c8d00306a89bcb5f147a3d9f3f
