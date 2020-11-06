@@ -44,6 +44,7 @@
 #   impact: 0.79.to_f },
 
 
+
 Favorite.destroy_all
 Commitment.destroy_all
 Footprint.destroy_all
@@ -367,8 +368,6 @@ if Category.all.empty?
 end
 
 puts "Finished!"
-
-
 
 
 
