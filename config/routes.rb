@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
+  authenticated :user do
+    root 'pages#dashboard', as: :authenticated_root
+  end
   root to: 'pages#home'
   get "/dashboard", to: 'pages#dashboard'
   get "/welcome", to: 'pages#welcome'
