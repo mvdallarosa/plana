@@ -412,7 +412,7 @@ best = brands["result"]["brands"].select do |brand|
   brand["ethical_rating"] >= 3
 end
 count = 0
-best.each do |brand|
+best.first(300).each do |brand|
   item = Item.new(
     name: brand["name"],
     description: brand["price"],
