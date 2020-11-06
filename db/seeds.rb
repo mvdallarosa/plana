@@ -10,6 +10,7 @@ require 'pry'
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
 # puts "Creating Plastic-Free Challenge..."
 #   category: "plastic-free"
 #   description: "avoid all forms of packaging that involve plastic"
@@ -44,8 +45,6 @@ require 'pry'
 #   impact: 0.79.to_f },
 
 Favorite.destroy_all
-Item.destroy_all
-Category.destroy_all
 Commitment.destroy_all
 Footprint.destroy_all
 Challenge.destroy_all
@@ -334,33 +333,171 @@ category_attributes.each do |attributes|
 end
 puts "Finished!"
 
-puts "Creating Recipe seeds"
-api_key = "b328d47a732a42639faf37a211637f23"
-offset = 1
-t_count = 0
-url = "https://api.spoonacular.com/recipes/complexSearch?diet=vegan&number=100&offset=#{offset}&apiKey=#{api_key}&includeNutrition=true."
-recipes_serialized = open(url).read
-recipes = JSON.parse(recipes_serialized)
-# my_recipes = recipes
-# Pry::ColorPrinter.pp(recipes)
-results = recipes["results"]
-results.each do |recipe|
-  api_key = "b328d47a732a42639faf37a211637f23"
-  url_info ="https://api.spoonacular.com/recipes/#{recipe["id"].to_i}/information?apiKey=#{api_key}&includeNutrition=true"
-  info_serialized = open(url_info).read
-  info = JSON.parse(info_serialized)
-  # Pry::ColorPrinter.pp(info)
-  category = Category.where(name: 'plant-based recipes').first
-  item = Item.new(
-    name: info["title"],
-    description: info["readyInMinutes"],
-    url: info["sourceUrl"]
-    )
-  item.category = category
-  file = URI.open(info["image"])
-  item.photo.attach(io: file, filename: "recipe#{t_count}.png", content_type: 'image/png')
-  t_count += 1
-  item.save
-end
 
-puts "Created all recipe seeds"
+
+# RECIPE SEEDS
+# plant_category = Category.where(name: 'plant-based recipes').first
+# if Item.where(category: plant_category).empty?
+#   p "Creating Recipe seeds"
+#     #Pry::ColorPrinter.pp(info)
+#   api_key = "c5a31e7ce3ec40f49ddb05ed72e816f9" #plan103@akxpert.com
+#   t_count = 0
+#   url = "https://api.spoonacular.com/recipes/complexSearch?diet=vegan&number=50&offset=0&apiKey=#{api_key}&includeNutrition=true."
+#   recipes_serialized = open(url).read
+#   recipes = JSON.parse(recipes_serialized)
+
+#   # Pry::ColorPrinter.pp(recipes)
+#   results = recipes["results"]
+#   results.each do |recipe|
+#     api_key = "c5a31e7ce3ec40f49ddb05ed72e816f9"
+#     url_info ="https://api.spoonacular.com/recipes/#{recipe["id"].to_i}/information?apiKey=#{api_key}&includeNutrition=true"
+#     info_serialized = open(url_info).read
+#     info = JSON.parse(info_serialized)
+#     #Pry::ColorPrinter.pp(info)
+#     category = Category.where(name: 'plant-based recipes').first
+#     item = Item.new(
+#       name: info["title"],
+#       description: info["readyInMinutes"],
+#       url: info["sourceUrl"]
+#       )
+#     item.category = category
+#     file = URI.open(info["image"])
+#     item.photo.attach(io: file, filename: "recipe#{t_count}.png", content_type: 'image/png')
+#     t_count += 1
+#     item.save
+#   end
+
+#   p "Created 50 recipe seeds"
+#   p "Creating the next 50 recipe seeds"
+#   url = "https://api.spoonacular.com/recipes/complexSearch?diet=vegan&number=50&offset=51&apiKey=#{api_key}&includeNutrition=true."
+#   recipes_serialized = open(url).read
+#   recipes = JSON.parse(recipes_serialized)
+#   results = recipes["results"]
+#   results.each do |recipe|
+#     api_key = "7d2316a3ecb04df2bb6474b291ef160f"
+#     url_info ="https://api.spoonacular.com/recipes/#{recipe["id"].to_i}/information?apiKey=#{api_key}&includeNutrition=true"
+#     info_serialized = open(url_info).read
+#     info = JSON.parse(info_serialized)
+#      Pry::ColorPrinter.pp(info)
+#     category = Category.where(name: 'plant-based recipes').first
+#     item = Item.new(
+#       name: info["title"],
+#       description: info["readyInMinutes"],
+#       url: info["sourceUrl"]
+#       )
+#     item.category = category
+#     file = URI.open(info["image"])
+#     item.photo.attach(io: file, filename: "recipe#{t_count}.png", content_type: 'image/png')
+#     t_count += 1
+#     item.save
+#   end
+
+#   p "Created total 101 recipe seeds"
+#   p "Creating the next 50 recipe seeds"
+
+#   url = "https://api.spoonacular.com/recipes/complexSearch?diet=vegan&number=50&offset=102&apiKey=#{api_key}&includeNutrition=true."
+#   recipes_serialized = open(url).read
+#   recipes = JSON.parse(recipes_serialized)
+#   results = recipes["results"]
+#   results.each do |recipe|
+#     api_key = "b10345bf49c7417283d56dcfb9b289d0"
+#     url_info ="https://api.spoonacular.com/recipes/#{recipe["id"].to_i}/information?apiKey=#{api_key}&includeNutrition=true"
+#     info_serialized = open(url_info).read
+#     info = JSON.parse(info_serialized)
+#      Pry::ColorPrinter.pp(info)
+#     category = Category.where(name: 'plant-based recipes').first
+#     item = Item.new(
+#       name: info["title"],
+#       description: info["readyInMinutes"],
+#       url: info["sourceUrl"]
+#       )
+#     item.category = category
+#     file = URI.open(info["image"])
+#     item.photo.attach(io: file, filename: "recipe#{t_count}.png", content_type: 'image/png')
+#     t_count += 1
+#     item.save
+#   end
+
+#   p "Created total 153 recipe seeds"
+#   p "Creating the next 50 recipe seeds"
+
+#   url = "https://api.spoonacular.com/recipes/complexSearch?diet=vegan&number=50&offset=154&apiKey=#{api_key}&includeNutrition=true."
+#   recipes_serialized = open(url).read
+#   recipes = JSON.parse(recipes_serialized)
+#   results = recipes["results"]
+#   results.each do |recipe|
+#     api_key = "2955395df676404caf40a018c9f03358"
+#     url_info ="https://api.spoonacular.com/recipes/#{recipe["id"].to_i}/information?apiKey=#{api_key}&includeNutrition=true"
+#     info_serialized = open(url_info).read
+#     info = JSON.parse(info_serialized)
+#      Pry::ColorPrinter.pp(info)
+#     category = Category.where(name: 'plant-based recipes').first
+#     item = Item.new(
+#       name: info["title"],
+#       description: info["readyInMinutes"],
+#       url: info["sourceUrl"]
+#       )
+#     item.category = category
+#     file = URI.open(info["image"])
+#     item.photo.attach(io: file, filename: "recipe#{t_count}.png", content_type: 'image/png')
+#     t_count += 1
+#     item.save
+#   end
+
+#   p "Created total 205 recipe seeds"
+#   p "Creating the next 50 recipe seeds"
+
+#    url = "https://api.spoonacular.com/recipes/complexSearch?diet=vegan&number=50&offset=206&apiKey=#{api_key}&includeNutrition=true."
+#   recipes_serialized = open(url).read
+#   recipes = JSON.parse(recipes_serialized)
+#   results = recipes["results"]
+#   results.each do |recipe|
+#     api_key = "2955395df676404caf40a018c9f03358"
+#     url_info ="https://api.spoonacular.com/recipes/#{recipe["id"].to_i}/information?apiKey=#{api_key}&includeNutrition=true"
+#     info_serialized = open(url_info).read
+#     info = JSON.parse(info_serialized)
+#      Pry::ColorPrinter.pp(info)
+#     category = Category.where(name: 'plant-based recipes').first
+#     item = Item.new(
+#       name: info["title"],
+#       description: info["readyInMinutes"],
+#       url: info["sourceUrl"]
+#       )
+#     item.category = category
+#     file = URI.open(info["image"])
+#     item.photo.attach(io: file, filename: "recipe#{t_count}.png", content_type: 'image/png')
+#     t_count += 1
+#     item.save
+#   end
+
+#   p "Created total 257 recipe seeds"
+#   p "Creating the next 50 recipe seeds"
+
+#   url = "https://api.spoonacular.com/recipes/complexSearch?diet=vegan&number=50&offset=258&apiKey=#{api_key}&includeNutrition=true."
+#   recipes_serialized = open(url).read
+#   recipes = JSON.parse(recipes_serialized)
+#   results = recipes["results"]
+#   results.each do |recipe|
+#     api_key = "b10345bf49c7417283d56dcfb9b289d0"
+#     url_info ="https://api.spoonacular.com/recipes/#{recipe["id"].to_i}/information?apiKey=#{api_key}&includeNutrition=true"
+#     info_serialized = open(url_info).read
+#     info = JSON.parse(info_serialized)
+#      Pry::ColorPrinter.pp(info)
+#     category = Category.where(name: 'plant-based recipes').first
+#     item = Item.new(
+#       name: info["title"],
+#       description: info["readyInMinutes"],
+#       url: info["sourceUrl"]
+#       )
+#     item.category = category
+#     file = URI.open(info["image"])
+#     item.photo.attach(io: file, filename: "recipe#{t_count}.png", content_type: 'image/png')
+#     t_count += 1
+#     item.save
+#   end
+
+#   p "Created total 309 recipe seeds"
+#   p "Thank God it's finished!"
+# else
+#   p "Recipe Seeds are included"
+# end
