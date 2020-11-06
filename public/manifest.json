@@ -1,17 +1,17 @@
 {
   "short_name": "Plana",
-  "name": "Plana - Live more sustainable",
+  "name": "Plana - Live more sustainably",
   "description": "",
   "icons": [
     {
       "src": "/icons/plant-icon.png",
       "sizes": "192x192",
-      "type": "icons/png"
+      "type": "image/png"
     },
     {
       "src": "/icons/plant-icon-4.png",
-      "type": "icons/png",
-      "sizes": "512x512"
+      "sizes": "512x512",
+      "type": "image/png"
 }
   ],
   "start_url": "www.chooseplana.com",
