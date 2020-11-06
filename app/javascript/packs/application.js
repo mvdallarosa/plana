@@ -28,11 +28,13 @@ import "bootstrap";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 import { multiForm } from '../components/multi_step_form';
+import { pickChallenge } from '../components/pick_challenge_form';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   multiForm();
+  pickChallenge();
 });
 
 

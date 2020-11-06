@@ -20,9 +20,27 @@
 }
 
 .point-avatar {
-  position: absolute;
   width: 45px;
   height: 45px;
+  left: 15px;
+  top: 250px;
+  border-radius: 50px;
+}
+
+.point-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.vector-ranking {
+  position: absolute;
+  left: 81.87%;
+  right: 10.13%;
+  top: 4.68%;
+  bottom: 91.63%;
+  color: #D8D8D8;
+  width: 30px;
+  height: 30px;
   left: 45px;
   top: 338px;
   border-radius: 50px;

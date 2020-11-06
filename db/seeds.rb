@@ -44,12 +44,10 @@
 #   impact: 0.79.to_f },
 
 
+
 Favorite.destroy_all
-Item.destroy_all
-Category.destroy_all
 Commitment.destroy_all
 Footprint.destroy_all
-Challenge.destroy_all
 User.destroy_all
 
 puts "Creating 11 users..."
@@ -328,8 +326,10 @@ challenge_attributes = [
     impact: 1.01.to_f}
 ]
 
-challenge_attributes.each do |attributes|
-  Challenge.create(attributes)
+if Challenge.all.empty?
+  challenge_attributes.each do |attributes|
+    Challenge.create(attributes)
+  end
 end
 
 puts "Finished!"
@@ -361,10 +361,11 @@ category_attributes = [
   { name: "farmers markets"}
 ]
 
-category_attributes.each do |attributes|
-  Category.create(attributes)
+if Category.all.empty?
+  category_attributes.each do |attributes|
+    Category.create(attributes)
+  end
 end
-
 
 puts "Finished!"
 
@@ -372,4 +373,7 @@ puts "Finished!"
 
 puts "Adding brands to category..."
 
+<<<<<<< HEAD
 category = Category.where(name: "shop responsibly")
+=======
+>>>>>>> ddeff643665404c8d00306a89bcb5f147a3d9f3f
