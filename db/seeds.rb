@@ -5,50 +5,12 @@ require 'pry'
 
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
-# puts "Creating Plastic-Free Challenge..."
-#   category: "plastic-free"
-#   description: "avoid all forms of packaging that involve plastic"
-#   duration: "28 days"
-#   impact: 0.50.to_f
-# puts 'Finished!'
-# puts "Creating No Red Meat Challenge..."
-#   category: "no-red-meat"
-#   description: "avoid Red Meat"
-#   duration: "28 days"
-#   impact: 0.47.to_f
-# puts 'Finished!'
-# puts "Creating Vegetarian Challenge..."
-#   category: "vegetarian"
-#   description: "avoid Meat/Fish"
-#   duration: "28 days"
-#   impact: 0.79.to_f
-# puts 'Finished!'
-# puts "Creating Plant-Based Challenge..."
-#   category: "plant-based"
-#   description: "no meat / fish / dairy / eggs -- fully plant-based"
-#   duration: "28 days"
-#   impact: 1.01.to_f
-# puts 'Finished!'
-# { category: "no-red-meat",
-#   description: "avoid Red Meat",
-#   duration: "28 days",
-#   impact: 0.47.to_f },
-# { category: "vegetarian",
-#   description: "avoid Meat/Fish",
-#   duration: "28 days",
-#   impact: 0.79.to_f },
 
 Favorite.destroy_all
 Commitment.destroy_all
 Footprint.destroy_all
-Challenge.destroy_all
 User.destroy_all
+
 puts "Creating 11 users..."
 
 user_attributes = [
@@ -68,6 +30,8 @@ user_attributes = [
       household3: ("A".."C").to_a.sample
     }
   },
+  
+  
   { first_name: "Enrico",
     last_name: "Favaro",
     username: "enrico",
@@ -84,6 +48,8 @@ user_attributes = [
       household3: ("A".."C").to_a.sample
     }
   },
+
+  
   { first_name: "Lily",
     last_name: "Walch",
     username: "lily",
@@ -100,6 +66,8 @@ user_attributes = [
       household3: ("A".."C").to_a.sample
     }
   },
+
+  
   { first_name: "Giulia",
     last_name: "Martinelli",
     username: "giulia",
@@ -116,6 +84,9 @@ user_attributes = [
       household3: ("A".."C").to_a.sample
     }
   },
+
+  
+  
   { first_name: "Marco",
     last_name: "Checchi",
     username: "marco",
@@ -132,6 +103,8 @@ user_attributes = [
       household3: ("A".."C").to_a.sample
     }
   },
+
+  
   { first_name: "Michele",
     last_name: "Comolli",
     username: "michele",
@@ -148,6 +121,8 @@ user_attributes = [
       household3: ("A".."C").to_a.sample
     }
   },
+
+  
   { first_name: "Giacomo",
     last_name: "Bonomelli",
     username: "giacomo",
@@ -164,6 +139,9 @@ user_attributes = [
       household3: ("A".."C").to_a.sample
     }
   },
+
+  
+  
   { first_name: "Michael",
     last_name: "Tung",
     username: "michael",
@@ -180,6 +158,9 @@ user_attributes = [
       household3: ("A".."C").to_a.sample
     }
   },
+
+  
+  
   { first_name: "Naelle",
     last_name: "Burger",
     username: "naelle",
@@ -196,6 +177,8 @@ user_attributes = [
       household3: ("A".."C").to_a.sample
     }
   },
+
+  
   { first_name: "Soraya",
     last_name: "De Lisa",
     username: "soraya",
@@ -212,6 +195,9 @@ user_attributes = [
       household3: ("A".."C").to_a.sample
     }
   },
+
+  
+  
   { first_name: "Yassine",
     last_name: "Chaqroun",
     username: "yassine",
@@ -229,10 +215,13 @@ user_attributes = [
     }
   }
 ]
+
 user_attributes.each do |attributes|
   User.create(attributes)
 end
+
 puts "Finished!"
+
 puts "Creating footprints..."
 values = {
   mobility1: {
@@ -291,6 +280,7 @@ User.all.each do |user|
   user.save
 end
 puts "Finished!"
+
 puts "Creating 2 challenges..."
 challenge_attributes = [
   { category: "plastic-free",
@@ -304,10 +294,15 @@ challenge_attributes = [
     duration: 28,
     impact: 1.01.to_f}
 ]
-challenge_attributes.each do |attributes|
-  Challenge.create(attributes)
+
+if Challenge.all.empty?
+  challenge_attributes.each do |attributes|
+    Challenge.create(attributes)
+  end
 end
 puts "Finished!"
+
+
 puts "Creating commitments..."
 User.all.each do |user|
   commitment = Commitment.new( {
@@ -319,7 +314,24 @@ User.all.each do |user|
   commitment.save
 end
 puts "Finished!"
+
+puts "Creating commitments..."
+
+User.all.each do |user|
+  commitment = Commitment.new( {
+    start_date: Date.new(2020,10,10),
+    end_date: Date.new(2020,10,10) + 28,
+  })
+  commitment.challenge = Challenge.all.sample
+  commitment.user = user
+  commitment.save
+end
+
+puts "Finished!"
+
+
 puts "Creating 6 categories..."
+
 category_attributes = [
   { name: "shop responsibly"},
   { name: "plant-based recipes"},
@@ -328,11 +340,14 @@ category_attributes = [
   { name: "seasonal foods"},
   { name: "farmers markets"}
 ]
-category_attributes.each do |attributes|
-  Category.create(attributes)
-end
-puts "Finished!"
 
+if Category.all.empty?
+  category_attributes.each do |attributes|
+    Category.create(attributes)
+  end
+end
+
+puts "Finished!"
 
 
 # RECIPE SEEDS
@@ -443,7 +458,6 @@ puts "Finished!"
 #     t_count += 1
 #     item.save
 #   end
-
 #   p "Created total 205 recipe seeds"
 #   p "Creating the next 50 recipe seeds"
 
