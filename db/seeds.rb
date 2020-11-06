@@ -34,29 +34,6 @@
 #   impact: 1.01.to_f
 # puts 'Finished!'
 
-
-puts "Creating all challenges..."
-
-challenge_attributes = [
-{ category: "plastic-free",
-  description: "avoid all forms of packaging that involve plastic",
-  information: "Plastic never bio-degrades and disrupts our endocrine system, and is suspected to cause cancer, infertility, and many other diseases. The Plastic Free Challenge is designed to raise awareness and promote solutions."
-  duration: "28 days",
-  impact: 0.50.to_f },
-
-{ category: "plant-based",
-  description: "no meat / fish / dairy / eggs -- fully plant-based",
-  information: "At Plana, we believe that eating mostly plant-based whole foods for three weeks (or longer) is the perfect way to become your healthiest self and make a positive impact on our environment by saving CO2."
-  duration: "28 days",
-  impact: 1.01.to_f
-}]
-
-challenge_attributes.each do |attributes|
-  Challenge.create(attributes)
-end
-
-puts "Finished!"
-
 # { category: "no-red-meat",
 #   description: "avoid Red Meat",
 #   duration: "28 days",
@@ -65,6 +42,40 @@ puts "Finished!"
 #   description: "avoid Meat/Fish",
 #   duration: "28 days",
 #   impact: 0.79.to_f },
+
+require 'json'
+require 'open-uri'
+require 'pry'
+
+api_key = "6027980db6444536ae0f8b6f7517cbd2"
+offset = 0
+t_count = 0
+url = "https://api.spoonacular.com/recipes/complexSearch?diet=vegan&number=100&offset=#{offset}&apiKey=#{api_key}&includeNutrition=true."
+recipes_serialized = open(url).read
+recipes = JSON.parse(recipes_serialized)
+# my_recipes = recipes
+# Pry::ColorPrinter.pp(recipes)
+results = recipes["results"]
+results.each do |recipe|
+  api_key = "6027980db6444536ae0f8b6f7517cbd2"
+  url_info ="https://api.spoonacular.com/recipes/#{recipe["id"].to_i}/information?apiKey=#{api_key}&includeNutrition=true"
+  info_serialized = open(url_info).read
+  info = JSON.parse(info_serialized)
+  # Pry::ColorPrinter.pp(info)
+  category = Category.where(name: 'plant-based recipes').first
+  item = Item.new(
+    name: info["title"],
+    description: info["readyInMinutes"],
+    url: info["sourceUrl"]
+    )
+  item.category = category
+  file = info["image"]
+  item.photo.attach(io: file, filename: "recipe#{t_count}.png", content_type: 'image/png')
+  t_count += 1
+  user.save
+end
+
+
 
 
 

@@ -1,7 +1,7 @@
-<div class="discover-container" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path 'grass-background.jpg' %>);">
+<div class="discover-container" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path 'grass-background.jpg' %>);">
   <div class='set'>
     <p>YOU'RE ALL SET!</p>
   </div>
-  <span class="plana-btn-grey">DISCOVER PLANA</span>
+  <%= link_to 'DISCOVER PLANA', dashboard_path, class: 'plana-btn-grey' %>
 </div>
 
