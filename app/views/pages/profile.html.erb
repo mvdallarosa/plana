@@ -2,7 +2,13 @@
 <%= render 'shared/navbar' %>
 <div class="main-container">
   <div class="profile-header">
-    <p><%= image_tag 'lilywalsh.png', class: 'profile-avatar' %></p>
+    <div class="profile-avatar-div">
+      <% if current_user.photo.attached? %>
+        <%= cl_image_tag current_user.photo.key, class: 'profile-avatar' %>
+      <% else %>
+        <%= image_tag "profile-placeholder.png", class: "profile-avatar", alt: "profile picture" %>
+      <% end %>
+  </div>
     <h2><%= current_user.first_name %> <%= current_user.last_name %></h2>
     <%= link_to edit_user_registration_path do %>
       <i class="far fa-edit"></i>
