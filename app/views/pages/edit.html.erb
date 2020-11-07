@@ -53,7 +53,7 @@
 <div class ="tip-container">
   <% if @challenge.category == "plant-based"  %>
   <% recipe = Item.where(category: Category.where(name: 'plant-based recipes'))[Date.today.month] %>
-
+  <% if recipe != nil %>
   <div class="tip-box-card">
       <p>Try this out!</p>
     <a href="<%= recipe.url %>" target="_blank" style="text-decoration: none;">
@@ -68,6 +68,7 @@
     </a>
 
   </div>
+  <% end %>
 
   <% elsif @challenge.category == "plastic-free" %>
   <% shop = Item.where(category: Category.where(name: 'shop responsibly'))[Date.today.month] %>

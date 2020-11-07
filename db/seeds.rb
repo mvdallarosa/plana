@@ -424,7 +424,7 @@ plant_category = Category.where(name: 'plant-based recipes').first
 if Item.where(category: plant_category).empty?
   p "Creating Recipe seeds"
     #Pry::ColorPrinter.pp(info)
-  api_key = "c5a31e7ce3ec40f49ddb05ed72e816f9" #plan103@akxpert.com
+  api_key = "82de840e62824f7d9fffef599d9c5049" #plan103@akxpert.com
   t_count = 0
   url = "https://api.spoonacular.com/recipes/complexSearch?diet=vegan&number=50&offset=0&apiKey=#{api_key}&includeNutrition=true."
   recipes_serialized = open(url).read
@@ -433,7 +433,7 @@ if Item.where(category: plant_category).empty?
   # Pry::ColorPrinter.pp(recipes)
   results = recipes["results"]
   results.each do |recipe|
-    api_key = "c5a31e7ce3ec40f49ddb05ed72e816f9"
+    api_key = "82de840e62824f7d9fffef599d9c5049"
     url_info ="https://api.spoonacular.com/recipes/#{recipe["id"].to_i}/information?apiKey=#{api_key}&includeNutrition=true"
     info_serialized = open(url_info).read
     info = JSON.parse(info_serialized)
