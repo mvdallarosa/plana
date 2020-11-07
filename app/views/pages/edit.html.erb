@@ -1,0 +1,101 @@
+<!-- tracking of current challenge + daily recommendations & tips  -->
+<!-- this is the dashboard that displays the current challenge with its info  -->
+<%= render 'shared/navbar' %>
+  <!-- DASHBOARD  -->
+<div class="main-container">
+  <div class="dashboard-header">
+    <%= link_to profile_path do %>
+      <%= image_tag 'lilywalsh.png', class: 'small-profile-avatar' %>
+    <% end %>
+    <div class="dashboard-header-infos">
+      <div class="header-icon-box">
+        <h2> <%= @challenge.category.upcase %></h2>
+        <%= image_tag "sprout1.svg", class: "sprout-icon" %>
+        <% image_tag "sprout2.svg", class: "sprout-icon" %>
+        <% image_tag "sprout3.svg", class: "sprout-icon" %>
+        <% image_tag "tree.svg", class: "sprout-icon" %>
+        <% image_tag "planet-earth.svg", class: "sprout-icon" %>
+      </div>
+      <p><%= Date.today.strftime("%A, %d %B")%></p>
+    </div>
+  </div>
+
+<div class ="tip-container">
+  <% if @user.done["#{Date.today}"] %>
+  <div class='log-box'>
+    <p class='plana-btn-dark'>DONE FOR TODAY</p>
+  </div>
+  <% else %>
+  <div class='log-box'>
+    <p class='plana-btn-grey done-btn'>MARK AS DONE</p>
+  </div>
+  <% end %>
+  <div class="tip-box-card">
+    <p>Info on challenge</p>
+    <div class="tip-box">
+      <%=  @challenge.information  %>
+    </div>
+  </div>
+
+
+<% if @challenge.category == "plant-based"  %>
+
+
+  <div class="tip-box-card">
+      <p>Try this out!</p>
+    <div class="item-card m-0">
+      <img src="https://res.cloudinary.com/dolfny7hf/image/upload/v1604324794/Screenshot_2020-11-02_at_14.41.55_ebniqf.png">
+      <div class="item-card-infos">
+        <% recipe = Item.where(category: Category.where(name: 'plant-based recipes'))[Date.today.month] %>
+        <h2><%= recipe.name %></h2>
+        <p><i class="far fa-clock"></i> <%= recipe.description %> minutes</p>
+        <span class='heart-icon'><i class="far fa-heart"></i></span>
+      </div>
+    </div>
+  </div>
+
+<% elsif @challenge.category == "plastic-free" %>
+  <div class="tip-box-card">
+      <p>Check out this sustainable shop!</p>
+    <div class="item-card m-0">
+      <img src="https://res.cloudinary.com/dolfny7hf/image/upload/v1604324794/Screenshot_2020-11-02_at_14.41.55_ebniqf.png">
+      <div class="item-card-infos">
+        <% shop = Item.where(category: Category.where(name: 'shop responsibly'))[Date.today.month] %>
+        <h2> <%= shop.name.capitalize %></h2>
+        <p><i class="fas fa-dollar-sign"></i> Price range: <%= shop.description %>/5</p>
+        <span class='heart-icon'><i class="far fa-heart"></i></span>
+      </div>
+    </div>
+  </div>
+
+<% end %>
+<!--   <div class="tip-box-card">
+    <p>Daily Recommendation</p>
+    <div class="tip-box">
+      ENTER TIP HERE
+    </div>
+  </div> -->
+
+  <div class='log-box'>
+    <%= link_to 'SEND CHALLENGE', ranking_path, class: 'plana-btn-green' %>
+  </div>
+</div>
+</div>
+
+
+
+<div style="display: none;">
+  <%= simple_form_for(@user, url: dashboard_path, :html=> { class: 'done-attributes' }) do |f| %>
+    <%= f.simple_fields_for :done do |done_f| %>
+        <%= done_f.input "#{Date.today}", input_html: { class: 'done-input-attribute' } %>
+    <% end %>
+    <%= f.button :submit %>
+  <% end %>
+</div>
+
+
+
+
+
+
+

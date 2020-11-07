@@ -3,7 +3,7 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
-// require("@rails/ujs").start()
+require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
@@ -29,6 +29,7 @@ import "bootstrap";
 // import { initSelect2 } from '../components/init_select2';
 import { multiForm } from '../components/multi_step_form';
 import { pickChallenge } from '../components/pick_challenge_form';
+import { markDone } from '../components/mark_done_form';
 // import {LeafScene} from '../components/falling'
 
 var LeafScene = function(el) {
@@ -192,15 +193,6 @@ var LeafScene = function(el) {
     requestAnimationFrame(this.render.bind(this));
   }
 
-
-
-
-
-
-
-
-
-
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
@@ -212,7 +204,10 @@ document.addEventListener('turbolinks:load', () => {
 
   leaves.init();
   leaves.render();
+  markDone();
 });
+
+
 
 
 

@@ -12,8 +12,18 @@ class PagesController < ApplicationController
     @users = User.order(score: :desc)
   end
 
-  def dashboard
+  def edit
+    @user = current_user
     @challenge = current_user.commitments.last.challenge
+    if @user.done == nil
+      @user.done = Hash.new
+    end
+  end
+
+  def update
+    @user = current_user
+    @user.done["#{Date.today}"] = params[:user][:done]["#{Date.today}"]
+    @user.save
   end
 
   def welcome
@@ -23,5 +33,11 @@ class PagesController < ApplicationController
   end
 
   def discover
+  end
+
+  private
+
+  def user_params
+    params.require(:user).permit( :done )
   end
 end
