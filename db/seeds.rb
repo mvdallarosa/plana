@@ -581,4 +581,3 @@ if Item.where(category: plant_category).empty?
 else
   p "Recipe Seeds are included"
 end
-
