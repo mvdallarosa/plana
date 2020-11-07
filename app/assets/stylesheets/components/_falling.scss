@@ -1,0 +1,46 @@
+body, html {
+  height: 100%;
+}
+
+.falling-leaves {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 100%;
+  max-width: 880px;
+  max-height: 880px; // image is only 880x880
+  transform: translate(-50%, 0);
+  border: 2px solid #fff;
+  border-radius: 50px;
+  background-color: #F5F5F5;
+  background-size: cover;
+  overflow: hidden;
+h1 {
+  color: white;
+  margin-left: 20px;
+  position: absolute;
+  bottom: 0;
+ }
+}
+
+.leaf-scene {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    transform-style: preserve-3d;
+
+    div {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 20px;
+      height: 20px;
+      background: url(/assets/leaf-32.png) no-repeat;
+      background-size: 100%;
+      transform-style: preserve-3d;
+      backface-visibility: visible;
+    }
+  }

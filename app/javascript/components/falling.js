@@ -1,46 +1,13 @@
-// This file is automatically compiled by Webpack, along with any other files
-// present in this directory. You're encouraged to place your actual application logic in
-// a relevant structure within app/javascript and only use these pack files to reference
-// that code so it'll be compiled.
-
-// require("@rails/ujs").start()
-require("turbolinks").start()
-require("@rails/activestorage").start()
-require("channels")
-
-
-// Uncomment to copy all static images under ../images to the output folder and reference
-// them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
-// or the `imagePath` JavaScript helper below.
-//
-// const images = require.context('../images', true)
-// const imagePath = (name) => images(name, true)
-
-
-// ----------------------------------------------------
-// Note(lewagon): ABOVE IS RAILS DEFAULT CONFIGURATION
-// WRITE YOUR OWN JS STARTING FROM HERE 👇
-// ----------------------------------------------------
-
-// External imports
-import "bootstrap";
-
-// Internal imports, e.g:
-// import { initSelect2 } from '../components/init_select2';
-import { multiForm } from '../components/multi_step_form';
-import { pickChallenge } from '../components/pick_challenge_form';
-// import {LeafScene} from '../components/falling'
-
-var LeafScene = function(el) {
+const LeafScene = (el) => {
     this.viewport = el;
     this.world = document.createElement('div');
     this.leaves = [];
 
     this.options = {
-      numLeaves: 10,
+      numLeaves: 20,
       wind: {
         magnitude: 1.2,
-        maxSpeed: 5,
+        maxSpeed: 12,
         duration: 300,
         start: 0,
         speed: 0
@@ -53,7 +20,7 @@ var LeafScene = function(el) {
     // animation helper
     this.timer = 0;
 
-    this._resetLeaf = function(leaf) {
+    this._resetLeaf = (leaf) => {
 
       // place leaf towards the top left
       leaf.x = this.width * 2 - Math.random()*this.width*1.75;
@@ -91,7 +58,7 @@ var LeafScene = function(el) {
       return leaf;
     }
 
-    this._updateLeaf = function(leaf) {
+    this._updateLeaf = (leaf) => {
       var leafWindSpeed = this.options.wind.speed(this.timer - this.options.wind.start, leaf.y);
 
       var xSpeed = leafWindSpeed + leaf.xSpeedVariation;
@@ -114,7 +81,7 @@ var LeafScene = function(el) {
       }
     }
 
-    this._updateWind = function() {
+    this._updateWind = () => {
       // wind follows a sine curve: asin(b*time + c) + a
       // where a = wind magnitude as a function of leaf position, b = wind.duration, c = offset
       // wind duration should be related to wind magnitude, e.g. higher windspeed means longer gust duration
@@ -127,7 +94,7 @@ var LeafScene = function(el) {
 
         var screenHeight = this.height;
 
-        this.options.wind.speed = function(t, y) {
+        this.options.wind.speed = (t, y) => {
           // should go from full wind speed at the top, to 1/2 speed at the bottom, using leaf Y
           var a = this.magnitude/2 * (screenHeight - 2*y/3)/screenHeight;
           return a * Math.sin(2*Math.PI/this.duration * t + (3 * Math.PI/2)) + a;
@@ -136,7 +103,7 @@ var LeafScene = function(el) {
     }
   }
 
-  LeafScene.prototype.init = function() {
+  LeafScene.prototype.init = () => {
 
     for (var i = 0; i < this.options.numLeaves; i++) {
       var leaf = {
@@ -175,13 +142,13 @@ var LeafScene = function(el) {
 
     // reset window height/width on resize
     var self = this;
-    window.onresize = function(event) {
+    window.onresize = (event) => {
       self.width = self.viewport.offsetWidth;
       self.height = self.viewport.offsetHeight;
     };
   }
 
-  LeafScene.prototype.render = function() {
+  LeafScene.prototype.render = () => {
     this._updateWind();
     for (var i = 0; i < this.leaves.length; i++) {
       this._updateLeaf(this.leaves[i]);
@@ -192,30 +159,5 @@ var LeafScene = function(el) {
     requestAnimationFrame(this.render.bind(this));
   }
 
-
-
-
-
-
-
-
-
-
-document.addEventListener('turbolinks:load', () => {
-  // Call your functions here, e.g:
-  // initSelect2();
-  multiForm();
-  pickChallenge();
-
-  var leafContainer = document.querySelector('.falling-leaves'),
-      leaves = new LeafScene(leafContainer);
-
-  leaves.init();
-  leaves.render();
-});
-
-
-
-
-
+  export {LeafScene}
 
