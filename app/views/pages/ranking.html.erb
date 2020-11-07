@@ -32,7 +32,7 @@
     <div class="challanges-card">
       <div class="challenge-avatar">
         <% if current_user.photo.attached? %>
-        <%= cl_image_tag user.photo.key, class: "point-avatar"%>
+        <%= cl_image_tag current_user.photo.key, class: "point-avatar"%>
       <% else %>
         <%= image_tag "profile-placeholder.png", class: "point-avatar", alt: "profile picture" %>
       <% end %>
