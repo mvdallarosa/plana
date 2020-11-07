@@ -5,7 +5,11 @@
 <div class="main-container">
   <div class="dashboard-header">
     <%= link_to profile_path do %>
-      <%= image_tag 'lilywalsh.png', class: 'small-profile-avatar' %>
+      <% if current_user.photo.attached? %>
+        <%= cl_image_tag current_user.photo.key, class: 'small-profile-avatar' %>
+      <% else %>
+        <%= image_tag "profile-placeholder.png", class: "small-profile-avatar", alt: "profile picture" %>
+      <% end %>
     <% end %>
     <div class="dashboard-header-infos">
       <div class="header-icon-box">
@@ -26,20 +30,20 @@
           <% image_tag "planet-earth.svg", class: "sprout-icon" %>
           </span>
         <div class='text'>
-          <p><%= @challenge.category.upcase %></p>
+          <p style="font-weight: bold;"><%= @challenge.category.upcase %></p>
         </div>
       </div>
 
       <% if @user.done["#{Date.today}"] %>
-        <p class='plana-btn-dark'>DONE FOR TODAY</p>
+        <p class='plana-btn-dark'>DONE</p>
       <% else %>
-        <p class='plana-btn-grey done-btn'>MARK AS DONE</p>
+        <p class='plana-btn-grey done-btn'>MARK</p>
       <% end %>
   </div>
 
 
 
-    <div class="tip-box-card">
+    <div class="tip-box-card mt-3">
       <p>Info on challenge</p>
       <div class="tip-box">
         <%=  @challenge.information  %>
@@ -48,32 +52,38 @@
 
 <div class ="tip-container">
   <% if @challenge.category == "plant-based"  %>
+  <% recipe = Item.where(category: Category.where(name: 'plant-based recipes'))[Date.today.month] %>
 
   <div class="tip-box-card">
       <p>Try this out!</p>
+    <a href="<%= recipe.url %>" target="_blank" style="text-decoration: none;">
     <div class="item-card m-0">
-      <img src="https://res.cloudinary.com/dolfny7hf/image/upload/v1604324794/Screenshot_2020-11-02_at_14.41.55_ebniqf.png">
+      <img src="<%= cl_image_path recipe.photo.key%>">
       <div class="item-card-infos">
-        <% recipe = Item.where(category: Category.where(name: 'plant-based recipes'))[Date.today.month] %>
         <h2><%= recipe.name %></h2>
         <p><i class="far fa-clock"></i> <%= recipe.description %> minutes</p>
         <span class='heart-icon'><i class="far fa-heart"></i></span>
       </div>
     </div>
+    </a>
+
   </div>
 
-<% elsif @challenge.category == "plastic-free" %>
+  <% elsif @challenge.category == "plastic-free" %>
+  <% shop = Item.where(category: Category.where(name: 'shop responsibly'))[Date.today.month] %>
+
   <div class="tip-box-card">
       <p>Check out this sustainable shop!</p>
+    <a href="<%= shop.url %>" target="_blank" style="text-decoration: none;">
     <div class="item-card m-0">
       <img src="https://res.cloudinary.com/dolfny7hf/image/upload/v1604324794/Screenshot_2020-11-02_at_14.41.55_ebniqf.png">
       <div class="item-card-infos">
-        <% shop = Item.where(category: Category.where(name: 'shop responsibly'))[Date.today.month] %>
         <h2> <%= shop.name.capitalize %></h2>
         <p><i class="fas fa-dollar-sign"></i> Price range: <%= shop.description %>/5</p>
         <span class='heart-icon'><i class="far fa-heart"></i></span>
       </div>
     </div>
+    </a>
   </div>
 
 <% end %>

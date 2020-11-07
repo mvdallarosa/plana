@@ -22,6 +22,9 @@ class PagesController < ApplicationController
 
   def update
     @user = current_user
+    if @user.done == nil
+      @user.done = Hash.new
+    end
     @user.done["#{Date.today}"] = params[:user][:done]["#{Date.today}"]
     @user.save
   end

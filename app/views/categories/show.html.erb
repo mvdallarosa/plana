@@ -5,19 +5,57 @@
 <div class="main-container">
   <div class="category-container">
 
-    <div>
+  <% if @category.name == "plant-based recipes"  %>
+<!--     <div>
       <button class="search-btn"><i class="fas fa-search"></i> search recipe </button>
-    </div>
-    <div class="item-card">
+    </div> -->
+
+<!--     <div class="item-card">
       <img src="https://res.cloudinary.com/dolfny7hf/image/upload/v1604324794/Screenshot_2020-11-02_at_14.41.55_ebniqf.png">
       <div class="item-card-infos">
         <h2>Recommendation</h2>
         <p><i class="far fa-clock"></i> 45 minutes</p>
         <span class='heart-icon'><i class="far fa-heart"></i></span>
       </div>
-    </div>
+    </div> -->
 
-    <div class="item-card">
+    <% recipes = Item.where(category: @category).each do |recipe| %>
+    <a href="<%= recipe.url %>" target="_blank" style="text-decoration: none;">
+      <div class="item-card">
+        <img src="<%= cl_image_path recipe.photo.key%>">
+        <div class="item-card-infos">
+          <h2><%= recipe.name %></h2>
+          <p><i class="far fa-clock"></i> <%= recipe.description %> minutes</p>
+          <span class='heart-icon'><i class="far fa-heart"></i></span>
+        </div>
+      </div>
+    </a>
+
+    <% end %>
+
+  <% elsif @category.name == "shop responsibly"  %>
+
+    <% shops = Item.where(category: @category).each do |shop| %>
+    <a href="<%= shop.url %>" target="_blank" style="text-decoration: none;">
+      <div class="item-card">
+        <img src="<%= cl_image_path shop.photo.key%>">
+        <div class="item-card-infos">
+          <h2><%= shop.name.capitalize %></h2>
+          <p><i class="fas fa-dollar-sign"></i> Price range: <%= shop.description %>/5</p>
+          <span class='heart-icon'><i class="far fa-heart"></i></span>
+        </div>
+      </div>
+    </a>
+
+    <% end %>
+
+  <% else %>
+
+  <h3>COMING SOONNNN :) </h3>
+
+  <% end %>
+
+<!--     <div class="item-card">
       <img src="https://res.cloudinary.com/dolfny7hf/image/upload/v1604145319/loj8ksjz8ddp8ydae1w8pflpiwhh.png">
       <div class="item-card-infos">
         <h2>Recommendation</h2>
@@ -42,7 +80,7 @@
         <p><i class="far fa-clock"></i> 45 minutes</p>
         <span class='heart-icon'><i class="fas fa-heart"></i></span>
       </div>
-    </div>
+    </div> -->
 
   </div>
 </div>
