@@ -29,45 +29,19 @@ import "bootstrap";
 // import { initSelect2 } from '../components/init_select2';
 import { multiForm } from '../components/multi_step_form';
 import { pickChallenge } from '../components/pick_challenge_form';
+import { markDone } from '../components/mark_done_form';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   multiForm();
   pickChallenge();
-
-  const doneBtn =  document.querySelector('.done-btn');
-  const doneInput =  document.querySelector('.done-input-attribute');
-  const doneForm = document.querySelector('.done-attributes');
-  if (doneBtn) {
-    doneBtn.addEventListener('click', (event) => {
-      event.currentTarget.classList.remove("plana-btn-grey")
-      event.currentTarget.classList.remove("done-btn")
-      event.currentTarget.classList.add("plana-btn-dark")
-      event.currentTarget.innerText = "DONE FOR TODAY"
-      doneInput.value = true
-      doneForm.submit()
-    })
-  }
+  markDone();
 
 });
 
 
 
-// const markDone = () => {
-//   const doneBtn =  document.querySelector('.done-btn');
-//     const doneInput =  document.querySelector('.done-input-attribute');
-//     const doneForm = document.querySelector('.done-attributes');
-//     if (doneBtn) {
-//       doneBtn.addEventListener('click', (event) => {
-//         event.currentTarget.classList.remove("plana-btn-grey")
-//         event.currentTarget.classList.add("plana-btn-dark")
-//         event.currentTarget.innerText = "DONE FOR TODAY"
-//         doneInput.value = true
-//         doneForm.submit()
-//       })
-//   }
-// }
 
 
 
