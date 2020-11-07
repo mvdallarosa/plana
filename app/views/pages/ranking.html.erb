@@ -1,33 +1,51 @@
 <!-- list of all users with their info (User.all)  -->
 <%= render 'shared/navbar' %>
-<div class="container-ranking">
-  <div class="top-ranking">
-    <img src="/assets/forest-background.jpg" class="small-avatar" alt="avatar">
-    <img src="/assets/Vector.png" class="vector-ranking" alt="plus">
-  </div>
-  <div class="ranking-card"><p>FRIENDS</p></div>
-  <div class="ranking-card-green"><p>WORLD</p></div>
-  <div style="margin-top: 170px;">
-  <% @users.each_with_index do |user, index| %>
-  <div class="challanges-card">
-    <div class="challenge-avatar">
-      <img class="point-avatar" src="/assets/apple.png" alt="avatar">
+<div class="main-container">
+
+  <div class="container-ranking">
+    <div class="top-ranking">
+      <%= link_to profile_path do %> <%= image_tag 'lilywalsh.png', class: 'small-profile-avatar' %> <% end %>
+      <%= image_tag "Vector.png", class: "vector-ranking", alt: "plus" %>
     </div>
+  </div>
+
+  <div class="container-ranking">
+    <div class="ranking-button">
+       <div class="ranking-card-green">
+        <p>WORLD</p>
+       </div>
+      <div class="ranking-card">
+        <p>FRIENDS</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-ranking">
+    <% @users.each_with_index do |user, index| %>
+    <div class="challanges-card">
+      <div class="challenge-avatar">
+        <img class="point-avatar" src="/assets/apple.png" alt="avatar">
+      </div>
+
       <div class="card-info" >
         <span> <%= user.first_name.capitalize %><% user.last_name.capitalize %> </span>
-          <div class="icons">
-            <img class="point-icon mr-1" src="/assets/drop.png" alt="icon">
-            <p><%=user.score%></p>
-            <img class="point-icon mr-1" src="/assets/schedule.png" alt="icon">
-            <p><%=user.commitments.size%></p style="margin-right: 20px;">
-            <img class="point-icon mr-1" src="/assets/calculator.png" alt="icon">
-            <p><%= user.footprint ? (user.footprint.mobility.round(1) + user.footprint.food.round(1) + user.footprint.household.round(1)).round(1) : 50 %></p style="margin-right: 20px;">
+        <div class="icons">
+          <%= image_tag "drop.png", class: "point-icon mr-1", alt:"icon" %>
+          <p><%=user.score%></p>
+          <%= image_tag "schedule.png", class: "point-icon mr-1", alt: "icon" %>
+          <p><%=user.commitments.size%></p style="margin-right: 20px;">
+          <%= image_tag "calculator.png", class: "point-icon mr-1", alt: "icon" %>
+          <p><%= user.footprint ? (user.footprint.mobility.round(1) + user.footprint.food.round(1) + user.footprint.household.round(1)).round(1) : 50 %></p style="margin-right: 20px;">
         </div>
       </div>
+
       <div class="card-points">
-        <div><%= index + 1 %></div>
+        <div>
+          <%= index + 1 %>
+        </div>
       </div>
+    </div>
+    <% end %>
   </div>
-  <% end %>
-  </div>
+
 </div>
