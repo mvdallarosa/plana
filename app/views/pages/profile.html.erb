@@ -13,19 +13,25 @@
   <div class="profile-container">
     <div class="profile-cards">
       <%= image_tag 'drop-rectangle.png', alt: 'points', class: 'profile-icon' %>
-      <p class='number'>58</p>
+      <p class='number'><%=current_user.score%></p>
       <p class='descriptions'>Points</p>
     </div>
     <div class="profile-cards">
       <%= image_tag 'schedule-rectangle.png', alt: 'schedule', class: 'profile-icon' %>
-      <p class='number'>2</p>
+      <p class='number'><%=current_user.commitments.size%></p>
       <p class='descriptions'>Challenges</p>
     </div>
     <div class="profile-cards">
       <%= image_tag 'calculator-rectangle.png', alt: 'co2 saved', class: 'profile-icon' %>
-      <p class='number'>50</p>
+      <p class='number'><%= current_user.footprint ? (current_user.footprint.mobility.round(1) + current_user.footprint.food.round(1) + current_user.footprint.household.round(1)).round(1) : 50 %></p>
       <p class='descriptions'>CO2 saved</p>
     </div>
+  </div>
+
+  <div style="text-align: center;">
+    <%= link_to footprint_path do %>
+    <p class= "plana-btn-green">REVIEW MY IMPACT</p>
+    <% end %>
   </div>
 
   <div class='saved-container'>
@@ -44,7 +50,7 @@
         </div>
       </div>
 
-      <div class="saved-rows">
+<!--       <div class="saved-rows">
         <div class="saved-column">
           <%= image_tag 'seed.png', alt: 'seed', class: 'saved-icon' %>
         </div>
@@ -54,9 +60,9 @@
         <div class="saved-column3">
           10
         </div>
-      </div>
+      </div> -->
 
-      <div class="saved-rows">
+      <div class="last-saved-rows">
         <div class="saved-column">
           <%= image_tag 'label.png', alt: 'shops', class: 'saved-icon' %>
         </div>
@@ -67,7 +73,7 @@
           3
         </div>
       </div>
-
+<!--
       <div class="last-saved-rows">
         <div class="saved-column">
           <%= image_tag 'tree.png', alt: 'farmers market', class: 'saved-icon' %>
@@ -78,7 +84,7 @@
         <div class="saved-column3">
           5
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </div>
