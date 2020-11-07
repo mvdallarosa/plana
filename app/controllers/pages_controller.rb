@@ -15,9 +15,9 @@ class PagesController < ApplicationController
   def edit
     @user = current_user
     @challenge = current_user.commitments.last.challenge
-    # if @user.done == nil
-    #   @user.done = Hash.new
-    # end
+    if @user.done == nil
+      @user.done = Hash.new
+    end
   end
 
   def update
