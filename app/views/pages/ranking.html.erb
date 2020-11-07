@@ -24,7 +24,11 @@
     <% @users.each_with_index do |user, index| %>
     <div class="challanges-card">
       <div class="challenge-avatar">
-        <img class="point-avatar" src="/assets/apple.png" alt="avatar">
+        <% if user.photo.attached? %>
+        <%= cl_image_tag user.photo.key, class: "point-avatar"%>
+      <% else %>
+        <%= image_tag "profile-placeholder.png", class: "point-avatar", alt: "profile picture" %>
+      <% end %>
       </div>
 
       <div class="card-info" >
