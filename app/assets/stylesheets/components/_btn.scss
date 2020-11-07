@@ -15,32 +15,49 @@
   text-decoration: none;
 }
 
-.plana-btn-grey {
+.plana-btn-log-grey {
   height: 56px;
   width: 270px;
   border-radius: 50px;
+  background: rgba(168, 168, 168, 0.9);
+  font-size: 18px;
+  text-align: center;
+  letter-spacing: 0.12em;
+  color: #FFFFFF;
+  line-height: 60px;
+  border: 0px;
+  padding: 0;
+  margin: 20px auto;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.plana-btn-grey {
+  height: 130px;
+  width: 40%;
+  border-radius: 15px;
   background: rgba(168, 168, 168, 0.9);
   color: white;
   text-align: center;
   font-size: 18px;
   line-height: 60px;
-  margin: 20px auto;
-  padding: 0;
+  margin: 10px;
+  padding-top: 30px;
   display: inline-block;
   text-decoration: none;
 }
 
 .plana-btn-dark {
-  height: 56px;
-  width: 270px;
-  border-radius: 50px;
+  height: 130px;
+  width: 40%;
+  border-radius: 15px;
   background: rgba(80, 80, 80, 0.9);
   color: white;
   text-align: center;
   font-size: 18px;
   line-height: 60px;
-  margin: 20px auto;
-  padding: 0;
+  margin: 10px;
+  padding-top: 30px;
   display: inline-block;
   text-decoration: none;
 }
