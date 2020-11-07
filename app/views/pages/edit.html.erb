@@ -26,20 +26,20 @@
           <% image_tag "planet-earth.svg", class: "sprout-icon" %>
           </span>
         <div class='text'>
-          <p><%= @challenge.category.upcase %></p>
+          <p style="font-weight: bold;"><%= @challenge.category.upcase %></p>
         </div>
       </div>
 
       <% if @user.done["#{Date.today}"] %>
-        <p class='plana-btn-dark'>DONE FOR TODAY</p>
+        <p class='plana-btn-dark'>DONE</p>
       <% else %>
-        <p class='plana-btn-grey done-btn'>MARK AS DONE</p>
+        <p class='plana-btn-grey done-btn'>MARK</p>
       <% end %>
   </div>
 
 
 
-    <div class="tip-box-card">
+    <div class="tip-box-card mt-3">
       <p>Info on challenge</p>
       <div class="tip-box">
         <%=  @challenge.information  %>

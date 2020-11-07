@@ -9,32 +9,32 @@
     </div>
   </div>
 </div> -->
+<!--
 <div class="falling-leaves" style="z-index: -1;">
-
-<div class="container-answer">
-  <h5 class="question" style=" font-weight: lighter; margin: 20px;">How do you usually get to work or school?</h5>
+ -->
   <div class="container-answer">
-    <p class="answer a1" data-option='A'>walk, bike or public transport</p>
-    <p class="answer a2" data-option='B'>car & public transport</p>
-    <p class="answer a3" data-option='C'>only car</p>
+    <h5 class="question" style=" font-weight: lighter; margin: 20px;">How do you usually get to work or school?</h5>
+    <div class="container-answer">
+      <p class="answer a1" data-option='A'>walk, bike or public transport</p>
+      <p class="answer a2" data-option='B'>car & public transport</p>
+      <p class="answer a3" data-option='C'>only car</p>
+    </div>
   </div>
-</div>
 
 
-<div style="display: none;">
-  <%= simple_form_for(@user, url: questionnaire_path, :html=> { class: 'form-attributes' }) do |f| %>
-    <%= f.simple_fields_for :form do |form_f| %>
-        <%= form_f.input :mobility1, input_html: { class: 'input-attribute' } %>
-        <%= form_f.input :mobility2, input_html: { class: 'input-attribute' } %>
-        <%= form_f.input :food1, input_html: { class: 'input-attribute' } %>
-        <%= form_f.input :food2, input_html: { class: 'input-attribute' } %>
-        <%= form_f.input :household1, input_html: { class: 'input-attribute' } %>
-        <%= form_f.input :household2, input_html: { class: 'input-attribute' } %>
-        <%= form_f.input :household3, input_html: { class: 'input-attribute' } %>
+  <div style="display: none">
+    <%= simple_form_for(@user, url: questionnaire_path, :html=> { class: 'form-attributes' }) do |f| %>
+      <%= f.simple_fields_for :form do |form_f| %>
+          <%= form_f.input :mobility1, input_html: { class: 'input-attribute' } %>
+          <%= form_f.input :mobility2, input_html: { class: 'input-attribute' } %>
+          <%= form_f.input :food1, input_html: { class: 'input-attribute' } %>
+          <%= form_f.input :food2, input_html: { class: 'input-attribute' } %>
+          <%= form_f.input :household1, input_html: { class: 'input-attribute' } %>
+          <%= form_f.input :household2, input_html: { class: 'input-attribute' } %>
+          <%= form_f.input :household3, input_html: { class: 'input-attribute' } %>
+      <% end %>
+      <%= f.button :submit %>
     <% end %>
-    <%= f.button :submit %>
-  <% end %>
-</div>
+  </div>
 
-
-</div>
+<!-- </div> -->

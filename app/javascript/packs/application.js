@@ -198,13 +198,13 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   multiForm();
   pickChallenge();
+  markDone();
 
   var leafContainer = document.querySelector('.falling-leaves'),
       leaves = new LeafScene(leafContainer);
 
   leaves.init();
   leaves.render();
-  markDone();
 });
 
 

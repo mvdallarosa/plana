@@ -15,13 +15,16 @@ class PagesController < ApplicationController
   def edit
     @user = current_user
     @challenge = current_user.commitments.last.challenge
-    if @user.done == nil
-      @user.done = Hash.new
-    end
+    # if @user.done == nil
+    #   @user.done = Hash.new
+    # end
   end
 
   def update
     @user = current_user
+    if @user.done == nil
+      @user.done = Hash.new
+    end
     @user.done["#{Date.today}"] = params[:user][:done]["#{Date.today}"]
     @user.save
   end
