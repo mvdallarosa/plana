@@ -1,8 +1,8 @@
 const content = [
   ["How often do you fly?", "I never fly", "2 short flights or 1 long flight / 2 years", "at least 1 short & 1 long distance / year"],
   ["How often do you eat meat?", "I am vegetarian", "I eat meat 2-3 times/week", "I eat meat almost every day"],
-  ["How often do you buy?", "very rarely", "every now and then", "every week"],
-  ["What kind of energy system do you have?", "completely energy efficient", "renewable energy for heating only", "oil & natural gas heating"],
+  ["How often do you buy NEW clothes, cellphones, computers, toys, furniture, appliances, etc?", "very rarely", "every now and then", "every week"],
+  ["What kind of energy system does your building have?", "completely energy efficient", "renewable energy for heating only", "oil & natural gas heating"],
   ["how long are your showers usually?", "less than 5 minutes", "20 minutes", "not long but I have baths often"],
   ["how warm is your house in winter?", "I wear a pullover (18-20°C)", "pleasantly warm (20-22°C)", "I can just wear a T-shirt (> 22°C)"]
 ]

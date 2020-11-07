@@ -9,37 +9,45 @@
     <% end %>
     <div class="dashboard-header-infos">
       <div class="header-icon-box">
-        <h2> <%= @challenge.category.upcase %></h2>
-        <%= image_tag "sprout1.svg", class: "sprout-icon" %>
-        <% image_tag "sprout2.svg", class: "sprout-icon" %>
-        <% image_tag "sprout3.svg", class: "sprout-icon" %>
-        <% image_tag "tree.svg", class: "sprout-icon" %>
-        <% image_tag "planet-earth.svg", class: "sprout-icon" %>
+        <h2> Challenge Progress</h2>
       </div>
       <p><%= Date.today.strftime("%A, %d %B")%></p>
     </div>
   </div>
 
-<div class ="tip-container">
-  <% if @user.done["#{Date.today}"] %>
-  <div class='log-box'>
-    <p class='plana-btn-dark'>DONE FOR TODAY</p>
+
+  <div class="dashboard-challenge-container">
+     <div class="challenge-card-green">
+        <span class='challenge-icon-white'>
+          <%= image_tag "growing_sprout1.png", class: "sprout-icon" %>
+          <% image_tag "sprout2.svg", class: "sprout-icon" %>
+          <% image_tag "sprout3.svg", class: "sprout-icon" %>
+          <% image_tag "tree.svg", class: "sprout-icon" %>
+          <% image_tag "planet-earth.svg", class: "sprout-icon" %>
+          </span>
+        <div class='text'>
+          <p><%= @challenge.category.upcase %></p>
+        </div>
+      </div>
+
+      <% if @user.done["#{Date.today}"] %>
+        <p class='plana-btn-dark'>DONE FOR TODAY</p>
+      <% else %>
+        <p class='plana-btn-grey done-btn'>MARK AS DONE</p>
+      <% end %>
   </div>
-  <% else %>
-  <div class='log-box'>
-    <p class='plana-btn-grey done-btn'>MARK AS DONE</p>
-  </div>
-  <% end %>
-  <div class="tip-box-card">
-    <p>Info</p>
-    <div class="tip-box">
-      <%=  @challenge.information  %>
+
+
+
+    <div class="tip-box-card">
+      <p>Info</p>
+      <div class="tip-box">
+        <%=  @challenge.information  %>
+      </div>
     </div>
-  </div>
 
-
-<% if @challenge.category == "plant-based"  %>
-
+<div class ="tip-container">
+  <% if @challenge.category == "plant-based"  %>
 
   <div class="tip-box-card">
       <p>Try this out!</p>
@@ -69,18 +77,12 @@
   </div>
 
 <% end %>
-<!--   <div class="tip-box-card">
-    <p>Daily Recommendation</p>
-    <div class="tip-box">
-      ENTER TIP HERE
-    </div>
-  </div> -->
 
   <div class='log-box'>
     <%= link_to 'SEND CHALLENGE', ranking_path, class: 'plana-btn-green' %>
   </div>
 </div>
-</div>
+
 
 
 

@@ -11,9 +11,9 @@
   <div class="login-buttons">
     <p><%= link_to "SIGN UP", welcome_path, class: "plana-btn-green" %></p>
     <% if user_signed_in? %>
-      <%= link_to "LOGIN", dashboard_path, class: "plana-btn-grey" %>
+      <%= link_to "LOGIN", dashboard_path, class: "plana-btn-log-grey" %>
     <% else %>
-      <%= link_to "LOGIN", new_user_session_path, class: "plana-btn-grey" %>
+      <%= link_to "LOGIN", new_user_session_path, class: "plana-btn-log-grey" %>
     <% end %>
   </div>
 </div>
