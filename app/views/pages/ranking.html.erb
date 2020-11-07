@@ -4,7 +4,14 @@
 
   <div class="container-ranking">
     <div class="top-ranking">
-      <%= link_to profile_path do %> <%= image_tag 'lilywalsh.png', class: 'small-profile-avatar' %> <% end %>
+      <%= link_to profile_path do %>
+      <% if current_user.photo.attached? %>
+      <%= cl_image_tag current_user.photo.key, class: 'small-profile-avatar' %>
+      <% else %>
+        <%= image_tag "profile-placeholder.png", class: 'small-profile-avatar', alt: "profile picture" %>
+      <% end %>
+      <% end %>
+
       <%= image_tag "Vector.png", class: "vector-ranking", alt: "plus" %>
     </div>
   </div>
@@ -24,8 +31,8 @@
     <% @users.each_with_index do |user, index| %>
     <div class="challanges-card">
       <div class="challenge-avatar">
-        <% if user.photo.attached? %>
-        <%= cl_image_tag user.photo.key, class: "point-avatar"%>
+        <% if current_user.photo.attached? %>
+        <%= cl_image_tag current_user.photo.key, class: "point-avatar"%>
       <% else %>
         <%= image_tag "profile-placeholder.png", class: "point-avatar", alt: "profile picture" %>
       <% end %>

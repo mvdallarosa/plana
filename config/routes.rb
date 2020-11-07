@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, :controllers => { :registrations => :registrations }
   authenticated :user do
-    root 'pages#dashboard', as: :authenticated_root
+    root 'pages#edit', as: :authenticated_root
   end
   root to: 'pages#home'
   # get "/dashboard", to: 'pages#dashboard'

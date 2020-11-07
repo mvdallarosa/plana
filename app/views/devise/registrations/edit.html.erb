@@ -1,5 +1,5 @@
-<div class="container-sign-in">
-<header id="log-in"> Edit <%= resource_name.to_s.humanize %></header>
+<div class="container-sign-in" >
+<header class="mb-4" id="log-in">plana</header>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
@@ -26,6 +26,11 @@
                 autofocus: true,
                 input_html:{placeholder:"username", class: "no-border"} %>
     <%= f.input :email, label: false, required: true, autofocus: true, input_html:{placeholder:"email", class: "no-border"} %>
+    <%= f.input :photo, as: :file,
+                label: false,
+                required: true,
+                autofocus: true,
+                input_html:{placeholder:"photo", class: "no-border"} %>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
@@ -40,19 +45,12 @@
                 label: false,
                 required: false,
                 input_html: {placeholder:"password confirmation", autocomplete: "new-password", class: "no-border" } %>
-    <%= f.input :current_password,
-                label: false,
-                # hint: "we need your current password to confirm your changes",
-                required: true,
-                input_html: {placeholder:"current password", autocomplete: "current-password", class: "no-border" } %>
   </div>
 
   <div class="form-actions">
     <button class="plana-btn-green"><%= f.button :submit, "Update" %></button>
   </div>
 <% end %>
-
-<h3>Cancel my account</h3>
 
 <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
