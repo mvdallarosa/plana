@@ -1,6 +1,8 @@
 .main-container {
   // PUT THIS CONTAINER UNDERNEATH THE NAVBAR IN EVERY PAGE THAT HAS A NAV BAR
   padding-bottom: 50px;
+  max-height: 100vh;
+  overflow: scroll;
 }
 
 
@@ -21,6 +23,7 @@
    // background-size: cover;
     color: white;
     padding: 350px 0;
+    max-height: 100vh;
     background-position: center;
     text-align: center;
     .set {
@@ -97,10 +100,10 @@
     font-size: 36px;
     font-weight: 700;
     padding-left: 30px;
-    margin-bottom: 10px;
-    margin-top: 10px;
+    padding-bottom: 10px;
   }
 }
+
 // Profile Container //
 
 .profile-header {
@@ -186,24 +189,20 @@
 }
 
 .container-ranking {
-  display: block;
-}
-
-.icons {
-  display: flex;
-  flex-direction: row;
-  margin-top:5px;
-  font-size: 12px;
-}
-
-.icons p {
-  margin-right: 20px;
-  font-weight: normal;
-}
-
-.top-ranking {
-  display: flex;
-  justify-content: space-between;
+  .icons {
+    display: flex;
+    margin-top:5px;
+    font-size: 12px;
+      p {
+    margin-right: 20px;
+    font-weight: normal;
+    }
+  }
+  .top-ranking {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+  }
 }
 
 // Carbon Container
@@ -262,3 +261,7 @@
   }
 }
 
+.container-sign-in {
+  float: none;
+  text-align : center;
+}
