@@ -3,7 +3,7 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
-// require("@rails/ujs").start()
+require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
@@ -35,8 +35,39 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   multiForm();
   pickChallenge();
+
+  const doneBtn =  document.querySelector('.done-btn');
+  const doneInput =  document.querySelector('.done-input-attribute');
+  const doneForm = document.querySelector('.done-attributes');
+  if (doneBtn) {
+    doneBtn.addEventListener('click', (event) => {
+      event.currentTarget.classList.remove("plana-btn-grey")
+      event.currentTarget.classList.remove("done-btn")
+      event.currentTarget.classList.add("plana-btn-dark")
+      event.currentTarget.innerText = "DONE FOR TODAY"
+      doneInput.value = true
+      doneForm.submit()
+    })
+  }
+
 });
 
+
+
+// const markDone = () => {
+//   const doneBtn =  document.querySelector('.done-btn');
+//     const doneInput =  document.querySelector('.done-input-attribute');
+//     const doneForm = document.querySelector('.done-attributes');
+//     if (doneBtn) {
+//       doneBtn.addEventListener('click', (event) => {
+//         event.currentTarget.classList.remove("plana-btn-grey")
+//         event.currentTarget.classList.add("plana-btn-dark")
+//         event.currentTarget.innerText = "DONE FOR TODAY"
+//         doneInput.value = true
+//         doneForm.submit()
+//       })
+//   }
+// }
 
 
 
