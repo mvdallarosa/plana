@@ -27,8 +27,13 @@
     color: white;
     padding: 350px 0;
     max-height: 100vh;
-    background-position: center;
+    // background-position: center;
     text-align: center;
+    background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('bladesofgrass.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
     .set {
       text-align: center;
       font-size: 24px;
@@ -59,11 +64,16 @@
   }
 }
 
-.container-answer {
-  align-items: center;
-  justify-content: center;
+.contain-questionaire {
   text-align: center;
-  margin-top: 150px;
+  max-width: 600px;
+  margin: 30px auto;
+  .container-question {
+    padding-top: 80px;
+  }
+  .container-answer {
+    padding-top: 50px;
+  }
 }
 
 .container-welcome {

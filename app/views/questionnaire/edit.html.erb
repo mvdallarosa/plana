@@ -12,16 +12,16 @@
 <!--
 <div class="falling-leaves" style="z-index: -1;">
  -->
-  <div class="container-answer">
+ <div class="contain-questionaire">
+  <div class="container-question">
     <h5 class="question" style=" font-weight: lighter; margin: 20px;font-family: Poppins; ">How do you usually get to work or school?</h5>
-    <div class="container-answer">
+  </div>
+  <div class="container-answer">
       <p class="answer a1" data-option='A'>walk, bike or public transport</p>
       <p class="answer a2" data-option='B'>car & public transport</p>
       <p class="answer a3" data-option='C'>only car</p>
-    </div>
   </div>
-
-
+</div>
   <div style="display: none">
     <%= simple_form_for(@user, url: questionnaire_path, :html=> { class: 'form-attributes' }) do |f| %>
       <%= f.simple_fields_for :form do |form_f| %>
@@ -36,5 +36,6 @@
       <%= f.button :submit %>
     <% end %>
   </div>
+
 
 <!-- </div> -->
