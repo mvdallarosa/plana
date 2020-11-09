@@ -467,7 +467,7 @@ elsif Item.where(category: plant_category).count == 50
     url_info ="https://api.spoonacular.com/recipes/#{recipe["id"].to_i}/information?apiKey=#{api_key}&includeNutrition=true"
     info_serialized = open(url_info).read
     info = JSON.parse(info_serialized)
-     Pry::ColorPrinter.pp(info)
+     # Pry::ColorPrinter.pp(info)
     category = Category.where(name: 'plant-based recipes').first
     item = Item.new(
       name: info["title"],
