@@ -6,9 +6,21 @@
   <div class="category-container">
 
   <% if @category.name == "plant-based recipes"  %>
-<!--     <div>
-      <button class="search-btn"><i class="fas fa-search"></i> search recipe </button>
-    </div> -->
+    <div class="search-bar-container" style="display: flex;">
+      <div class="search-bar" style="width: 300px;">
+      <%= form_tag category_path(@category), method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control search-btn",
+          placeholder: "Find a recipe"
+        %>
+      </div>
+       <div class="magnifying-glass" style="margin-left: 15px; margin-top: 15px">
+        <%= submit_tag "🔍", class: "fas fa-search p-1 search-btn-items" %>
+      </div>
+    <% end %>
+      <!-- <button class="search-btn"><i class="fas fa-search"></i> search recipe </button> -->
+    </div>
 
 <!--     <div class="item-card">
       <img src="https://res.cloudinary.com/dolfny7hf/image/upload/v1604324794/Screenshot_2020-11-02_at_14.41.55_ebniqf.png">
@@ -19,7 +31,7 @@
       </div>
     </div> -->
 
-    <% recipes = Item.where(category: @category).each do |recipe| %>
+    <% @items.each do |recipe| %>
     <a href="<%= recipe.url %>" target="_blank" style="text-decoration: none;">
       <div class="item-card">
         <img src="<%= cl_image_path recipe.photo.key%>">
@@ -35,7 +47,24 @@
 
   <% elsif @category.name == "shop responsibly"  %>
 
-    <% shops = Item.where(category: @category).each do |shop| %>
+  <div class="search-bar-container" style="display: flex;">
+      <div class="search-bar" style="width: 300px;">
+      <%= form_tag category_path(@category), method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control search-btn",
+          placeholder: "Find a shop"
+        %>
+      </div>
+      <div class="magnifying-glass" style="margin-left: 15px; margin-top: 15px">
+        <%= submit_tag "🔍", class: "fas fa-search p-1 search-btn-items" %>
+      </div>
+    <% end %>
+      <!-- <button class="search-btn"><i class="fas fa-search"></i> search recipe </button> -->
+    </div>
+
+
+    <% @items.each do |shop| %>
     <a href="<%= shop.url %>" target="_blank" style="text-decoration: none;">
       <div class="item-card">
         <img src="<%= cl_image_path shop.photo.key%>">
