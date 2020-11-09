@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   post "/challenges", to: "commitments#create"
   get "/profile", to: 'pages#profile'
   get '/footprint', to: 'footprints#show'
+  get '/tripcalculator', to: 'pages#tripcalculator'
   resources :favorites, only: [ :show ]
   get '/ranking', to: 'pages#ranking'
   resources :categories, only: [ :index, :show ]

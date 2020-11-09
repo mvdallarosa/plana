@@ -38,6 +38,10 @@ class PagesController < ApplicationController
   def discover
   end
 
+  def tripcalculator
+
+  end
+
   private
 
   def user_params
