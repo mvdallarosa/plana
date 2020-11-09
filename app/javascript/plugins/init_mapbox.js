@@ -15,7 +15,7 @@ const initMapbox = () => {
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
     const map = new mapboxgl.Map({
       container: 'map',
-      style: 'mapbox://styles/mapbox/streets-v10'
+      style: 'mapbox://styles/mvdallarosa/ckham75l63dvm19mvvfqpfwgz'
     });
     map.addControl(
       new MapboxDirections({
@@ -23,13 +23,21 @@ const initMapbox = () => {
       }),
       'top-left'
     );
-  //   const markers = JSON.parse(mapElement.dataset.markers);
-  //   markers.forEach((marker) => {
-  //     new mapboxgl.Marker()
-  //       .setLngLat([ marker.lng, marker.lat ])
-  //       .addTo(map);
-  //   fitMapToMarkers(map, markers);
-  // });
+    // const tripInstructions = [];
+    // for (let i = 0; i < steps.length; i++) {
+    //   tripInstructions.push('<br><li>' + steps[i].maneuver.instruction) + '</li>';
+    //   instructions.innerHTML = '<br><span class="duration">Trip duration: ' + Math.floor(data.duration / 60) + ' min  </span>' + tripInstructions;
+    // }
+    const distance = JSON.parse(mapElement.dataset.duration);
+    console.log(distance)
+
+    const markers = JSON.parse(mapElement.dataset.markers);
+    markers.forEach((marker) => {
+      new mapboxgl.Marker()
+        .setLngLat([ marker.lng, marker.lat ])
+        .addTo(map);
+    fitMapToMarkers(map, markers);
+  });
   }
 };
 

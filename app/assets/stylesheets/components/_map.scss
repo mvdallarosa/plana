@@ -1,0 +1,131 @@
+#map {
+  height: 100vh;
+  .mapbox-directions-steps {
+    display: none;
+  }
+  .mapboxgl-ctrl-geocoder {
+    // margin-top: 10px;
+  }
+
+  .suggestions {
+    list-style-type: none;
+    font-family: $body-font;
+    color: $dark-grey;
+    text-indent: none;
+    padding: 10px;
+    background-color: white;
+    line-height: 30px;
+    font-size: 14px;
+  }
+  .suggestions li {
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border-radius: 2px;
+  }
+  .suggestions li:hover {
+    background-color: rgba(99, 202, 190, 0.3);
+  }
+  .mapbox-directions-profile {
+    margin-top: 20px;
+    font-family: $body-font;
+    color: white;
+    font-size: 16px;
+    border-radius: 22px;
+    // background-color: white;
+    background-color: rgba(50, 50, 50, 0.3);
+    vertical-align: middle;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 10px;
+    padding-bottom: 3px;
+    justify-content: center;
+    label {
+      font-size: 16px;
+      font-family: 'Poppins';
+      padding-right: 8px;
+    }
+    input {
+      border: none;
+    }
+  }
+
+  .mapbox-directions-route-summary {
+      margin-top: 300px;
+      // position: sticky;
+      // bottom: 0 sticky;
+      font-family: 'Poppins';
+      color: white;
+      font-weight: 700;
+      font-size: 16px;
+      border-radius: 22px;
+      background-color: rgba(99, 202, 190, 1);
+      vertical-align: middle;
+      padding-left: 12px;
+      padding-right: 12px;
+      padding-top: 12px;
+      padding-bottom: 8px;
+  }
+
+  .mapbox-directions-route-summary h1 {
+      font-family: 'Poppins';
+      font-size: 22px;
+  }
+  // .mapboxgl-ctrl-geocoder, input {
+  //   width: 70px;
+  // }
+
+  .mapboxgl-ctrl-geocoder input {
+    width: 250px;
+    font-size: 18px;
+    font-family: 'Poppins';
+    padding: 8px;
+    text-indent: 5px;
+    border-radius: 22px;
+    border: none;
+  }
+
+
+
+  // #mapbox-directions-profile-driving-traffic {
+  //   display: none;
+  // }
+
+  // #mapbox-directions-profile-driving-traffic label {
+  //     display: none;
+  //   }
+
+  .directions-icon {
+    display: none;
+  }
+  .geocoder-icon {
+    display: none;
+  }
+
+}
+
+
+
+
+
+#instructions {
+  margin-top: 300px;
+  // position: sticky;
+  // bottom: 0 sticky;
+  font-family: 'Poppins';
+  color: white;
+  font-weight: 700;
+  font-size: 16px;
+  border-radius: 22px;
+  background-color: rgba(99, 202, 190, 1);
+  vertical-align: middle;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 12px;
+  padding-bottom: 8px;
+}
+
+.duration {
+  font-size: 2em;
+}

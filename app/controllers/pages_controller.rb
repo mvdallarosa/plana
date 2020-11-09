@@ -27,6 +27,7 @@ class PagesController < ApplicationController
     end
     @user.done["#{Date.today}"] = params[:user][:done]["#{Date.today}"]
     @user.save
+    redirect_to dashboard_path
   end
 
   def welcome
