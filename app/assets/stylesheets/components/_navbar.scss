@@ -1,11 +1,12 @@
-.navbar {
+.navbar2 {
   position: fixed;
   bottom: 0;
+  display: flex;
   justify-content: space-between;
   width: 100%;
   background-color: #F5F5F5;
-  margin-top: 80px;
+  margin-top: 50px;
   z-index: 500;
+  padding: 10px;
   padding-bottom: 20px;
-  padding-top: 10px;
 }

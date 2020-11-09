@@ -21,5 +21,10 @@ Rails.application.routes.draw do
   resources :categories, only: [ :index, :show ]
   # resources :challenges, only: [ :index ]
   resources :commitments, only: [ :new ]
+
+  get 'relationships/follow_user'
+  get 'relationships/unfollow_user'
+  post '/follow_user', to: 'relationships#follow_user', as: :follow_user
+  post '/unfollow_user', to: 'relationships#unfollow_user', as: :unfollow_user
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
