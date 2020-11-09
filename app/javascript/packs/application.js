@@ -31,6 +31,8 @@ import "bootstrap";
 import { multiForm } from '../components/multi_step_form';
 import { pickChallenge } from '../components/pick_challenge_form';
 import { markDone } from '../components/mark_done_form';
+// import { showMap } from '../components/map';
+import { initMapbox } from '../plugins/init_mapbox';
 // import {LeafScene} from '../components/falling'
 
 
@@ -40,6 +42,8 @@ document.addEventListener('turbolinks:load', () => {
   multiForm();
   pickChallenge();
   markDone();
+  // showMap();
+  initMapbox();
 
   var places = require('places.js');
   var placesAutocomplete = places({
