@@ -8,10 +8,10 @@ require 'open-uri'
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 
-Favorite.destroy_all
-Commitment.destroy_all
-Footprint.destroy_all
-User.destroy_all
+# Favorite.destroy_all
+# Commitment.destroy_all
+# Footprint.destroy_all
+# User.destroy_all
 
 puts "Creating 11 users..."
 
@@ -218,6 +218,7 @@ user_attributes = [
   }
 ]
 
+if User.all.empty?
 user_images = ["https://avatars3.githubusercontent.com/u/67639508?s=400&u=bf52cf62e6f6fe94de03e62206e6fd35f966395a&v=4", "https://avatars3.githubusercontent.com/u/70940270?s=400&u=d4bac1cf2f98564493b780e9d0e80ba94e77e721&v=4", "https://avatars3.githubusercontent.com/u/71090399?s=400&u=16afb00db6787e4d2d6aa7048f9328eec397f4f0&v=4", "https://avatars3.githubusercontent.com/u/70261924?s=400&u=2021182cb7334dcc6e975a1e6076c601b9f4e461&v=4", "https://avatars1.githubusercontent.com/u/68589257?s=400&u=61f1eb492f4bc191943e6c78736d741783b1ed4b&v=4", "https://avatars2.githubusercontent.com/u/58515733?s=400&u=161ac0d9f634ead785334fdbadb54fd0ac914bc6&v=4", "https://avatars1.githubusercontent.com/u/16468397?s=400&u=e69dabddf046e856c83ff12b4c2fb4a6820a28a2&v=4", "https://avatars0.githubusercontent.com/u/24207591?s=400&u=7f2153161e38a708b678e8a1db908c31716d2ee7&v=4", "https://avatars0.githubusercontent.com/u/71258556?s=400&u=d061fa04dfe3a998714ded183014e341f1ef1e16&v=4", "https://avatars3.githubusercontent.com/u/71065113?s=400&u=f7e9afe742654c1ece806f111c173b9b45926805&v=4", "https://avatars3.githubusercontent.com/u/70151566?s=400&u=a3623d2ca2f867db9dee1d25ecb40c8d493f8c87&v=4"]
 count = 0
 user_attributes.each do |attributes|
@@ -229,6 +230,7 @@ user_attributes.each do |attributes|
 end
 
 puts "Finished!"
+
 
 puts "Creating footprints..."
 values = {
@@ -356,6 +358,7 @@ if Category.all.empty?
 end
 
 puts "Finished!"
+end
 
 category = Category.where(name: "shop responsibly").first
 
