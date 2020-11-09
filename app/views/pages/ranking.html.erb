@@ -41,6 +41,10 @@
         <%= image_tag "profile-placeholder.png", class: "point-avatar", alt: "profile picture" %>
       <% end %>
       </div>
+<!--
+      <div class="card-points">
+        <%= index + 1 %>
+      </div> -->
 
       <div class="card-info" >
         <span> <%= user.first_name.capitalize %><% user.last_name.capitalize %> </span>
@@ -49,18 +53,34 @@
           <p><%=user.score%></p>
           <%= image_tag "schedule.png", class: "point-icon mr-1", alt: "icon" %>
           <p><%=user.commitments.size%></p style="margin-right: 20px;">
-          <%= image_tag "calculator.png", class: "point-icon mr-1", alt: "icon" %>
-          <p><%= user.footprint ? (user.footprint.mobility.round(1) + user.footprint.food.round(1) + user.footprint.household.round(1)).round(1) : 50 %></p style="margin-right: 20px;">
+<!--           <%= image_tag "calculator.png", class: "point-icon mr-1", alt: "icon" %>
+          <p><%= user.footprint ? (user.footprint.mobility.round(1) + user.footprint.food.round(1) + user.footprint.household.round(1)).round(1) : 50 %></p style="margin-right: 20px;"> -->
         </div>
       </div>
 
-      <div class="card-points">
+      <div class="following-card">
         <div>
-          <%= index + 1 %>
+         <% if user == current_user %>
+            <p> </p>
+          <% else %>
+            <% if current_user.is_following(user.id) %>
+              <%= link_to 'Following', unfollow_user_path(user_id: user.id),
+                remote: true,
+                class: 'btn unfollow-button',
+                id: 'unfollow-button',
+                method: :post %>
+            <% else %>
+              <%= link_to 'Follow', follow_user_path(user_id: user.id),
+                remote: true,
+                class: 'btn follow-button',
+                id: 'follow-button',
+                method: :post %>
+            <% end%>
+          <%end%>
         </div>
       </div>
     </div>
-    <% end %>
+<% end%>
   </div>
 
 </div>
