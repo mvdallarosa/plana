@@ -3,7 +3,6 @@
   <header style="margin-top: 80px;" id="sign-up">plana</header>
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= f.error_notification %>
-
   <div class="form-inputs">
       <%= f.input :first_name,
                   label: false,
@@ -19,7 +18,7 @@
                   label: false,
                   required: true,
                   autofocus: true,
-                  input_html: { placeholder:"city", autocomplete: "city", class:"no-border" }%>
+                  input_html: { type:"search",placeholder:"city", id: "address-input", autocomplete: "city", class:"no-border" }%>
       <%= f.input :username,
                   label: false,
                   required: true,
