@@ -459,6 +459,7 @@ if Item.where(category: plant_category).empty?
 elsif Item.where(category: plant_category).count == 50
   p "Creating the next 50 recipe seeds"
   api_key = "89006e23b95a4662abedcacd875dad9a"
+  t_count = 0
   url = "https://api.spoonacular.com/recipes/complexSearch?diet=vegan&number=50&offset=51&apiKey=#{api_key}&includeNutrition=true."
   recipes_serialized = open(url).read
   recipes = JSON.parse(recipes_serialized)
