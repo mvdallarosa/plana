@@ -12,6 +12,7 @@ class CategoriesController < ApplicationController
   def show
     @category = Category.find(params[:id])
     @items = Item.where(category: @category)
+    @favorite = Favorite.new
     # @items = @category.items
     # @category = Category.where(name: 'plant-based recipes')
     if params[:query].present?
