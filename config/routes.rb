@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users, :controllers => { :registrations => :registrations }
   authenticated :user do
-    root 'pages#edit', as: :authenticated_root
+    root 'pages#dashboard', as: :authenticated_root
   end
   root to: 'pages#home'
   # get "/dashboard", to: 'pages#dashboard'
-  get "/dashboard", to: 'pages#edit'
+  get "/dashboard", to: 'pages#dashboard'
   patch  "/dashboard", to: 'pages#update'
   get "/welcome", to: 'pages#welcome'
   get "/intro", to: 'pages#intro'

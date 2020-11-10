@@ -12,11 +12,16 @@ class PagesController < ApplicationController
     @users = User.order(score: :desc)
   end
 
-  def edit
+  def dashboard
     @user = current_user
-    @challenge = current_user.commitments.last.challenge
-    if @user.done == nil
-      @user.done = Hash.new
+    if !@user.commitments.last
+      redirect_to challenges_path
+    else
+      @challenge = current_user.commitments.last.challenge
+      if @user.done == nil
+        @user.done = Hash.new
+      end
+      render 'edit'
     end
   end
 
