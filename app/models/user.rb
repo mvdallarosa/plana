@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :commitments
   has_many :challenges, through: :commitments
-  has_many :favorites
+  has_many :favorites, dependent: :destroy
   has_one :footprint
 
   has_many :follows
@@ -45,5 +45,10 @@ class User < ApplicationRecord
   def is_following(followed_user_id)
     relationship = Follow.find_by(user_id: self.id, following_id: followed_user_id)
     return true if relationship
+  end
+
+  def already_liked(item_id)
+    favorite = Favorite.find_by(user_id: self.id, item_id: item_id)
+    return favorite
   end
 end

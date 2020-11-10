@@ -4,4 +4,6 @@ class Item < ApplicationRecord
   validates :name, presence: true
   validates :url, presence: true
   validates :description, presence: true
+
+  has_many :favorites, dependent: :destroy
 end

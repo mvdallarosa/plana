@@ -1,0 +1,27 @@
+<% @items.each do |recipe| %>
+  <a href="<%= recipe.url %>" target="_blank" style="text-decoration: none;">
+    <div class="item-card">
+      <img src="<%= cl_image_path recipe.photo.key%>">
+      <div class="item-card-infos">
+        <h2><%= recipe.name %></h2>
+        <p><i class="far fa-clock"></i> <%= recipe.description %> minutes</p>
+
+        <%if current_user.already_liked(recipe.id) %>
+          <%= link_to item_favorite_path(recipe, current_user.already_liked(recipe.id)),
+            remote: true,
+            id: 'heart-icon',
+            method: :delete do %>
+              <i class="fas fa-heart"></i>
+            <% end %>
+        <% else %>
+          <%= link_to item_favorites_path(item_id: recipe.id),
+            remote: true,
+            id: 'heart-icon',
+            method: :post do %>
+              <i class="far fa-heart"></i>
+            <% end %>
+          <% end %>
+        </div>
+    </div>
+  </a>
+<% end %>
