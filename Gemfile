@@ -31,7 +31,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary', '~> 1.16.0'
 gem 'serviceworker-rails'
-
+gem "algoliasearch-rails"
 gem 'devise'
 
 gem 'autoprefixer-rails'

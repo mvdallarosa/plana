@@ -1,0 +1,5 @@
+meta_product_name: "plana"
+meta_title: "plana - live sustainable"
+meta_description: "be part of the green revolution, join plana today!"
+meta_image: "plana.png" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards

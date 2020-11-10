@@ -24,6 +24,7 @@ require("channels")
 
 // External imports
 import "bootstrap";
+// import placesAutocompleteDataset from 'places.js/placesAutocompleteDataset';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -44,9 +45,14 @@ document.addEventListener('turbolinks:load', () => {
 
   // var leafContainer = document.querySelector('.falling-leaves'),
   //     leaves = new LeafScene(leafContainer);
-
   // leaves.init();
   // leaves.render();
+  
+  var places = require('places.js');
+  var placesAutocomplete = places({
+    apiKey: "7eb21f991499998723a42a4aac526794",
+    container: document.querySelector('#address-input')
+  });
 });
 
 
