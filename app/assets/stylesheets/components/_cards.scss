@@ -196,7 +196,7 @@
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
-  .ranking-card-green {
+  .ranking-card-green-left {
     background: #7DC7BE;
     border-radius: 50px 0px 0px 50px;
     text-align: center;
@@ -210,9 +210,36 @@
       color: white;
     }
   }
-  .ranking-card {
+  .ranking-card-right {
     background: #FFFFFF;
     border-radius: 0px 50px 50px 0px;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 21px;
+    text-align: center;
+    color: #575757;
+    width: 40%;
+    p {
+      margin-top: 13px;
+    }
+  }
+    .ranking-card-green-right {
+    background: #7DC7BE;
+    border-radius: 0px 50px 50px 0px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 21px;
+    color: #575757;
+    width: 40%;
+    p {
+      margin-top: 13px;
+      color: white;
+    }
+  }
+  .ranking-card-left {
+    background: #FFFFFF;
+    border-radius: 50px 0px 0px 50px;
     font-weight: bold;
     font-size: 14px;
     line-height: 21px;

@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   get '/tripcalculator', to: 'pages#tripcalculator'
   resources :favorites, only: [ :show ]
   get '/ranking', to: 'pages#ranking'
+  get '/friends', to: 'pages#friends'
   resources :categories, only: [ :index, :show ]
   # resources :challenges, only: [ :index ]
   resources :commitments, only: [ :new ]
