@@ -12,11 +12,26 @@ class PagesController < ApplicationController
     @users = User.order(score: :desc)
   end
 
-  def edit
+  def friends
+    # @users = User.order(score: :desc)
+    @friends = []
+    current_user.follows.each do |follow|
+      @friends << User.find(follow.following_id)
+    end
+    @friends.sort_by { |user| user.score }
+    @friends = @friends.reverse
+  end
+
+  def dashboard
     @user = current_user
-    @challenge = current_user.commitments.last.challenge
-    if @user.done == nil
-      @user.done = Hash.new
+    if !@user.commitments.last
+      redirect_to challenges_path
+    else
+      @challenge = current_user.commitments.last.challenge
+      if @user.done == nil
+        @user.done = Hash.new
+      end
+      render 'edit'
     end
   end
 

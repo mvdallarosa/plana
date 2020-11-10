@@ -139,30 +139,30 @@
 
 .follow-button {
   text-transform: uppercase;
-  border-color: #4090db;
-  color: #4090db;
+  border-color: #8a8a8a;
+  color: #8a8a8a;
   width: 100%;
   font-size: 12px;
   border-radius: 22px;
   &:visited, &:focus, &:hover {
-    border-color: #64A199;
-    background-color: #64A199;
+    border-color: #8a8a8a;
+    background-color: #8a8a8a;
     color: white;
   }
 }
 
 .unfollow-button {
   text-transform: uppercase;
-  border-color: #64A199;
-  background-color: #64A199;
+  border-color: #8a8a8a;
+  background-color: #8a8a8a;
   color: white;
   width: 100%;
   border-radius: 22px;
   font-size: 12px;
   &:focus, &:hover {
-    border-color: #4090db;
+    border-color: #8a8a8a;
     background-color: white;
-    color: #4090db;
+    color: #8a8a8a;
   }
 }
 

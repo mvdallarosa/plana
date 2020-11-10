@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users, :controllers => { :registrations => :registrations }
   authenticated :user do
-    root 'pages#edit', as: :authenticated_root
+    root 'pages#dashboard', as: :authenticated_root
   end
   root to: 'pages#home'
   # get "/dashboard", to: 'pages#dashboard'
-  get "/dashboard", to: 'pages#edit'
+  get "/dashboard", to: 'pages#dashboard'
   patch  "/dashboard", to: 'pages#update'
   get "/welcome", to: 'pages#welcome'
   get "/intro", to: 'pages#intro'
@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   get '/tripcalculator', to: 'pages#tripcalculator'
   resources :favorites, only: [ :show ]
   get '/ranking', to: 'pages#ranking'
+  get '/friends', to: 'pages#friends'
   resources :categories, only: [ :index, :show ]
   # resources :challenges, only: [ :index ]
   resources :commitments, only: [ :new ]

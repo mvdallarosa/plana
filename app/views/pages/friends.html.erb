@@ -1,4 +1,3 @@
-<!-- list of all users with their info (User.all)  -->
 <%= render 'shared/navbar' %>
 <div class="main-container">
 
@@ -18,19 +17,21 @@
 
   <div class="container-ranking">
     <div class="ranking-button">
-       <div class="ranking-card-green-left">
+      <%= link_to ranking_path, :class => 'ranking-card-left' do %>
+       <div>
         <p>WORLD</p>
        </div>
-      <%= link_to friends_path, :class => 'ranking-card-right' do %>
-      <div>
+      <% end %>
+      <div class="ranking-card-green-right">
         <p>FRIENDS</p>
       </div>
-      <% end %>
     </div>
   </div>
 
+  <% if @friends.first %>
+
   <div class="container-ranking">
-    <% @users.each_with_index do |user, index| %>
+    <% @friends.each_with_index do |user, index| %>
     <div class="challanges-card">
       <div class="challenge-avatar">
       <% if user.photo.attached? %>
@@ -82,7 +83,9 @@
         </div>
       </div>
     </div>
-    <% end%>
+  <% end%>
   </div>
+
+  <% end %>
 
 </div>

@@ -77,7 +77,7 @@
       <p>Check out this sustainable shop!</p>
     <a href="<%= shop.url %>" target="_blank" style="text-decoration: none;">
     <div class="item-card m-0">
-      <img src="https://res.cloudinary.com/dolfny7hf/image/upload/v1604324794/Screenshot_2020-11-02_at_14.41.55_ebniqf.png">
+      <img src="<%= cl_image_path shop.photo.key%>">
       <div class="item-card-infos">
         <h2> <%= shop.name.capitalize %></h2>
         <p><i class="fas fa-dollar-sign"></i> Price range: <%= shop.description %>/5</p>
