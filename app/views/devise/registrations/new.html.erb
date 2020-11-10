@@ -7,36 +7,29 @@
       <%= f.input :first_name,
                   label: false,
                   required: true,
-                  autofocus: true,
                   input_html: { placeholder:"first name", autocomplete: "first-name", class:"no-border"}%>
       <%= f.input :last_name,
                   label: false,
                   required: true,
-                  autofocus: true,
                   input_html: { placeholder:"last name", autocomplete: "last-name", class:"no-border" }%>
       <%= f.input :city,
                   label: false,
                   required: true,
-                  autofocus: true,
                   input_html: { type:"search",placeholder:"city", id: "address-input", autocomplete: "city", class:"no-border" }%>
       <%= f.input :username,
                   label: false,
                   required: true,
-                  autofocus: true,
                   input_html: { placeholder:"username", autocomplete: "username", class:"no-border" }%>
       <%= f.input :email,
                   label: false,
                   required: true,
-                  autofocus: true,
                   input_html: { placeholder:"email", autocomplete: "email", class:"no-border" }%>
       <%= f.input :password,
                   label: false,
-                  required: true,
                   hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
                   input_html: { placeholder:"password", autocomplete: "new-password", class:"no-border" } %>
       <%= f.input :password_confirmation,
                   label: false,
-                  required: true,
                   input_html: { placeholder:"repeat password", autocomplete: "new-password", class:"no-border" } %>
     </div>
 
