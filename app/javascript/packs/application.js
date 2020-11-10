@@ -47,12 +47,14 @@ document.addEventListener('turbolinks:load', () => {
   //     leaves = new LeafScene(leafContainer);
   // leaves.init();
   // leaves.render();
-  
-  var places = require('places.js');
-  var placesAutocomplete = places({
-    apiKey: "7eb21f991499998723a42a4aac526794",
-    container: document.querySelector('#address-input')
-  });
+  const addressInput = document.querySelector('#address-input');
+  if (addressInput) {
+    var places = require('places.js');
+    var placesAutocomplete = places({
+      apiKey: "7eb21f991499998723a42a4aac526794",
+      container: addressInput
+    });
+  }
 });
 
 
