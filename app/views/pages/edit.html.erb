@@ -98,19 +98,12 @@
   <% if @challenge.category == "plant-based"  %>
   <% recipe = Item.where(category: Category.where(name: 'plant-based recipes'))[Date.today.month] %>
   <% if recipe != nil %>
+
   <div class="tip-box-card">
       <p>Try this out!</p>
-    <a href="<%= recipe.url %>" target="_blank" style="text-decoration: none;">
-    <div class="item-card m-0">
-      <img src="<%= cl_image_path recipe.photo.key%>">
-      <div class="item-card-infos">
-        <h2><%= recipe.name %></h2>
-        <p><i class="far fa-clock"></i> <%= recipe.description %> minutes</p>
-        <span class='heart-icon'><i class="far fa-heart"></i></span>
+      <div class="tip-box-item-card">
+        <%= render partial: 'categories/item_card', locals: {item: recipe, page: 'dashboard'} %>
       </div>
-    </div>
-    </a>
-
   </div>
   <% end %>
 
@@ -118,17 +111,10 @@
   <% shop = Item.where(category: Category.where(name: 'shop responsibly'))[Date.today.month] %>
 
   <div class="tip-box-card">
-      <p>Check out this sustainable shop!</p>
-    <a href="<%= shop.url %>" target="_blank" style="text-decoration: none;">
-    <div class="item-card m-0">
-      <img src="<%= cl_image_path shop.photo.key%>">
-      <div class="item-card-infos">
-        <h2> <%= shop.name.capitalize %></h2>
-        <p><i class="fas fa-dollar-sign"></i> Price range: <%= shop.description %>/5</p>
-        <span class='heart-icon'><i class="far fa-heart"></i></span>
-      </div>
+    <p>Check out this sustainable shop!</p>
+    <div class="tip-box-item-card">
+      <%= render partial: 'categories/item_card', locals: {item: shop, page: 'dashboard'} %>
     </div>
-    </a>
   </div>
 
 <% end %>
