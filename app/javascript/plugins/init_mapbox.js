@@ -13,6 +13,7 @@ const initMapbox = () => {
 
   if (mapElement) { // only build a map if there's a div#map to inject into
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
+
     const map = new mapboxgl.Map({
       container: mapElement,
       style: 'mapbox://styles/mvdallarosa/ckham75l63dvm19mvvfqpfwgz'
@@ -21,6 +22,7 @@ const initMapbox = () => {
     const directions = new MapboxDirections({
           accessToken: mapboxgl.accessToken
       })
+
     map.addControl(directions, 'top-left');
 
     directions.on("route", () => {

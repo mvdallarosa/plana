@@ -31,5 +31,8 @@
   <body>
     <%= render 'shared/flashes' %>
     <%= yield %>
+    <% if action_name == 'tripcalculator' %>
+      <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js"></script>
+    <% end %>
   </body>
 </html>
