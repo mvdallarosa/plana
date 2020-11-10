@@ -23,6 +23,10 @@ Rails.application.routes.draw do
   # resources :challenges, only: [ :index ]
   resources :commitments, only: [ :new ]
 
+  resources :items do
+    resources :favorites, only: [:show, :create, :destroy]
+  end
+
   get 'relationships/follow_user'
   get 'relationships/unfollow_user'
   post '/follow_user', to: 'relationships#follow_user', as: :follow_user
