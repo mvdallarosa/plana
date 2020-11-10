@@ -276,6 +276,7 @@ DEPENDENCIES
   font-awesome-sass
   geocoder
   jbuilder (~> 2.7)
+  json
   listen (~> 3.2)
   pg (>= 0.18, < 2.0)
   pry-byebug

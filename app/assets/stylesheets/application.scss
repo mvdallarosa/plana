@@ -24,3 +24,7 @@ body {
     font-weight: 700;
   }
 }
+
+a:-webkit-any-link {
+  text-decoration: none;
+}

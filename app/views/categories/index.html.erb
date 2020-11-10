@@ -11,7 +11,7 @@
   <div class="grid-card-container">
 
       <div class="grid-cards">
-        <%= link_to tripcalculator_path do %>
+        <%= link_to tripcalculator_path, class: "no-decor" do %>
         <div class="grid-card">
           <p>Measure my travel</p>
           <p><%= image_tag "icon-btn.png", alt: "magnify", width: 50, id:'image-icon' %></p>
@@ -27,13 +27,13 @@
       </div>
 
       <div class="grid-cards">
-        <%= link_to category_path(@categories[0]) do %>
+        <%= link_to category_path(@categories[0]), class: "no-decor" do %>
         <div class="grid-card">
           <p> <%= @categories[0].name.capitalize %> </p>
           <p><%= image_tag "label.png", alt: "label", width: 50, id:'image-icon' %></p>
         </div>
         <% end %>
-        <%= link_to category_path(@categories[1]) do %>
+        <%= link_to category_path(@categories[1]), class: "no-decor" do %>
         <div class="grid-card">
           <p><%= @categories[1].name.capitalize %></p>
           <p><%= image_tag "carrot.png", alt: "carrot", width: 50, id:'image-icon' %></p>
@@ -42,13 +42,13 @@
         </div>
 
         <div class="grid-cards">
-          <%= link_to category_path(@categories[2]) do %>
+          <%= link_to category_path(@categories[2]), class: "no-decor" do %>
           <div class="grid-card">
             <p><%= @categories[2].name.capitalize %></p>
             <p><%= image_tag "grocery.png", alt: "grocery", width: 50, id:'image-icon' %></p>
           </div>
           <% end %>
-          <%= link_to category_path(@categories[3]) do %>
+          <%= link_to category_path(@categories[3]), class: "no-decor" do %>
           <div class="grid-card">
             <p><%= @categories[3].name.capitalize %></p>
             <p><%= image_tag "seed.png", alt: "seed", width: 50, id:'image-icon' %></p>
@@ -57,13 +57,13 @@
         </div>
 
         <div class="grid-cards">
-          <%= link_to category_path(@categories[4]) do %>
+          <%= link_to category_path(@categories[4]), class: "no-decor" do %>
           <div class="grid-card">
             <p><%= @categories[4].name.capitalize %></p>
             <p><%= image_tag "apple.png", alt: "apple", width: 50, id:'image-icon' %></p>
           </div>
           <% end %>
-          <%= link_to category_path(@categories[5]) do %>
+          <%= link_to category_path(@categories[5]), class: "no-decor" do %>
           <div class="grid-card">
             <p><%= @categories[5].name.capitalize %></p>
             <p><%= image_tag "tree.png", alt: "tree", width: 50, id:'image-icon' %></p>
