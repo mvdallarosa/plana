@@ -1,5 +1,5 @@
 import mapboxgl from 'mapbox-gl';
-// import MapboxDirections from "@mapbox/mapbox-gl-directions";
+// import MapboxDirections from "mapbox-gl-directions";
 
 const fitMapToMarkers = (map, markers) => {
   const bounds = new mapboxgl.LngLatBounds();
@@ -14,30 +14,27 @@ const initMapbox = () => {
   if (mapElement) { // only build a map if there's a div#map to inject into
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
     const map = new mapboxgl.Map({
-      container: 'map',
+      container: mapElement,
       style: 'mapbox://styles/mvdallarosa/ckham75l63dvm19mvvfqpfwgz'
     });
-    map.addControl(
-      new MapboxDirections({
-          accessToken: mapboxgl.accessToken
-      }),
-      'top-left'
-    );
-    // const tripInstructions = [];
-    // for (let i = 0; i < steps.length; i++) {
-    //   tripInstructions.push('<br><li>' + steps[i].maneuver.instruction) + '</li>';
-    //   instructions.innerHTML = '<br><span class="duration">Trip duration: ' + Math.floor(data.duration / 60) + ' min  </span>' + tripInstructions;
-    // }
-    const distance = JSON.parse(mapElement.dataset.duration);
-    console.log(distance)
 
-    const markers = JSON.parse(mapElement.dataset.markers);
-    markers.forEach((marker) => {
-      new mapboxgl.Marker()
-        .setLngLat([ marker.lng, marker.lat ])
-        .addTo(map);
-    fitMapToMarkers(map, markers);
-  });
+    const directions = new MapboxDirections({
+          accessToken: mapboxgl.accessToken
+      })
+    map.addControl(directions, 'top-left');
+
+    directions.on("route", () => {
+      const distance = document.querySelector('.mapbox-directions-route-summary>h1')
+      const duration = document.querySelector('.mapbox-directions-route-summary>span')
+      // console.log(distance.innerText);
+      const number = Number(distance.innerText.substring(0, distance.innerText.length - 2));
+      const car = document.querySelector('#car-result')
+      const metro = document.querySelector('#metro-result')
+      const walk = document.querySelector('#walk-result')
+      car.innerHTML = `${Math.floor(number*1.60934*0.133)} Kg CO2`
+      metro.innerHTML = `${Math.floor(number*1.60934*0.059)} Kg CO2`
+      walk.innerHTML = `${Math.floor(number*1.60934*0)} Kg CO2`
+    })
   }
 };
 
