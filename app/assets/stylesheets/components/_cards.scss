@@ -48,6 +48,10 @@
   }
 }
 
+.item-card:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
 .item-card .item-card-infos {
   padding: 16px;
   justify-content: space-between;
@@ -137,6 +141,10 @@
   }
 }
 
+.challenge-card:hover {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
 .challenge-card-green {
   background: #7DC7BE;
   box-shadow: 0px 0px 22px rgba(0, 0, 0, 0.05);
@@ -190,7 +198,14 @@
   p {
     color: #575757;
     font-size: 16px;
+    text-decoration: none;
   }
+}
+
+.grid-card:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+
 }
 
 .ranking-button {
@@ -263,6 +278,10 @@
     width: 35%;
     margin-top: 10px;
   }
+}
+
+.challanges-card:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 

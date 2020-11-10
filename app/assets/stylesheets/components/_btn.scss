@@ -1,4 +1,5 @@
 .plana-btn-green {
+  text-decoration: none;
   height: 56px;
   width: 270px;
   border-radius: 50px;
@@ -12,7 +13,14 @@
   padding: 0;
   margin: 20px auto;
   display: inline-block;
+}
+
+.plana-btn-green:hover {
   text-decoration: none;
+  color: white;
+  background: #8ACCC4;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
 }
 
 .search-btn-items {
@@ -26,6 +34,7 @@
 }
 
 .plana-btn-grey-thin {
+  text-decoration: none;
   height: 56px;
   width: 270px;
   border-radius: 50px;
@@ -39,7 +48,13 @@
   padding: 0;
   margin: 20px auto;
   display: inline-block;
+}
+
+.plana-btn-grey-thin:hover {
   text-decoration: none;
+  color: white;
+  background: rgba(168, 168, 168, 0.8);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .plana-btn-log-grey {
@@ -149,4 +164,21 @@
     background-color: white;
     color: #4090db;
   }
+}
+
+.plana-btn-green-pick {
+  height: 56px;
+  width: 270px;
+  border-radius: 50px;
+  background: #7DC7BE;
+  font-size: 18px;
+  text-align: center;
+  letter-spacing: 0.12em;
+  color: #FFFFFF;
+  line-height: 60px;
+  border: 0px;
+  padding: 0;
+  margin: 20px auto;
+  display: inline-block;
+  text-decoration: none;
 }
