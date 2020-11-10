@@ -143,6 +143,7 @@
 
 .challenge-card:hover {
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  background-color: #7DC7BE;
 }
 
 .challenge-card-green {
@@ -194,6 +195,7 @@
   height: 140px;
   align-items: center;
   padding: 10px;
+  text-decoration: none !important;
   p {
     color: #575757;
     font-size: 16px;
