@@ -3,6 +3,51 @@
 <%= render 'shared/navbar' %>
   <!-- DASHBOARD  -->
 <div class="main-container">
+
+<% if current_user.commitment_done?(@user.commitments.last) %>
+
+  <div class="footprint-container">
+    <i class="fas fa-star fa-3x"></i>
+    <h2>Congratulations!</h2>
+  </div>
+
+  <div class="footprint-grid">
+    <div class="footprint-text">
+      <p>You finished your challenge! </p>
+      <p>Keep choosing Plana 🌎</p>
+
+      <div class="profile-container mb-4">
+        <div class="profile-cards">
+          <%= image_tag 'drop-rectangle.png', alt: 'points', class: 'profile-icon' %>
+          <p class='number'>+ 10</p>
+          <p class='descriptions'>Points</p>
+        </div>
+        <div class="profile-cards">
+          <%= image_tag 'calculator-rectangle.png', alt: 'schedule', class: 'profile-icon' %>
+          <p class='number'><%=(current_user.commitments.last.challenge.duration * current_user.commitments.last.challenge.impact).round(2) %> Kg</p>
+          <p class='descriptions'>CO2 saved</p>
+        </div>
+      </div>
+      <div class='container mb-3'>
+        <%= link_to profile_path do %>
+        <% if current_user.photo.attached? %>
+          <%= cl_image_tag current_user.photo.key, class: 'profile-avatar' %>
+        <% else %>
+          <%= image_tag "profile-placeholder.png", class: "profile-avatar", alt: "profile picture" %>
+        <% end %>
+      </div>
+
+      <%= link_to challenges_path do %>
+        <p class='plana-btn-green-pick mb-4'> PICK A CHALLENGE </p>
+      <% end %>
+
+    <% end %>
+    </div>
+  </div>
+
+
+<% else %>
+
   <div class="dashboard-header">
     <%= link_to profile_path do %>
       <% if current_user.photo.attached? %>
@@ -18,7 +63,6 @@
       <p><%= Date.today.strftime("%A, %d %B")%></p>
     </div>
   </div>
-
 
   <div class="dashboard-challenge-container">
      <div class="challenge-card-green">
@@ -106,9 +150,7 @@
   <% end %>
 </div>
 
-
-
-
+<% end %>
 
 
 
