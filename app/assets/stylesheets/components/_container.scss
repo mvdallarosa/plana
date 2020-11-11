@@ -1,6 +1,6 @@
 .main-container {
   // PUT THIS CONTAINER UNDERNEATH THE NAVBAR IN EVERY PAGE THAT HAS A NAV BAR
-  margin-bottom: 150px;
+  margin-bottom: 80px;
   max-height: 100vh;
   overflow: scroll;
 }
@@ -101,6 +101,14 @@
   text-align: center;
 }
 
+.ranking-header-bold {
+  color: #575757;
+  font-size: 36px;
+  font-weight: 700;
+  padding-left: 30px;
+  padding-bottom: 10px;
+}
+
 
 .category-index-container {
   .index-header{
@@ -118,6 +126,11 @@
   display: flex;
   justify-content: center;
 }
+
+.challenge-grid-container {
+  margin: 10px;
+  color: #575757;
+}
 // Profile Container //
 
 .profile-header {
@@ -128,7 +141,8 @@
     color: #C4C4C4;
   }
   .logout {
-    font-size: 12px;
+    font-size: 16px;
+    color: #8a8a8a;
   }
 }
 
@@ -217,6 +231,20 @@
     display: flex;
     justify-content: space-between;
     margin: 20px;
+  }
+}
+
+.challenge-progress-container {
+  box-shadow: 0px 0px 22px rgba(0, 0, 0, 0.05);
+  color: #D8D8D8;
+  height: 150px;
+  text-align: center;
+  padding: 20px;
+  h2 {
+    padding-top: 25px;
+  }
+  p {
+    color: $suva-grey;
   }
 }
 

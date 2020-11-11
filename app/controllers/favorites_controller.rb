@@ -1,5 +1,6 @@
 class FavoritesController < ApplicationController
   before_action :find_item
+
   def show
   end
   def create
