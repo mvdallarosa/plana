@@ -4,24 +4,24 @@
   <!-- DASHBOARD  -->
 <div class="main-container">
 
-<% if current_user.commitment_done?(@user.commitments.last) %>
+  <% if current_user.commitment_done?(@user.commitments.last) %>
 
-  <div class="footprint-container">
-    <i class="fas fa-star fa-3x"></i>
-    <h2>Congratulations!</h2>
-  </div>
+    <div class="footprint-container">
+      <i class="fas fa-star fa-3x"></i>
+      <h2>Congratulations!</h2>
+    </div>
 
-  <div class="footprint-grid">
-    <div class="footprint-text">
-      <p>You finished your challenge! </p>
-      <p>Keep choosing Plana 🌎</p>
+    <div class="footprint-grid">
+      <div class="footprint-text">
+        <p>You finished your challenge! </p>
+        <p>Keep choosing Plana 🌎</p>
 
-      <div class="profile-container mb-4">
-        <div class="profile-cards">
-          <%= image_tag 'drop-rectangle.png', alt: 'points', class: 'profile-icon' %>
-          <p class='number'>+ 10</p>
-          <p class='descriptions'>Points</p>
-        </div>
+        <div class="profile-container mb-4">
+          <div class="profile-cards">
+            <%= image_tag 'drop-rectangle.png', alt: 'points', class: 'profile-icon' %>
+            <p class='number'>+ 10</p>
+            <p class='descriptions'>Points</p>
+          </div>
         <div class="profile-cards">
           <%= image_tag 'calculator-rectangle.png', alt: 'schedule', class: 'profile-icon' %>
           <p class='number'><%=(current_user.commitments.last.challenge.duration * current_user.commitments.last.challenge.impact).round(2) %> Kg</p>
@@ -43,10 +43,10 @@
 
     <% end %>
     </div>
-  </div>
 
 
 <% else %>
+      
   <div class="challenge-progress-container">
     <%= link_to profile_path do %>
       <% if current_user.photo.attached? %>
@@ -78,6 +78,8 @@
           <p style="text-indent: 12px; font-size: 18px;"><%= @challenge.category.upcase %></p>
         </div>
       </div>
+    </div>
+
 
       <div class="challenge-progress-grid-card">
         <div class="pt-1">
@@ -90,6 +92,7 @@
         </div>
       </div>
     </div>
+
 
     <div class="challenge-progress-grid">
       <div class="challenge-progress-grid-card">
@@ -108,7 +111,6 @@
     </div>
   </div>
 
-
 <div class="tip-box-card">
   <p>Info on challenge</p>
   <div class="tip-box">
@@ -116,28 +118,31 @@
   </div>
 </div>
 
-<div class ="tip-container">
-  <% if @challenge.category == "plant-based"  %>
-  <% recipe = Item.where(category: Category.where(name: 'plant-based recipes'))[Date.today.month] %>
-  <% if recipe != nil %>
 
-  <div class="tip-box-card">
-      <p>Try this out!</p>
-      <div class="tip-box-item-card">
-        <%= render partial: 'categories/item_card', locals: {item: recipe, page: 'dashboard'} %>
-      </div>
-  </div>
-  <% end %>
+  <% if @challenge.category == "plant-based"  %>
+    <% recipe = Item.where(category: Category.where(name: 'plant-based recipes'))[Date.today.month] %>
+      <% if recipe != nil %>
+
+        <div class="try-box-card">
+          <p>Try this out!</p>
+        </div>
+
+        <div class="tip-box-item-card">
+          <%= render partial: 'categories/item_card', locals: {item: recipe, page: 'dashboard'} %>
+        </div>
+      <% end %>
+
 
   <% elsif @challenge.category == "plastic-free" %>
-  <% shop = Item.where(category: Category.where(name: 'shop responsibly'))[Date.today.month] %>
+    <% shop = Item.where(category: Category.where(name: 'shop responsibly'))[Date.today.month] %>
 
-  <div class="tip-box-card">
-    <p>Check out this sustainable shop!</p>
-    <div class="tip-box-item-card">
-      <%= render partial: 'categories/item_card', locals: {item: shop, page: 'dashboard'} %>
-    </div>
-  </div>
+      <div class="try-box-card">
+        <p>Check out this sustainable shop!</p>
+      </div>
+
+      <div class="tip-box-item-card">
+        <%= render partial: 'categories/item_card', locals: {item: shop, page: 'dashboard'} %>
+      </div>
 
 <% end %>
 </div>
@@ -149,17 +154,16 @@
 
 </div>
 
-
-<div style="display: none;">
-  <%= simple_form_for(@user, url: dashboard_path, :html=> { class: 'done-attributes' }) do |f| %>
-    <%= f.simple_fields_for :done do |done_f| %>
+  <div style="display: none;">
+    <%= simple_form_for(@user, url: dashboard_path, :html=> { class: 'done-attributes' }) do |f| %>
+      <%= f.simple_fields_for :done do |done_f| %>
         <%= done_f.input "#{Date.today}", input_html: { class: 'done-input-attribute' } %>
+      <% end %>
+      <%= f.button :submit %>
     <% end %>
-    <%= f.button :submit %>
+  </div>
   <% end %>
 </div>
-
-<% end %>
 
 
 

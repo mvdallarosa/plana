@@ -2,16 +2,6 @@ class Category < ApplicationRecord
   has_many :items
   validates :name, presence: true
 
-
-#   category_attributes = [
-#   { name: "shop responsibly"},
-#   { name: "plant-based recipes"},
-#   { name: "package-free shops"},
-#   { name: "organic restaurants"},
-#   { name: "seasonal foods"},
-#   { name: "farmers markets"}
-# ]
-
   def css_class
     case name
       when "shop responsibly"
