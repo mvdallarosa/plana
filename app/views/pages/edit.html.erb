@@ -46,7 +46,7 @@
 
 
 <% else %>
-      
+
   <div class="challenge-progress-container">
     <%= link_to profile_path do %>
       <% if current_user.photo.attached? %>
@@ -62,14 +62,7 @@
   <div class="challenge-grid-container">
     <div class="challenge-progress-grid">
       <div class="challenge-progress-grid-card">
-<!--         <span class='challenge-icon-white'>
-          <%= image_tag "growing_sprout1.png", class: "sprout-icon" %>
-          <% image_tag "sprout2.svg", class: "sprout-icon" %>
-          <% image_tag "sprout3.svg", class: "sprout-icon" %>
-          <% image_tag "tree.svg", class: "sprout-icon" %>
-          <% image_tag "planet-earth.svg", class: "sprout-icon" %>
-          </span> -->
-        <div >
+        <div>
           <% if @challenge.category == "plant-based" %>
             <i style="text-indent: 12px; font-size: 32px; color: #7DC7BE" class="fas fa-seedling mt-3 mb-2"></i>
           <% elsif @challenge.category == "plastic-free" %>
@@ -78,7 +71,6 @@
           <p style="text-indent: 12px; font-size: 18px;"><%= @challenge.category.upcase %></p>
         </div>
       </div>
-    </div>
 
 
       <div class="challenge-progress-grid-card">
@@ -111,12 +103,6 @@
     </div>
   </div>
 
-<div class="tip-box-card">
-  <p>Info on challenge</p>
-  <div class="tip-box">
-    <%=  @challenge.information  %>
-  </div>
-</div>
 
 
   <% if @challenge.category == "plant-based"  %>
@@ -145,12 +131,20 @@
       </div>
 
 <% end %>
+
+<div class='log-box'>
+    <%= link_to 'EXPLORE THE TOOLS', categories_path, class: 'plana-btn-green' %>
 </div>
 
 
-  <div class='log-box mb-50'>
-    <%= link_to 'SEND CHALLENGE', ranking_path, class: 'plana-btn-green' %>
+<div class="tip-box-card mt-4">
+  <p>Info on challenge</p>
+  <div class="tip-box">
+    <%=  @challenge.information  %>
   </div>
+</div>
+
+
 
 </div>
 
