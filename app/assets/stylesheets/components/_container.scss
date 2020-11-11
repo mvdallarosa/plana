@@ -1,6 +1,6 @@
 .main-container {
   // PUT THIS CONTAINER UNDERNEATH THE NAVBAR IN EVERY PAGE THAT HAS A NAV BAR
-  padding-bottom: 150px;
+  margin-bottom: 50px;
   max-height: 100vh;
   overflow: scroll;
 }
@@ -30,10 +30,10 @@
     // background-position: center;
     text-align: center;
     background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('bladesofgrass.jpg') no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  // -webkit-background-size: cover;
+  // -moz-background-size: cover;
+  // -o-background-size: cover;
+    background-size: cover;
     .set {
       text-align: center;
       font-size: 24px;
@@ -149,6 +149,7 @@
     .number {
       font-size: 18px;
       font-weight: 700;
+      color: #575757;
       margin-bottom: 0 !important;
     }
     .descriptions {
@@ -255,6 +256,7 @@
       .tonnes {
         font-weight: 700;
         font-size: 18px;
+        font-family: 'Poppins';
         margin-bottom: 0px;
       }
       .number {
@@ -283,4 +285,9 @@
 .container-sign-in {
   float: none;
   text-align : center;
+}
+
+.search-bar-container {
+  display: flex;
+  margin-left: 10px;
 }

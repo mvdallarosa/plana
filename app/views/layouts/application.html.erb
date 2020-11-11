@@ -24,18 +24,16 @@
     <meta name="twitter:creator" content="<%= DEFAULT_META["twitter_account"] %>">
     <meta name="twitter:image:src" content="<%= meta_image %>">
 
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js"></script>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable"  content="yes">
+
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- <meta property="og:title" content="Join plana, live a sustainable life!" />
-    <meta property="og:url" content="https://www.theguardian.com/us-news/2020/nov/09/william-barr-vote-irregularities-donald-trump-election" />
-    <meta property="og:image" content="http://sharethis.com/images/logo.jpg" />
-    <meta property="og:description" content="plana is its people. It's imperative that we hire smart,innovative people who can work intelligently as we continue to disrupt the very category we created. Come join us!" />
-    <meta property="og:site_name" content="plana" />  -->
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap" rel="stylesheet">
+
     <link rel="manifest" href="<%= asset_path 'manifest.json' %>">
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="57x57" href="<%= image_path 'icons/apple-icon-57x57.png' %>">
@@ -50,9 +48,12 @@
     <link rel="icon" type="image/png" sizes="32x32" href="<%= image_path 'icons/favicon-32x32.png' %>">
     <link rel="icon" type="image/png" sizes="96x96" href="<%= image_path 'icons/favicon-96x96.png' %>">
     <link rel="icon" type="image/png" sizes="16x16" href="<%= image_path 'icons/favicon-16x16.png' %>">
+    
     <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5fa98d1be3f5df0012a018ab&product=sop' async='async'></script>
+
     <style>
     </style>
+    
   </head>
   <body>
     <%= render 'shared/flashes' %>

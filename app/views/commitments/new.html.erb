@@ -14,7 +14,7 @@
         </div>
       </div>
 
-      <div class="challenge-card" data-option=<%= @challenges[1].id%>>
+      <div id="white-challenge"class="challenge-card" data-option=<%= @challenges[1].id%>>
       <!-- <div class="challenge-card-green"> -->
       <!-- <span class='challenge-icon-white'> -->
         <span class='challenge-icon-grey'><i class="fas fa-seedling fa-flip-horizontal fa-3x"></i></span>
@@ -25,7 +25,6 @@
     </div>
   </div>
 </div>
-
 
 <div style="display: none;">
   <%= simple_form_for(@commitment, url: challenges_path, :html=> { class: 'commitment-attributes' }) do |f| %>

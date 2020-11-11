@@ -6,7 +6,7 @@
   <div class="category-container">
 
   <% if @category.name == "plant-based recipes"  %>
-    <div class="search-bar-container" style="display: flex;">
+    <div class="search-bar-container">
       <div class="search-bar" style="width: 300px;">
       <%= form_tag category_path(@category), method: :get do %>
         <%= text_field_tag :query,
@@ -31,23 +31,13 @@
       </div>
     </div> -->
 
-    <% @items.each do |recipe| %>
-    <a href="<%= recipe.url %>" target="_blank" style="text-decoration: none;">
-      <div class="item-card">
-        <img src="<%= cl_image_path recipe.photo.key%>">
-        <div class="item-card-infos">
-          <h2><%= recipe.name %></h2>
-          <p><i class="far fa-clock"></i> <%= recipe.description %> minutes</p>
-          <span class='heart-icon'><i class="far fa-heart"></i></span>
-        </div>
-      </div>
-    </a>
-
-    <% end %>
+  <div class="recipes-in-here">
+    <%= render partial: 'categories/items_index' %>
+  </div>
 
   <% elsif @category.name == "shop responsibly"  %>
 
-  <div class="search-bar-container" style="display: flex;">
+  <div class="search-bar-container">
       <div class="search-bar" style="width: 300px;">
       <%= form_tag category_path(@category), method: :get do %>
         <%= text_field_tag :query,
@@ -63,20 +53,9 @@
       <!-- <button class="search-btn"><i class="fas fa-search"></i> search recipe </button> -->
     </div>
 
-
-    <% @items.each do |shop| %>
-    <a href="<%= shop.url %>" target="_blank" style="text-decoration: none;">
-      <div class="item-card">
-        <img src="<%= cl_image_path shop.photo.key%>">
-        <div class="item-card-infos">
-          <h2><%= shop.name.capitalize %></h2>
-          <p><i class="fas fa-dollar-sign"></i> Price range: <%= shop.description %>/5</p>
-          <span class='heart-icon'><i class="far fa-heart"></i></span>
-        </div>
-      </div>
-    </a>
-
-    <% end %>
+    <div class="shops-in-here">
+      <%= render partial: 'categories/items_index' %>
+    </div>
 
   <% else %>
 
