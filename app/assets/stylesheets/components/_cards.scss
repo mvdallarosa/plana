@@ -19,6 +19,40 @@
   text-align: center;
 }
 
+
+.challenge-progress-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 15px;
+}
+
+.challenge-progress-grid-card {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  height: 85%;
+  font-weight: 400;
+  color: $dark-grey;
+  font-size: 16px;
+  padding: 6px;
+  border-radius: 22px;
+  background-color: white;
+}
+
+.challenge-progress-grid-card-green {
+  display: flex;
+  align-items: center;
+  color: $dark-grey;
+  text-align: left;
+  height: 100px;
+  font-weight: 400;
+  font-size: 18px;
+  padding: 6px;
+  border-radius: 22px;
+  border: 5px solid #7DC7BE;
+  background-color: white;
+}
+
 //INSIDE CATEGORIES SHOW.html
 .item-card {
   overflow: hidden;
