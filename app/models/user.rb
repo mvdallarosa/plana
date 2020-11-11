@@ -27,12 +27,10 @@ class User < ApplicationRecord
   def total_footprint
     self.footprint.mobility + self.footprint.food + self.footprint.household
   end
-  # def current_challenge
-  #   # date = Date.today
-  #   # current_commitment = current_user.commitments.where(['start_date < ? AND end_date > ?', date, date])
-  #   # return current_commitment.challenge
-  #   current_user.commitments.last
-  # end
+
+  def commitment_done?(commitment)
+    commitment.end_date <= Date.today
+  end
 
   def follow(user_id)
     following_relationships.create(following_id: user_id)

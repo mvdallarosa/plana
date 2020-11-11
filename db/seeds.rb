@@ -8,10 +8,10 @@ require 'open-uri'
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 
-# Favorite.destroy_all
-# Commitment.destroy_all
-# Footprint.destroy_all
-# User.destroy_all
+Favorite.destroy_all
+Commitment.destroy_all
+Footprint.destroy_all
+User.destroy_all
 
 puts "Creating 11 users..."
 
@@ -427,7 +427,7 @@ plant_category = Category.where(name: 'plant-based recipes').first
 if Item.where(category: plant_category).empty?
   p "Creating Recipe seeds"
     #Pry::ColorPrinter.pp(info)
-  api_key = "82de840e62824f7d9fffef599d9c5049" #plan103@akxpert.com
+  api_key = "6027980db6444536ae0f8b6f7517cbd2" #plan103@akxpert.com
   t_count = 0
   url = "https://api.spoonacular.com/recipes/complexSearch?diet=vegan&number=50&offset=0&apiKey=#{api_key}&includeNutrition=true."
   recipes_serialized = open(url).read
@@ -436,7 +436,7 @@ if Item.where(category: plant_category).empty?
   # Pry::ColorPrinter.pp(recipes)
   results = recipes["results"]
   results.each do |recipe|
-    api_key = "82de840e62824f7d9fffef599d9c5049"
+    api_key = "6027980db6444536ae0f8b6f7517cbd2"
     url_info ="https://api.spoonacular.com/recipes/#{recipe["id"].to_i}/information?apiKey=#{api_key}&includeNutrition=true"
     info_serialized = open(url_info).read
     info = JSON.parse(info_serialized)

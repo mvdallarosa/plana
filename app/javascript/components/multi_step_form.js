@@ -3,8 +3,8 @@ const content = [
   ["How often do you eat meat?", "I am vegetarian", "I eat meat 2-3 times/week", "I eat meat almost every day"],
   ["How often do you buy NEW clothes, cellphones, computers, toys, furniture, appliances, etc?", "very rarely", "every now and then", "every week"],
   ["What kind of energy system does your building have?", "completely energy efficient", "renewable energy for heating only", "oil & natural gas heating"],
-  ["how long are your showers usually?", "less than 5 minutes", "20 minutes", "not long but I have baths often"],
-  ["how warm is your house in winter?", "I wear a pullover (18-20°C)", "pleasantly warm (20-22°C)", "I can just wear a T-shirt (> 22°C)"]
+  ["How long are your showers usually?", "less than 5 minutes", "up to 20 minutes", "not long but I have baths often"],
+  ["How warm is your house in winter?", "I wear a pullover (18-20°C)", "pleasantly warm (20-22°C)", "I can just wear a T-shirt (> 22°C)"]
 ]
 
 const multiForm = () => {

@@ -78,31 +78,29 @@
 }
 
 .plana-btn-grey {
-  height: 130px;
-  width: 40%;
-  border-radius: 15px;
-  background: rgba(168, 168, 168, 0.9);
-  color: white;
+  width: 70px;
+  height: 40%;
+  padding-top: 2px;
+  border-radius: 35px;
+  border: 3px solid #7DC7BE;
   text-align: center;
   font-size: 18px;
-  line-height: 60px;
   margin: 10px;
-  padding-top: 30px;
   display: inline-block;
   text-decoration: none;
 }
 
 .plana-btn-dark {
-  height: 130px;
-  width: 40%;
-  border-radius: 15px;
-  background: rgba(80, 80, 80, 0.9);
+  width: 70px;
+  height: 40%;
+  padding-top: 2px;
+  border-radius: 35px;
+  background-color: #7DC7BE;
   color: white;
+  font-weight: 400;
   text-align: center;
   font-size: 18px;
-  line-height: 60px;
   margin: 10px;
-  padding-top: 30px;
   display: inline-block;
   text-decoration: none;
 }

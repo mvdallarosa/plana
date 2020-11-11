@@ -32,7 +32,9 @@
     </div> -->
 
   <div class="recipes-in-here">
-    <%= render partial: 'categories/recipes_index' %>
+    <div class="something">
+      <%= render partial: 'categories/items_index' %>
+    </div>
   </div>
 
   <% elsif @category.name == "shop responsibly"  %>
@@ -53,8 +55,8 @@
       <!-- <button class="search-btn"><i class="fas fa-search"></i> search recipe </button> -->
     </div>
 
-    <div class="shops-in-here">
-      <%= render partial: 'categories/shops_index' %>
+    <div class="shops-in-here mb-50">
+      <%= render partial: 'categories/items_index' %>
     </div>
 
   <% else %>

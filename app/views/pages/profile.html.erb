@@ -2,7 +2,7 @@
 <%= render 'shared/navbar' %>
 <div class="main-container">
   <div class="profile-header">
-    <div class="profile-avatar-div">
+    <div class="profile-avatar-div mb-4">
       <% if current_user.photo.attached? %>
         <%= cl_image_tag current_user.photo.key, class: 'profile-avatar' %>
       <% else %>
@@ -29,8 +29,8 @@
     </div>
     <div class="profile-cards">
       <%= image_tag 'calculator-rectangle.png', alt: 'co2 saved', class: 'profile-icon' %>
-      <p class='number'><%= current_user.footprint ? (current_user.footprint.mobility.round(1) + current_user.footprint.food.round(1) + current_user.footprint.household.round(1)).round(1) : 50 %></p>
-      <p class='descriptions'>CO2 saved</p>
+      <p class='number'><%= current_user.footprint ? (current_user.footprint.mobility.round(1) + current_user.footprint.food.round(1) + current_user.footprint.household.round(1)).round(1) : 50 %> T</p>
+      <p class='descriptions'>CO2/year</p>
     </div>
   </div>
 
@@ -68,7 +68,7 @@
         </div>
       </div> -->
 
-      <div class="last-saved-rows">
+      <div class="last-saved-rows mb-50">
         <div class="saved-column">
           <%= image_tag 'label.png', alt: 'shops', class: 'saved-icon' %>
         </div>
