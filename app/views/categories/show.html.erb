@@ -7,7 +7,7 @@
 
   <% if @category.name == "plant-based recipes"  %>
     <div class="search-bar-container">
-      <div class="search-bar" style="width: 300px;">
+      <div class="search-bar">
       <%= form_tag category_path(@category), method: :get do %>
         <%= text_field_tag :query,
           params[:query],
@@ -15,8 +15,10 @@
           placeholder: "Find a recipe"
         %>
       </div>
-       <div class="magnifying-glass" style="margin-left: 15px; margin-top: 15px">
-        <%= submit_tag "🔍", class: "fas fa-search p-1 search-btn-items" %>
+       <div class="magnifying-glass">
+         <%= button_tag(type: "submit", class: "search-bar-buttn") do %>
+            <i class="fas fa-search fa-lg"></i>
+          <% end %>
       </div>
     <% end %>
       <!-- <button class="search-btn"><i class="fas fa-search"></i> search recipe </button> -->

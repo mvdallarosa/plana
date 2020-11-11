@@ -1,8 +1,9 @@
 #heart-icon {
-  text-align: right !important;
-  display: flex !important;
-  justify-content: flex-end !important;
-  color:#7DC7BE !important;
+  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+  color:#7DC7BE;
+  width: 100%;
 }
 
 .sprout-icon {
@@ -32,8 +33,11 @@
   color: white;
 }
 
-#image-icon {
-  float: right;
+.image-icon {
+  text-align: right;
+  display: flex;
+  flex-wrap: wrap;
+  align-content:flex-end;
 }
 
 .profile-icon {
