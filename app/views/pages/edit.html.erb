@@ -47,8 +47,7 @@
 
 
 <% else %>
-
-  <div class="dashboard-header">
+  <div class="challenge-progress-container">
     <%= link_to profile_path do %>
       <% if current_user.photo.attached? %>
         <%= cl_image_tag current_user.photo.key, class: 'small-profile-avatar' %>
@@ -56,43 +55,66 @@
         <%= image_tag "profile-placeholder.png", class: "small-profile-avatar", alt: "profile picture" %>
       <% end %>
     <% end %>
-    <div class="dashboard-header-infos">
-      <div class="header-icon-box">
-        <h2> Challenge Progress</h2>
-      </div>
-      <p><%= Date.today.strftime("%A, %d %B")%></p>
-    </div>
+    <h2>Challenge Progress</h2>
+    <p><%= Date.today.strftime("%A, %d %B")%></p>
   </div>
 
-  <div class="dashboard-challenge-container">
-     <div class="challenge-card-green">
-        <span class='challenge-icon-white'>
+  <div class="challenge-grid-container">
+    <div class="challenge-progress-grid">
+      <div class="challenge-progress-grid-card">
+<!--         <span class='challenge-icon-white'>
           <%= image_tag "growing_sprout1.png", class: "sprout-icon" %>
           <% image_tag "sprout2.svg", class: "sprout-icon" %>
           <% image_tag "sprout3.svg", class: "sprout-icon" %>
           <% image_tag "tree.svg", class: "sprout-icon" %>
           <% image_tag "planet-earth.svg", class: "sprout-icon" %>
-          </span>
-        <div class='text'>
-          <p style="font-weight: bold;"><%= @challenge.category.upcase %></p>
+          </span> -->
+        <div >
+          <% if @challenge.category == "plant-based" %>
+            <i style="text-indent: 12px; font-size: 32px; color: #7DC7BE" class="fas fa-seedling mt-3 mb-2"></i>
+          <% elsif @challenge.category == "plastic-free" %>
+            <i style="text-indent: 12px; font-size: 32px; color: #7DC7BE" class="fas fa-carrot mt-3 mb-2"></i>
+          <% end %>
+          <p style="text-indent: 12px; font-size: 18px;"><%= @challenge.category.upcase %></p>
         </div>
       </div>
 
-      <% if @user.done["#{Date.today}"] %>
-        <p class='plana-btn-dark'>DONE</p>
-      <% else %>
-        <p class='plana-btn-grey done-btn'>MARK</p>
-      <% end %>
+      <div class="challenge-progress-grid-card">
+        <div class="pt-1">
+          <% if @user.done["#{Date.today}"] %>
+            <p class='plana-btn-dark'>DONE</p>
+          <% else %>
+            <p class='plana-btn-grey done-btn'>MARK</p>
+          <% end %>
+          <p style="text-indent: 12px;"><%= Date.today.strftime("%a, %d %b")%></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="challenge-progress-grid">
+      <div class="challenge-progress-grid-card">
+        <div>
+          <i style="text-indent: 12px; font-size: 32px; color: #FF9987" class="fas fa-calculator mt-3 mb-2"></i>
+          <p style="text-indent: 12px;"><%= (@user.done.size * @challenge.impact).round(1) %> Kg C02 saved</p>
+        </div>
+      </div>
+
+      <div class="challenge-progress-grid-card">
+        <div>
+          <i style="text-indent: 12px; font-size: 32px; color: #9B9BFF" class="fas fa-clock mt-3 mb-2"></i>
+          <p style="text-indent: 12px;"><%= (Date.today - @user.commitments.last.start_date).to_i %> / <%= @challenge.duration %> days</p>
+        </div>
+      </div>
+    </div>
   </div>
 
 
-
-    <div class="tip-box-card mt-3">
-      <p>Info on challenge</p>
-      <div class="tip-box">
-        <%=  @challenge.information  %>
-      </div>
-    </div>
+<div class="tip-box-card">
+  <p>Info on challenge</p>
+  <div class="tip-box">
+    <%=  @challenge.information  %>
+  </div>
+</div>
 
 <div class ="tip-container">
   <% if @challenge.category == "plant-based"  %>
@@ -118,13 +140,14 @@
   </div>
 
 <% end %>
+</div>
+
 
   <div class='log-box mb-50'>
     <%= link_to 'SEND CHALLENGE', ranking_path, class: 'plana-btn-green' %>
   </div>
+
 </div>
-
-
 
 
 <div style="display: none;">
