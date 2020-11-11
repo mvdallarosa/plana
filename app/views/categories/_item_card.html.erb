@@ -1,6 +1,8 @@
-<a href="<%= item.url %>" target="_blank" style="text-decoration: none;">
   <div class="item-card">
-    <img src="<%= cl_image_path item.photo.key%>">
+    <a href="<%= item.url %>" target="_blank">
+      <div class="item-image">
+        <img src="<%= cl_image_path item.photo.key%>">
+      </div>
     <div class="item-card-infos">
       <h2><%= item.name.capitalize %></h2>
       <p><i class="fas fa-dollar-sign"></i> Price range: <%= item.description %>/5</p>

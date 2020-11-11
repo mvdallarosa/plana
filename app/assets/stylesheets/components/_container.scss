@@ -18,16 +18,11 @@
 
 
 .discover-container {
-   // background-size: cover;
     color: white;
     padding: 350px 0;
     max-height: 100vh;
-    // background-position: center;
     text-align: center;
-    background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('bladesofgrass.jpg') no-repeat center center fixed;
-  // -webkit-background-size: cover;
-  // -moz-background-size: cover;
-  // -o-background-size: cover;
+    background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.5)), asset-url('bladesofgrass.jpg');
     background-size: cover;
     .set {
       text-align: center;
@@ -313,4 +308,17 @@
 .search-bar-container {
   display: flex;
   margin-left: 10px;
+  .search-bar {
+    width: 88%;
+    color: #8A8A8A;
+  }
+  .magnifying-glass {
+    margin-top: 20px;
+  }
+  .search-bar-buttn {
+    border: none;
+    background-color: #F5F5F5;
+    padding: 0;
+    color: #8A8A8A;
+  }
 }
