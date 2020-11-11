@@ -13,6 +13,7 @@
   padding: 0;
   margin: 20px auto;
   display: inline-block;
+  font-weight: 500;
 }
 
 .plana-btn-green:hover {
@@ -48,6 +49,8 @@
   padding: 0;
   margin: 20px auto;
   display: inline-block;
+  font-weight: 500;
+
 }
 
 .plana-btn-grey-thin:hover {
@@ -114,6 +117,7 @@
   padding: 0;
   display: inline-block;
   text-decoration: none;
+  font-weight: 500;
 }
 
 
@@ -137,30 +141,31 @@
 
 .follow-button {
   text-transform: uppercase;
-  border-color: #8a8a8a;
-  color: #8a8a8a;
+  border-color: #7DC7BE;
+  color: #7DC7BE;
   width: 100%;
   font-size: 12px;
   border-radius: 22px;
   &:visited, &:focus, &:hover {
-    border-color: #8a8a8a;
-    background-color: #8a8a8a;
+    border-color: #7DC7BE;
+    background-color: #7DC7BE;
+
     color: white;
   }
 }
 
 .unfollow-button {
   text-transform: uppercase;
-  border-color: #8a8a8a;
-  background-color: #8a8a8a;
+  border-color: #7DC7BE;
+  background-color: #7DC7BE;
   color: white;
   width: 100%;
   border-radius: 22px;
   font-size: 12px;
   &:focus, &:hover {
-    border-color: #8a8a8a;
+    border-color: #7DC7BE;
     background-color: white;
-    color: #8a8a8a;
+    color: #7DC7BE;
   }
 }
 
@@ -172,7 +177,7 @@
   font-size: 18px;
   text-align: center;
   letter-spacing: 0.12em;
-  color: #FFFFFF;
+  color: #white;
   line-height: 60px;
   border: 0px;
   padding: 0;
