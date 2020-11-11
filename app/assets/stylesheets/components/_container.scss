@@ -1,6 +1,6 @@
 .main-container {
   // PUT THIS CONTAINER UNDERNEATH THE NAVBAR IN EVERY PAGE THAT HAS A NAV BAR
-  margin-bottom: 50px;
+  margin-bottom: 150px;
   max-height: 100vh;
   overflow: scroll;
 }
@@ -10,17 +10,12 @@
   overflow: scroll;
   margin-top: 20px
 }
-.tip-container {
-  margin: 10px;
-  color: #575757;
-  // width: 45%;
-  height: 130px;
 
-  .log-box {
-  margin: 0 auto;
+.log-box {
+  margin-bottom: 50px;
   display: flex;
-  }
 }
+
 
 .discover-container {
    // background-size: cover;
