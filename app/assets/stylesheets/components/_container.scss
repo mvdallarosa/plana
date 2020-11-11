@@ -101,6 +101,14 @@
   text-align: center;
 }
 
+.ranking-header-bold {
+  color: #575757;
+  font-size: 36px;
+  font-weight: 700;
+  padding-left: 30px;
+  padding-bottom: 10px;
+}
+
 
 .category-index-container {
   .index-header{
@@ -133,7 +141,8 @@
     color: #C4C4C4;
   }
   .logout {
-    font-size: 12px;
+    font-size: 16px;
+    color: #8a8a8a;
   }
 }
 
@@ -228,7 +237,7 @@
 .challenge-progress-container {
   box-shadow: 0px 0px 22px rgba(0, 0, 0, 0.05);
   color: #D8D8D8;
-  height: 180px;
+  height: 150px;
   text-align: center;
   padding: 20px;
   h2 {
