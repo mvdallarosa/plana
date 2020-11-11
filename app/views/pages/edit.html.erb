@@ -2,51 +2,43 @@
 <!-- this is the dashboard that displays the current challenge with its info  -->
 <%= render 'shared/navbar' %>
   <!-- DASHBOARD  -->
-<div class="main-container">
+<div class="main-container mx-2">
 
   <% if current_user.commitment_done?(@user.commitments.last) %>
 
     <div class="footprint-container">
       <i class="fas fa-star fa-3x"></i>
-      <h2>Congratulations!</h2>
+      <h2 style="font-size: 26px">Congratulations!</h2>
     </div>
 
     <div class="footprint-grid">
       <div class="footprint-text">
-        <p>You finished your challenge! </p>
-        <p>Keep choosing Plana 🌎</p>
+        <p>You finished your challenge & went <%= current_user.commitments.last.challenge.category %> for <%= current_user.commitments.last.challenge.duration %> days. </p>
 
         <div class="profile-container mb-4">
           <div class="profile-cards">
             <%= image_tag 'drop-rectangle.png', alt: 'points', class: 'profile-icon' %>
-            <p class='number'>+ 10</p>
+            <p class='number mt-1'>+ 10</p>
             <p class='descriptions'>Points</p>
           </div>
         <div class="profile-cards">
           <%= image_tag 'calculator-rectangle.png', alt: 'schedule', class: 'profile-icon' %>
-          <p class='number'><%=(current_user.commitments.last.challenge.duration * current_user.commitments.last.challenge.impact).round(2) %> Kg</p>
+          <p class='number mt-1'><%=(current_user.commitments.last.challenge.duration * current_user.commitments.last.challenge.impact).round(2) %> Kg</p>
           <p class='descriptions'>CO2 saved</p>
         </div>
       </div>
-      <div class='container mb-3'>
-        <%= link_to profile_path do %>
-        <% if current_user.photo.attached? %>
-          <%= cl_image_tag current_user.photo.key, class: 'profile-avatar' %>
-        <% else %>
-          <%= image_tag "profile-placeholder.png", class: "profile-avatar", alt: "profile picture" %>
-        <% end %>
-      </div>
 
       <%= link_to challenges_path do %>
-        <p class='plana-btn-green-pick mb-4'> PICK A CHALLENGE </p>
+        <p class='plana-btn-green-pick mb-5'> NEW CHALLENGE </p>
       <% end %>
 
-    <% end %>
+      <p>KEEP CHOOSING PLANA 🌎</p>
+
     </div>
 
 
 <% else %>
-      
+
   <div class="challenge-progress-container">
     <%= link_to profile_path do %>
       <% if current_user.photo.attached? %>
@@ -55,21 +47,13 @@
         <%= image_tag "profile-placeholder.png", class: "small-profile-avatar", alt: "profile picture" %>
       <% end %>
     <% end %>
-    <h2>Challenge Progress</h2>
-    <p><%= Date.today.strftime("%A, %d %B")%></p>
+    <h2 style="font-size: 26px";>Challenge Progress</h2>
   </div>
 
   <div class="challenge-grid-container">
     <div class="challenge-progress-grid">
       <div class="challenge-progress-grid-card">
-<!--         <span class='challenge-icon-white'>
-          <%= image_tag "growing_sprout1.png", class: "sprout-icon" %>
-          <% image_tag "sprout2.svg", class: "sprout-icon" %>
-          <% image_tag "sprout3.svg", class: "sprout-icon" %>
-          <% image_tag "tree.svg", class: "sprout-icon" %>
-          <% image_tag "planet-earth.svg", class: "sprout-icon" %>
-          </span> -->
-        <div >
+        <div>
           <% if @challenge.category == "plant-based" %>
             <i style="text-indent: 12px; font-size: 32px; color: #7DC7BE" class="fas fa-seedling mt-3 mb-2"></i>
           <% elsif @challenge.category == "plastic-free" %>
@@ -78,7 +62,6 @@
           <p style="text-indent: 12px; font-size: 18px;"><%= @challenge.category.upcase %></p>
         </div>
       </div>
-    </div>
 
 
       <div class="challenge-progress-grid-card">
@@ -112,12 +95,22 @@
   </div>
 
 <div class="tip-box-card">
-  <p>Info on challenge</p>
-  <div class="tip-box">
-    <%=  @challenge.information  %>
+  <p>What's my challenge?</p>
+  <div class="tip-box" style="text-align:center;">
+    <% if @challenge.category == "plant-based"  %>
+      <%= image_tag 'vegan-diet.png', alt: 'points', class: 'challenge-icons-img' %>
+    <% elsif @challenge.category == "plastic-free" %>
+      <%= image_tag 'plastic-free.png', alt: 'points', class: 'challenge-icons-img' %>
+    <% end %>
   </div>
 </div>
 
+<div class="tip-box-card">
+  <p>Eco-tip of the day</p>
+  <div class="tip-box">
+    Eco-tip of the day - random from array ( ex. array[Date.today.month])
+  </div>
+</div>
 
   <% if @challenge.category == "plant-based"  %>
     <% recipe = Item.where(category: Category.where(name: 'plant-based recipes'))[Date.today.month] %>
@@ -145,12 +138,22 @@
       </div>
 
 <% end %>
+
+
+<div class="tip-box-card mt-4">
+  <p>Info on challenge</p>
+  <div class="tip-box">
+    TO UPDATE WITH BETTER & SHORTER DESCRIPTION (SEEDS):<%=  @challenge.information  %>
+  </div>
 </div>
 
 
-  <div class='log-box mb-50'>
-    <%= link_to 'SEND CHALLENGE', ranking_path, class: 'plana-btn-green' %>
-  </div>
+
+
+
+<div class='log-box'>
+    <%= link_to 'EXPLORE THE TOOLS', categories_path, class: 'plana-btn-green mb-0' %>
+</div>
 
 </div>
 
