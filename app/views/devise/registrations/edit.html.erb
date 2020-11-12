@@ -8,28 +8,23 @@
     <%= f.input :first_name,
                 label: false,
                 required: true,
-                autofocus: true,
                 input_html:{placeholder:"first name", class: "no-border"} %>
     <%= f.input :last_name,
                 label: false,
                 required: true,
-                autofocus: true,
                 input_html:{placeholder:"last name", class: "no-border"} %>
     <%= f.input :city,
                 label: false,
                 required: true,
-                autofocus: true,
                 input_html:{placeholder:"city", class: "no-border"} %>
     <%= f.input :username,
                 label: false,
                 required: true,
-                autofocus: true,
                 input_html:{placeholder:"username", class: "no-border"} %>
     <%= f.input :email, label: false, required: true, autofocus: true, input_html:{placeholder:"email", class: "no-border"} %>
     <%= f.input :photo, as: :file,
                 label: false,
                 required: true,
-                autofocus: true,
                 input_html:{placeholder:"photo", class: "no-border"} %>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -48,7 +43,7 @@
   </div>
 
   <div class="form-actions">
-    <button class="plana-btn-green"><%= f.button :submit, "Update" %></button>
+    <button class="plana-btn-green"><%= f.button :submit, "UPDATE" %></button>
   </div>
 <% end %>
 

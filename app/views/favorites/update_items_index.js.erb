@@ -1,0 +1,1 @@
+document.querySelector(`.chosen-div[data-id='<%= @favorite.item.id %>']`).innerHTML = `<%= render partial: 'categories/item_card', locals: {item: @favorite.item, page: 'category'}  %>`

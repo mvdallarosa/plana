@@ -1,14 +1,27 @@
 #heart-icon {
-  text-align: right !important;
-  display: flex !important;
-  justify-content: flex-end !important;
-  color:#7DC7BE !important;
+  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+  color:#7DC7BE;
+  width: 100%;
 }
 
 .sprout-icon {
   height: 30px;
   text-align: right;
   margin: 10px;
+}
+
+.challenge-icons-img {
+  width: 300px;
+  height: 70px;
+  text-align: center;
+}
+
+.progress-icon {
+  font-size: 26px;
+  color: #D8D8D8;
+  float: right;
 }
 
 .teardrop-icon {
@@ -32,8 +45,11 @@
   color: white;
 }
 
-#image-icon {
-  float: right;
+.image-icon {
+  text-align: right;
+  display: flex;
+  flex-wrap: wrap;
+  align-content:flex-end;
 }
 
 .profile-icon {
