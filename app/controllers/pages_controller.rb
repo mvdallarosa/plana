@@ -19,9 +19,8 @@ class PagesController < ApplicationController
       current_user.follows.each do |follow|
         @friends << User.find(follow.following_id)
       end
-      @friends.sort_by { |user| user.score }
-      @friends = @friends.reverse
     end
+    @friends= @friends.sort_by { |user| user.score }.reverse
   end
 
   def dashboard
