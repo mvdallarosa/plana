@@ -1,1 +1,1 @@
-document.querySelector(`<%= @category.css_class %>`).innerHTML = `<%= render partial: 'categories/items_index' %>`
+document.querySelector(`.chosen-div[data-id='<%= @favorite.item.id %>']`).innerHTML = `<%= render partial: 'categories/item_card', locals: {item: @favorite.item, page: 'category'}  %>`
