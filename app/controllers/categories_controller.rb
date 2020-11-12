@@ -20,5 +20,11 @@ class CategoriesController < ApplicationController
       @items = @items.where(sql_query, query: "%#{params[:query]}%")
     end
 
+    if params[:per_page].present?
+      @items_p = @items.page(params[:page]).per(params[:per_page])
+    else
+      @items_p = @items.page(params[:page])
+    end
+
   end
 end

@@ -5,7 +5,11 @@
       </div>
     <div class="item-card-infos">
       <h2><%= item.name.capitalize %></h2>
-      <p><i class="fas fa-dollar-sign"></i> Price range: <%= item.description %>/5</p>
+      <% if item.category.name == 'plant-based recipes' %>
+        <p><i class="far fa-clock"></i> Time: <%= item.description %> minutes</p>
+      <% elsif item.category.name == 'shop responsibly' %>
+        <p><i class="fas fa-dollar-sign"></i>  Price range: <%= item.description %>/5</p>
+      <% end %>
 
       <%if current_user.already_liked(item.id) %>
         <%= link_to item_favorite_path(item, current_user.already_liked(item.id), page: page),

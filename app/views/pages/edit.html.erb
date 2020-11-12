@@ -129,7 +129,7 @@
   <% elsif @challenge.category == "plastic-free" %>
     <% shop = Item.where(category: Category.where(name: 'shop responsibly'))[Date.today.month] %>
 
-      <div class="try-box-card">
+      <div id="plastic-shop" class="try-box-card">
         <p>Check out this sustainable shop!</p>
       </div>
 

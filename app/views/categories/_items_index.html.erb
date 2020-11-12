@@ -1,5 +1,7 @@
-<% @items.each do |item| %>
+<% @items_p.each do |item| %>
   <div data-id="<%= item.id %>" class="chosen-div">
     <%= render partial: 'categories/item_card', locals: {item: item, page: 'category'} %>
   </div>
 <% end %>
+
+<%= paginate @items_p %>
