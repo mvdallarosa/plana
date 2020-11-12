@@ -1,3 +1,5 @@
 <% @items.each do |item| %>
-  <%= render partial: 'categories/item_card', locals: {item: item, page: 'category'} %>
+  <div data-id="<%= item.id %>" class="chosen-div">
+    <%= render partial: 'categories/item_card', locals: {item: item, page: 'category'} %>
+  </div>
 <% end %>
