@@ -59,10 +59,17 @@
   max-width: 600px;
   margin: 30px auto;
   .container-question {
-    padding-top: 80px;
+    padding-top: 110px;
+    .question {
+      margin: 20px;
+      font-size: 24px;
+      font-family: Poppins;
+      color: #7DC7BE;
+      font-weight: 500;
+    }
   }
   .container-answer {
-    padding-top: 50px;
+    padding-top: 30px;
   }
 }
 

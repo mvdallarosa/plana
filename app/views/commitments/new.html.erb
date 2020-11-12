@@ -3,23 +3,39 @@
   <div class="challenge-index-container">
     <div class="index-text">
       Choose your
-      4 week
+      4-week
       challenge
     </div>
-    <div class="index-cards">
+    <div class="index-cards px-4">
       <div class="challenge-card" data-option=<%= @challenges[0].id %>>
-        <span class='challenge-icon-grey'><i class="fas fa-carrot fa-3x"></i></span>
-        <div class='text'>
-          <p><%= @challenges[0].category.upcase %></p>
+        <span class='challenge-icon-grey' ><i class="fas fa-seedling fa-3x py-2 pl-3"style="color: #B3E989;"></i></span>
+        <div>
+          <p style="text-indent: 12px;padding-top: 10px;padding-bottom: 10px; font-weight: 500; font-size:18px;"><%= @challenges[0].category.upcase %></p>
         </div>
       </div>
 
       <div id="white-challenge"class="challenge-card" data-option=<%= @challenges[1].id%>>
       <!-- <div class="challenge-card-green"> -->
       <!-- <span class='challenge-icon-white'> -->
-        <span class='challenge-icon-grey'><i class="fas fa-seedling fa-flip-horizontal fa-3x"></i></span>
-        <div class='text mb-50'>
-          <p><%= @challenges[1].category.upcase %></p>
+        <span class='challenge-icon-grey'><i class="fas fa-carrot fa-3x py-2 pl-3" style="color:#8EC9FF; "></i></span>
+        <div>
+          <p style="text-indent: 12px;padding-top: 10px;padding-bottom: 10px; font-weight: 500; font-size: 18px;"><%= @challenges[1].category.upcase %></p>
+        </div>
+      </div>
+
+      <div class="challenge-card-inactive">
+        <span class='challenge-icon-grey' ><i class="fas fa-fish fa-3x py-2 pl-3"style="color:#FFDA73; "></i></span>
+        <div>
+          <p style="text-indent: 12px;padding-top: 10px;padding-bottom: 10px; font-weight: 500; font-size:18px;">MEAT-FREE</p>
+        </div>
+      </div>
+
+      <div id="white-challenge"class="challenge-card-inactive">
+      <!-- <div class="challenge-card-green"> -->
+      <!-- <span class='challenge-icon-white'> -->
+        <span class='challenge-icon-grey'><i class="fas fa-recycle fa-3x py-2 pl-3" style="color:#9B9BFF; "></i></span>
+        <div>
+          <p style="text-indent: 12px;padding-top: 10px;padding-bottom: 10px; font-weight: 500; font-size: 18px;">ZERO-WASTE</p>
         </div>
       </div>
     </div>

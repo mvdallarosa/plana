@@ -7,7 +7,7 @@ const markDone = () => {
       event.currentTarget.classList.remove("plana-btn-grey")
       event.currentTarget.classList.remove("done-btn")
       event.currentTarget.classList.add("plana-btn-dark")
-      event.currentTarget.innerText = "DONE"
+      event.currentTarget.innerText = "YES"
       doneInput.value = true
       doneForm.submit()
     })
