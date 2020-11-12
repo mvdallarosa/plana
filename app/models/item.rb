@@ -6,4 +6,5 @@ class Item < ApplicationRecord
   validates :description, presence: true
 
   has_many :favorites, dependent: :destroy
+  paginates_per 12
 end
