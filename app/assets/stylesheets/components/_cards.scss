@@ -162,29 +162,34 @@
 }
 
 .index-cards {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 15px;
 }
 
 .index-text {
-  margin: 120px auto;
+  margin: 100px auto;
   text-align: center;
-  width: 65%;
+  width: 80%;
   line-height: 36px;
   font-size: 24px;
-  font-weight: 300;
+  font-weight: 700;
+  color: #8a8a8a;
 }
 
 // Inside Challenges/INDEX.html
 .challenge-card {
-  background: #FFFFFF;
+  display: block;
+  align-items: center;
+  text-align: left;
+  height: 85%;
+  font-weight: 400;
+  color: $dark-grey;
+  font-size: 16px;
+  padding: 6px;
+  border-radius: 22px;
+  background-color: white;
   box-shadow: 0px 0px 22px rgba(0, 0, 0, 0.05);
-  border-radius: 15px;
-  width: 40%;
-  height: 130px;
-  text-align: right;
-  padding: 10px;
   .text {
     color: #575757;
     padding-top: 30px;
@@ -192,6 +197,27 @@
     line-height: 27px;
   }
 }
+
+.challenge-card-inactive {
+  display: block;
+  align-items: center;
+  text-align: left;
+  height: 85%;
+  font-weight: 400;
+  color: $dark-grey;
+  font-size: 16px;
+  padding: 6px;
+  border-radius: 22px;
+  background-color: white;
+  box-shadow: 0px 0px 22px rgba(0, 0, 0, 0.05);
+  .text {
+    color: #575757;
+    padding-top: 30px;
+    text-align: center;
+    line-height: 27px;
+  }
+}
+
 
 .challenge-card:hover {
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
@@ -220,8 +246,10 @@
   border-radius: 50px;
   font-size: 18px;
   margin: 30px;
+  font-family: Poppins;
+  font-weight: 400;
   color: #2E2E2E;
-  padding: 20px 20px;
+  padding: 15px 15px;
   max-height: 100px;
   max-width: 500px;
 }
