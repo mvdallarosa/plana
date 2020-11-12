@@ -4,6 +4,7 @@ class FootprintsController < ApplicationController
       redirect_to intro_path
     else
       @footprint = current_user.footprint
+    end
   end
 
 end

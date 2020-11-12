@@ -1,8 +1,8 @@
+<a href="<%= item.url %>" target="_blank">
   <div data-id="<%= item.id %>" class="item-card">
-    <a href="<%= item.url %>" target="_blank">
-      <div class="item-image">
-        <img src="<%= cl_image_path item.photo.key%>">
-      </div>
+    <div class="item-image">
+      <img src="<%= cl_image_path item.photo.key%>">
+    </div>
     <div class="item-card-infos">
       <h2><%= item.name.capitalize %></h2>
       <% if item.category.name == 'plant-based recipes' %>
