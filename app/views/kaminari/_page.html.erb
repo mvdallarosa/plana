@@ -1,9 +1,5 @@
 <% if page.current? %>
-  <li class='active'>
-    <%= content_tag :a, page, data: { remote: remote }, rel: page.rel %>
-  </li>
+    <%= content_tag :a, page, remote: remote, rel: (page.next? ? 'next' : (page.prev? ? 'prev' : nil)), class: "current" %>
 <% else %>
-  <li>
-    <%= link_to page, url, remote: remote, rel: page.rel %>
-  </li>
+    <%= link_to page, url, remote: remote, rel: (page.next? ? 'next' : (page.prev? ? 'prev' : nil)) %>
 <% end %>

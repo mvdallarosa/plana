@@ -110,7 +110,7 @@
 <div class="tip-box-card">
   <p>Eco-tip of the day</p>
   <div class="tip-box">
-    Eco-tip of the day - random from array ( ex. array[Date.today.month])
+    <%= @tip.sample %>
   </div>
 </div>
 
@@ -146,7 +146,7 @@
 <div class="tip-box-card mt-4">
   <p>Info on challenge</p>
   <div class="tip-box">
-    TO UPDATE WITH BETTER & SHORTER DESCRIPTION (SEEDS):<%=  @challenge.information  %>
+    <%=  @challenge.information  %>
   </div>
 </div>
 
