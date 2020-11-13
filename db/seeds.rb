@@ -10,6 +10,7 @@ require 'open-uri'
 
 Favorite.destroy_all
 Commitment.destroy_all
+Challenge.destroy_all
 Footprint.destroy_all
 User.destroy_all
 
@@ -280,10 +281,16 @@ User.all.each do |user|
   footprint.user = user
   footprint.save
   total = footprint.mobility + footprint.food + footprint.household
-  if total >= 0 && total <= 3.5
-      user.score = 100
-  elsif total > 3.5 && total <= 7.5
+  if total >= 0 && total <= 1.75
+      @user.score = 100
+  elsif total > 1.75 && total <= 3.5
+    user.score = 80
+  elsif total > 3.5 && total <= 5.5
+    user.score = 65
+  elsif total > 5.5 && total <= 7.5
     user.score = 50
+  elsif total > 7.5 && total <= 10
+    user.score = 25
   else
     user.score = 0
   end
@@ -295,12 +302,12 @@ puts "Creating 2 challenges..."
 challenge_attributes = [
   { category: "plastic-free",
     description: "avoid all forms of packaging that involve plastic",
-    information: "Plastic never bio-degrades and disrupts our endocrine system, and is suspected to cause cancer, infertility, and many other diseases. Managing your waste has a direct positive impact on the healthcare of our ecosystems, especially the ocean. The Plastic Free Challenge is designed to raise awareness and promote solutions.",
+    information: "300 million tons of plastic are produced globally each year. The carbon footprint of plastic is about 6 kg of CO2 per kg of plastic. Reusing jam jars and recycling tin cans is not enough anymore. To make real environmental change, avoid all single-use plastic.",
     duration: 28,
     impact: 0.50.to_f },
   { category: "plant-based",
     description: "no meat / fish / dairy / eggs -- fully plant-based",
-    information: "At Plana, we believe that eating mostly plant-based whole foods for three weeks (or longer) is the perfect way to make a positive impact on our environment by saving CO2. On average diet accounts for 40\% of our carbon footprint.",
+    information: "Livestock and their byproducts account for at least 32,000 million tons of CO2 per year. According to scientists whom analyze the damage farming does to the planet, avoiding meat and dairy is the single biggest way to reduce your environmental impact.",
     duration: 28,
     impact: 1.01.to_f}
 ]
