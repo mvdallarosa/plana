@@ -90,17 +90,17 @@
 }
 
 .container-intro {
-  position: absolute;
-  width: 233px;
-  height: 10px;
-  top: 100px;
-  left: 71px;
+  width: 80%;
+  height: 180px;
   font-family: Poppins;
   font-style: normal;
   font-weight: 300;
   font-size: 24px;
   line-height: 36px;
   text-align: center;
+  color: #575757;
+  margin-top: 300px;
+  margin: 250px auto;
 }
 
 .ranking-header-bold {
@@ -324,7 +324,7 @@
   }
   .search-bar-buttn {
     border: none;
-    background-color: #F5F5F5;
+    background-color: #E5E5E5;
     padding: 0;
     color: #8A8A8A;
   }

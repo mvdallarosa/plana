@@ -14,13 +14,15 @@ class PagesController < ApplicationController
 
   def friends
     # @users = User.order(score: :desc)
-    @friends = [current_user]
-    if current_user.follows != nil
+    @friends = []
+    if current_user.follows.size == 0
+      @friends << current_user
+    else
       current_user.follows.each do |follow|
         @friends << User.find(follow.following_id)
       end
+      @friends = @friends.sort_by { |user| user.score }.reverse
     end
-    @friends= @friends.sort_by { |user| user.score }.reverse
   end
 
   def dashboard

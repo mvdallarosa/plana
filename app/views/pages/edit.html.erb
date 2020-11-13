@@ -7,13 +7,13 @@
   <% if current_user.commitment_done?(@user.commitments.last) %>
 
     <div class="footprint-container">
-      <i class="fas fa-star fa-3x"></i>
+      <i class="fas fa-star fa-3x" style="color: #FF9987;"></i>
       <h2 style="font-size: 26px">Congratulations!</h2>
     </div>
 
     <div class="footprint-grid">
       <div class="footprint-text">
-        <p>You finished your challenge & went <%= current_user.commitments.last.challenge.category %> for <%= current_user.commitments.last.challenge.duration %> days. </p>
+        <p style="font-weight: 300;">You finished your challenge & went <%= current_user.commitments.last.challenge.category %> for <%= current_user.commitments.last.challenge.duration %> days. </p>
 
         <div class="profile-container mb-4">
           <div class="profile-cards">
@@ -32,8 +32,9 @@
         <p class='plana-btn-green-pick mb-5'> NEW CHALLENGE </p>
       <% end %>
 
-      <p>KEEP CHOOSING PLANA 🌎</p>
-
+<!--       <p style="font-weight: 300; letter-spacing: 2px;">KEEP CHOOSING PLANA</p>
+      <p>🌎</p>
+ -->
     </div>
 
 
@@ -146,7 +147,7 @@
 <div class="tip-box-card mt-4">
   <p>Info on challenge</p>
   <div class="tip-box">
-    TO UPDATE WITH BETTER & SHORTER DESCRIPTION (SEEDS):<%=  @challenge.information  %>
+    <%=  @challenge.information  %>
   </div>
 </div>
 
