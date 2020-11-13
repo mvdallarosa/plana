@@ -5,7 +5,16 @@
   overflow: scroll;
 }
 
+.kaminari-container {
+  .row-card {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 50px;
+  }
+  .column-card {
 
+  }
+}
 .category-container{
   overflow: scroll;
   margin-top: 20px
