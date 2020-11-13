@@ -1,12 +1,22 @@
  <div class="navbar2" >
    <!-- nav bar -->
     <%= link_to categories_path, alt: "3 square icon" do %>
-      <%= image_tag 'tools.png', class: 'squares-icon' %>
+      <% if tools_active? %>
+        <%= image_tag 'tools-active.png', class: 'squares-icon' %>
+      <% else %>
+        <%= image_tag 'tools.png', class: 'squares-icon' %>
       <% end %>
+    <% end %>
+
     <%= link_to dashboard_path, alt: "3 square icon" do %>
       <%= image_tag 'drop-nav.png', class: 'teardrop-icon' %>
       <% end %>
+
     <%= link_to ranking_path, alt: "3 square icon" do %>
-      <%= image_tag 'dropdown.png', class: 'squares-icon' %>
+    <% if ranking_active? %>
+        <%= image_tag 'ranking-active.png', class: 'squares-icon' %>
+      <% else %>
+        <%= image_tag 'dropdown.png', class: 'squares-icon' %>
       <% end %>
+     <% end %>
 </div>
