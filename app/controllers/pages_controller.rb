@@ -14,9 +14,9 @@ class PagesController < ApplicationController
 
   def friends
     # @users = User.order(score: :desc)
-    @friends = []
+    @friends = [current_user]
     if current_user.follows.size == 0
-      @friends << current_user
+      @friends
     else
       current_user.follows.each do |follow|
         @friends << User.find(follow.following_id)
