@@ -12,3 +12,44 @@
   padding-bottom: 20px;
   border-top: solid 0.5px #D8D8D8;
 }
+
+.navbar-landing-white {
+  background-color: #E5E5E5;
+  border-bottom: 1px solid grey;
+}
+
+.navbar-landing {
+  justify-content: space-between;
+}
+
+.navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-brand img {
+  width: 100px;
+}
+
+.plana-btn-green-contact {
+  text-decoration: none;
+  height: 32px;
+  width: 132px;
+  border-radius: 50px;
+  background: #7DC7BE;
+  font-size: 12px;
+  text-align: center;
+  letter-spacing: 0.12em;
+  color: #FFFFFF;
+  line-height: 34px;
+  border: 0px;
+  padding: 0;
+  display: inline-block;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.plana-btn-green-contact:hover {
+  text-decoration: none;
+  color: white;
+  background: #48928A;
+}

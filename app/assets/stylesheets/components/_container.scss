@@ -339,3 +339,34 @@
     color: #8A8A8A;
   }
 }
+
+.step-text {
+  width: 50%;
+
+  .steps-icon {
+    width: 127px;
+    height: 47px;
+  }
+
+  h2 {
+    color: #2E2E2E;
+    font-size: 34px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 70%;
+  }
+
+  p {
+    font-size: 20px;
+    color: #6D6D6D;
+    font-weight: 500;
+    line-height: 40px;
+  }
+}
+
+.steps-img {
+    width: 35%;
+    height: 100%;
+}
+
+

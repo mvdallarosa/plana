@@ -3,7 +3,9 @@
 
 <!-- tracking of current challenge + daily recommendations & tips  -->
 <!-- this is the dashboard that displays the current challenge with its info  -->
-<div class="home-container" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path 'forest-main.jpg' %>);">
+
+
+<!-- <div class="home-container" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path 'forest-main.jpg' %>);">
   <div class='set'>
     <header id="home">plana</header>
   </div>
@@ -17,4 +19,74 @@
     <% end %>
   </div>
 </div>
+ -->
 
+<div class="navbar navbar-expand-sm navbar-landing fixed-top">
+  <a class="navbar-brand" href="/">
+    <%= image_tag 'plana.png', alt: 'logo', class: 'logo-landing' %>
+  </a>
+  <div class="collapse navbar-collapse">
+    <%= link_to "CONTACT", root_path, class: "plana-btn-green-contact" %>
+  </div>
+</div>
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,1)), url(<%= asset_path 'forest-main.jpg' %>);">
+  <div class="container" style="height: 90vh;">
+    <h1>Your guide to healthier habits, for  <strong>you</strong> & for the <strong>planet</strong>.</h1>
+    <%= image_tag 'choose-plana.png', alt: 'choose-plana', class: 'choose-plana' %>
+    <br>
+    <br>
+    <%= link_to "TRY THE DEMO", dashboard_path, class: "plana-btn-green-sq" %>
+  </div>
+    <div class="container px-4 d-flex justify-content-sm-between">
+      <%= image_tag 'step-0.png', alt: 'step-0', class: 'step-0-img' %>
+      <div class="intro-text py-5">
+        <h2>Your tool to make a positive impact on the planet </h2>
+        <p>Plana makes it easier for you to always choose the most sustainable option, to alwasy choose plan “a”. It calculates your carbon footprint and allows you to start reducing your CO2 impact by challenging you and your lifestyle.</p>
+      </div>
+  </div>
+</div>
+
+<div class="container mt-5">
+  <div class="container p-4 d-flex justify-content-sm-between">
+        <%= image_tag 'step-1.png', alt: 'step-1', class: 'steps-img' %>
+        <div class="step-text py-5">
+          <%= image_tag 'step-1-icon.png', alt: 'step-1', class: 'steps-icon' %>
+          <h2>Calculate your  carbon footprint</h2>
+          <p>By answering a few questions on your lifestyle, Plana calculates an astimate of your total yearly CO2 emissions.</p>
+        </div>
+  </div>
+</div>
+
+<div class="container mt-5">
+  <div class="container p-4 d-flex justify-content-sm-between">
+        <div class="step-text py-5">
+          <%= image_tag 'step-2-icon.png', alt: 'step-2', class: 'steps-icon' %>
+          <h2>Pick a challenge to reduce your impact </h2>
+          <p>By answering a few questions on your lifestyle, Plana calculates an astimate of your total yearly CO2 emissions.</p>
+        </div>
+        <%= image_tag 'step-2.png', alt: 'step-2', class: 'steps-img' %>
+  </div>
+</div>
+
+<div class="container mt-5">
+  <div class="container p-4 d-flex justify-content-sm-between">
+        <%= image_tag 'step-3.png', alt: 'step-3', class: 'steps-img' %>
+        <div class="step-text py-5">
+          <%= image_tag 'step-3-icon.png', alt: 'step-3', class: 'steps-icon' %>
+          <h2>Use the tools to live more sustainably</h2>
+          <p>You begin with challenges, but what if you want to continue making more responsible choices? Plana has many tools that facilitate your transition to a more sustainable lifestyle.</p>
+        </div>
+  </div>
+</div>
+
+<div class="container mt-5">
+  <div class="container p-4 d-flex justify-content-sm-between">
+        <div class="step-text py-5">
+          <%= image_tag 'step-4-icon.png', alt: 'step-4', class: 'steps-icon' %>
+          <h2>Compete with your friends</h2>
+          <p>What’s a challenge if there is no competition? Plana ranks users based on their score, so you can get motivated by seeing the progress of your friends.</p>
+        </div>
+        <%= image_tag 'step-4.png', alt: 'step-4', class: 'steps-img' %>
+  </div>
+</div>
