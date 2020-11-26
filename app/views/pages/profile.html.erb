@@ -19,7 +19,7 @@
   <div class="profile-container">
     <div class="profile-cards">
       <%= image_tag 'drop-rectangle.png', alt: 'points', class: 'profile-icon' %>
-      <p class='number'><%=current_user.score%></p>
+      <p class='number'><%= current_user.score ? current_user.score : 0 %></p>
       <p class='descriptions'>Points</p>
     </div>
     <div class="profile-cards">
@@ -29,7 +29,7 @@
     </div>
     <div class="profile-cards">
       <%= image_tag 'calculator-rectangle.png', alt: 'co2 saved', class: 'profile-icon' %>
-      <p class='number'><%= current_user.footprint ? (current_user.footprint.mobility.round(1) + current_user.footprint.food.round(1) + current_user.footprint.household.round(1)).round(1) : 50 %> T</p>
+      <p class='number'><%= current_user.footprint ? (current_user.footprint.mobility.round(1) + current_user.footprint.food.round(1) + current_user.footprint.household.round(1)).round(1) : 0  %> T</p>
       <p class='descriptions'>CO2/year</p>
     </div>
   </div>
