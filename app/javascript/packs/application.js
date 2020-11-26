@@ -31,11 +31,13 @@ import { multiForm } from '../components/multi_step_form';
 import { pickChallenge } from '../components/pick_challenge_form';
 import { markDone } from '../components/mark_done_form';
 import { initMapbox } from '../plugins/init_mapbox';
+import { initUpdateNavbarOnScroll } from '../components/navbar';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   multiForm();
+  initUpdateNavbarOnScroll();
   pickChallenge();
   markDone();
   initMapbox();
