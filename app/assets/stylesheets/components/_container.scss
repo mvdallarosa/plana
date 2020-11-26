@@ -340,6 +340,10 @@
   }
 }
 
+.steps-container {
+  display: flex;
+}
+
 .step-text {
   width: 50%;
 
@@ -371,7 +375,63 @@
 
 .footer {
   margin: 0 40px;
+  header {
+    font-size: 90px;
+  }
 }
 
+// Small devices (landscape phones, 576px and up)
+@media (max-width: 765px) {
+  .steps-container {
+    flex-direction: column;
+    padding: 0 20px !important;
+    img {
+      order: 1;
+      width: 100%;
+    }
+  }
+  .step-text {
+    width: 100%;
+    order: 2;
+
+    h2 {
+      font-size: 30px;
+      width: 100%;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 32px;
+    }
+  }
+  .footer header {
+    font-size: 50px;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 765px) and (max-width: 1000px) {
+  .step-text {
+    padding: 0 !important;
+
+    .steps-icon {
+      width: 110px;
+      height: auto;
+    }
+
+    h2 {
+      font-size: 30px;
+      width: 100%;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 32px;
+    }
+  }
+  .footer header {
+    font-size: 50px;
+  }
+}
 
 

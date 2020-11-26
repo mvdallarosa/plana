@@ -388,6 +388,15 @@
   }
 }
 
+.team-title {
+  font-size: 60px;
+  font-family: 'Poppins';
+  font-weight: 700;
+  text-align: center;
+  color: #2E2E2E;
+  padding-bottom: 30px;
+}
+
 .team-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -417,8 +426,35 @@
   }
 }
 
-// .challanges-card:hover {
-//   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-// }
+// Small devices (landscape phones, 576px and up)
+@media (max-width: 500px) {
+  .team-grid {
+    display: block;
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  .member-card {
+    padding-bottom: 50px;
+
+    h3 {
+      font-size: 22px;
+    }
+  }
+
+  .team-title {
+    font-size: 40px;
+  }
+}
+
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 500px) and (max-width: 1000px) {
+  .team-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 
 
