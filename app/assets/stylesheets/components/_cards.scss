@@ -388,7 +388,34 @@
   }
 }
 
+.team-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 40px;
+  width: 80%;
+  margin: 0 auto;
+}
 
+
+.member-card {
+  text-align: center;
+  h3 {
+    color: #595959;
+    font-family: 'Poppins';
+    font-size: 26px;
+    font-weight: 700;
+  }
+  img {
+    width: 100%;
+  }
+  a {
+    color: #b2b2b2;
+    font-size: 40px;
+  }
+  a:hover {
+    color: #8a8a8a;
+  }
+}
 
 // .challanges-card:hover {
 //   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
